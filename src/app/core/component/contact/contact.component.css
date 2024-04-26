@@ -1,0 +1,21 @@
+.contact-text {
+  font-size: 14px;
+}
+.form {
+  padding: 1rem;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+  border: 0.6px solid #e4e4e7df;
+}
+
+.item {
+  background-color: #fafafaea;
+  padding: 1rem 0;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+  border: 0.5px solid rgb(197, 195, 195);
+  border-radius: 5px;
+}
+
+.icon {
+  margin-bottom: 10px;
+}

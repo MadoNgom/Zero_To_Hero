@@ -1,29 +1,55 @@
-<div class="topBanner">
-    <div class="text">Free Courses 🌟 Sale Ends Soon, Get It Now</div>
-    <div class="icon">
-        <img src="assets/vector_stroke.svg" alt="" />
-    </div>
+<div class="top-header text-center text-light py-2">
+  <p class="top-header">
+    Free Courses 🌟 Sale Ends Soon, Get It Now
+    <i class="bi bi-arrow-right"></i>
+  </p>
 </div>
-
-<div class="navbar">
-    <div class="container">
-        <div class="logo">
-            <div class="shape17">
-                <img src="assets/logo_laptop.png" alt="Logo Zero_to_Hero" class="icon2" />
-            </div>
-        </div>
-
-    <div class="buttonsContainer">
-        <a href="#" class="button textButton">Home</a>
-        <a href="#" class="textButton">Courses</a>
-        <a href="#" class="textButton">About Us</a>
-        <a href="#" class="textButton">Pricing</a>
-        <a href="#" class="textButton">Contact</a>
-      </div>
+<!-- NAV BAR -->
+<nav class="nav navbar navbar-expand-lg bg-light navbar-light">
+  <div class="container">
+    <a href="#" class="navbar-brand d-inline-block align-top logo"
+      ><img
+        src="../../../assets/logo_laptop.png"
+        alt=""
+        width="40px"
+        height="40px"
+    /></a>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active-link">
+          <a href="#" class="nav-link active text-dark">Home</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link text-dark">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link text-dark">Courses</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link text-dark">Pricing</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link text-dark" routerLink="/contact"
+            >Contact</a
+          >
+        </li>
+      </ul>
     </div>
-
-    <div class="buttonsContainer2">
-        <button class="text2">Sign Up</button>
-        <button class="button2 text3">Login</button>
+    <div>
+      <button class="btn btn-outline-primary mx-2 ms-auto">sign up</button>
+      <button class="btn btn-primary mx-2">sign in</button>
+      <button
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+        class="navbar-toggler ml-auto"
+      >
+        menu
+      </button>
     </div>
   </div>
+</nav>
+<!-- END OF THE NAV BAR -->
