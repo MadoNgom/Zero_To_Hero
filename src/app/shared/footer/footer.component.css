@@ -1,0 +1,383 @@
+:host,
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  flex-shrink: 0;
+  text-decoration: none;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+:host,
+:not(span, a, ul, ol, li, p) {
+  display: flex;
+}
+
+ul,
+ol {
+  text-indent: 0;
+  padding-inline-start: 1.5em;
+}
+
+p:empty::before {
+  content: '';
+  display: inline-block;
+}
+
+img {
+  object-fit: contain;
+}
+
+svg {
+  overflow: visible;
+}
+
+:host {
+  height: 100vh;
+  width: 100vw;
+  flex-direction: column;
+  gap: 50px;
+  padding: 100px 162px 30px;
+  background-color: #fff;
+}
+.container {
+  height: min-content;
+  align-self: stretch;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 619px;
+}
+.subContainer {
+  width: min-content;
+  height: min-content;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 40px;
+}
+.logo {
+  width: 40px;
+  height: 40px;
+  filter: drop-shadow(0px 4px 4px #399bf7);
+}
+.icon {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.buttonsContainer {
+  width: 392px;
+  height: min-content;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  align-content: flex-start;
+  gap: 20px;
+}
+.button {
+  width: min-content;
+  height: min-content;
+  align-items: center;
+  gap: 6px;
+  border-radius: 6px;
+}
+.icon2 {
+  width: 24px;
+  height: 24px;
+}
+.icon3 {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.textButton {
+  color: #262626;
+  font-size: 18px;
+  line-height: 150%;
+  font-family: Be Vietnam Pro, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  width: min-content;
+  height: min-content;
+  white-space: nowrap;
+  flex-direction: column;
+}
+.button2 {
+  width: min-content;
+  height: min-content;
+  align-items: center;
+  gap: 6px;
+  border-radius: 6px;
+}
+.icon4 {
+  width: 24px;
+  height: 24px;
+}
+.icon5 {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.textButton2 {
+  color: #262626;
+  font-size: 18px;
+  line-height: 150%;
+  font-family: Be Vietnam Pro, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  width: min-content;
+  height: min-content;
+  white-space: nowrap;
+  flex-direction: column;
+}
+.button3 {
+  width: min-content;
+  height: min-content;
+  align-items: center;
+  gap: 6px;
+  border-radius: 6px;
+}
+.icon6 {
+  width: 24px;
+  height: 24px;
+}
+.icon7 {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.textButton3 {
+  color: #262626;
+  font-size: 18px;
+  line-height: 150%;
+  font-family: Be Vietnam Pro, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  width: min-content;
+  height: min-content;
+  white-space: nowrap;
+  flex-direction: column;
+}
+.subContainer2 {
+  width: 807px;
+  height: min-content;
+  align-items: flex-start;
+  gap: 30px;
+}
+.container2 {
+  height: min-content;
+  flex: 1;
+  flex-direction: column;
+  gap: 14px;
+}
+.heading {
+  color: #262626;
+  font-size: 20px;
+  line-height: 150%;
+  font-weight: 600;
+  font-family: Be Vietnam Pro, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  height: min-content;
+  align-self: stretch;
+  flex-direction: column;
+}
+.buttonsContainer2 {
+  height: min-content;
+  align-self: stretch;
+  flex-direction: column;
+  gap: 8px;
+}
+.textButton4 {
+  color: #59595a;
+  font-size: 18px;
+  line-height: 150%;
+  font-family: Be Vietnam Pro, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  height: min-content;
+  align-self: stretch;
+  flex-direction: column;
+}
+.textButton5 {
+  color: #59595a;
+  font-size: 18px;
+  line-height: 150%;
+  font-family: Be Vietnam Pro, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  height: min-content;
+  align-self: stretch;
+  flex-direction: column;
+}
+.textButton6 {
+  color: #59595a;
+  font-size: 18px;
+  line-height: 150%;
+  font-family: Be Vietnam Pro, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  height: min-content;
+  align-self: stretch;
+  flex-direction: column;
+}
+.textButton7 {
+  color: #59595a;
+  font-size: 18px;
+  line-height: 150%;
+  font-family: Be Vietnam Pro, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  height: min-content;
+  align-self: stretch;
+  flex-direction: column;
+}
+.container3 {
+  height: min-content;
+  flex: 1;
+  flex-direction: column;
+  gap: 14px;
+}
+.heading2 {
+  color: #262626;
+  font-size: 20px;
+  line-height: 150%;
+  font-weight: 600;
+  font-family: Be Vietnam Pro, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  height: min-content;
+  align-self: stretch;
+  flex-direction: column;
+}
+.buttonsContainer3 {
+  height: min-content;
+  align-self: stretch;
+  flex-direction: column;
+  gap: 8px;
+}
+.textButton8 {
+  color: #59595a;
+  font-size: 18px;
+  line-height: 150%;
+  font-family: Be Vietnam Pro, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  height: min-content;
+  align-self: stretch;
+  flex-direction: column;
+}
+.textButton9 {
+  color: #59595a;
+  font-size: 18px;
+  line-height: 150%;
+  font-family: Be Vietnam Pro, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  height: min-content;
+  align-self: stretch;
+  flex-direction: column;
+}
+.textButton10 {
+  color: #59595a;
+  font-size: 18px;
+  line-height: 150%;
+  font-family: Be Vietnam Pro, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  height: min-content;
+  align-self: stretch;
+  flex-direction: column;
+}
+.container4 {
+  height: min-content;
+  flex: 1;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+}
+.heading3 {
+  color: #262626;
+  font-size: 20px;
+  line-height: 150%;
+  font-weight: 600;
+  font-family: Be Vietnam Pro, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  height: min-content;
+  align-self: stretch;
+  flex-direction: column;
+}
+.buttonsContainer4 {
+  width: min-content;
+  height: min-content;
+  align-items: flex-start;
+  gap: 14px;
+}
+.button4 {
+  width: min-content;
+  height: min-content;
+  flex-direction: column;
+  padding: 14px;
+  outline: solid 1px #f1f1f3;
+  outline-offset: -1px;
+  border-radius: 8px;
+  background-color: #f7f7f8;
+}
+.icon8 {
+  z-index: 0;
+  width: 24px;
+  height: 24px;
+}
+.icon9 {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.button5 {
+  width: min-content;
+  height: min-content;
+  flex-direction: column;
+  padding: 14px;
+  outline: solid 1px #f1f1f3;
+  outline-offset: -1px;
+  border-radius: 8px;
+  background-color: #f7f7f8;
+}
+.icon10 {
+  z-index: 0;
+  width: 24px;
+  height: 24px;
+}
+.icon11 {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.button6 {
+  width: min-content;
+  height: min-content;
+  flex-direction: column;
+  padding: 14px;
+  outline: solid 1px #f1f1f3;
+  outline-offset: -1px;
+  border-radius: 8px;
+  background-color: #f7f7f8;
+}
+.icon12 {
+  z-index: 0;
+  width: 24px;
+  height: 24px;
+}
+.icon13 {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.line {
+  max-width: 100%;
+  height: 0;
+  max-height: 100%;
+  align-self: stretch;
+  border-bottom: solid 1px #f1f1f3;
+}
+.text {
+  color: #656567;
+  font-size: 18px;
+  line-height: 150%;
+  font-family: Be Vietnam Pro, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  height: min-content;
+  align-self: stretch;
+  text-align: center;
+  align-items: center;
+  flex-direction: column;
+}
