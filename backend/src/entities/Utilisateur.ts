@@ -1,4 +1,4 @@
-class Utilisateur {
+export class Utilisateur {
     private _idUtilisateur: string;
     private _nom: string;
     private _prenom: string;
@@ -54,26 +54,26 @@ class Utilisateur {
     }
 
 
-    public afficherInformation(): void {
-        //logic
-    }
+    // public afficherInformation(): void {
+    //     //logic
+    // }
     
-    public modifierProfil(utilisateur: Utilisateur): Utilisateur {
-        // logic
-        return utilisateur;
-    }
+    // public modifierProfil(utilisateur: Utilisateur): Utilisateur {
+    //     // logic
+    //     return utilisateur;
+    // }
     
-    public ouvrirDiscussion(discussion: Discussion): void {
-        //logic
-    }
+    // public ouvrirDiscussion(discussion: Discussion): void {
+    //     //logic
+    // }
     
-    public publierMessage(message: Message): void {
-        //logic
-    }
+    // public publierMessage(message: Message): void {
+    //     //logic
+    // }
     
-    public accederPlayground(): void {
-        //logic
-    }
+    // public accederPlayground(): void {
+    //     //logic
+    // }
 }
 
 
