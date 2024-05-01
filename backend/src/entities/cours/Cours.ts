@@ -1,4 +1,7 @@
-class Cours {
+import { niveauDifficulte } from "./NiveauDifficulte";
+
+export class Cours {
+    
     private _idCours: string;
     private _nomCours: string;
     private _description: string;

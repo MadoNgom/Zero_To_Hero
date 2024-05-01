@@ -1,4 +1,5 @@
-class Reponse {
+export class Reponse {
+    
     private _textReponse: string;
     private _estCorrect: boolean;
 

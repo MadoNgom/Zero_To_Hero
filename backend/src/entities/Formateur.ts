@@ -1,4 +1,9 @@
-class Formateur extends Utilisateur{
+import { Utilisateur } from './Utilisateur';
+import { Cours } from './cours/Cours';
+import { Module } from './cours/Module';
+
+export class Formateur extends Utilisateur{
+    
     constructor(idUtilisateur: string, nom: string, prenom: string, email: string, password: string) {
         super(idUtilisateur, nom, prenom, email, password);
     }

@@ -1,4 +1,7 @@
-class Evaluation {
+import { Question } from "./Question";
+
+export class Evaluation {
+    
     public ajouterQuestion(question : Question) : Question {
         //logic
         return question;

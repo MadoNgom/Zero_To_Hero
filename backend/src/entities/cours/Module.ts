@@ -1,4 +1,6 @@
-class Module {
+import { Cours } from './Cours';
+
+export class Module {
     private _idModule: String;
     private _titreModule: String;
 

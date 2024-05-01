@@ -1,4 +1,8 @@
-class Progression {
+import { Module } from "../cours/Module";
+import { EtatModule } from './EtatModule';
+
+export class Progression {
+    
     private _module: Module;
     private _etatModule: Map<Module, EtatModule>;
 

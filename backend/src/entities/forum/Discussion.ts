@@ -1,4 +1,5 @@
-class Discussion {
+import { Message } from './Message';
+export class Discussion {
     private _titre: string;
 
     constructor(titre: string) {

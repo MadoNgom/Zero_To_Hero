@@ -1,4 +1,5 @@
-class Question {
+export class Question {
+    
     private _intituleQuestion: string;
 
     constructor(intituleQuestion: string) {

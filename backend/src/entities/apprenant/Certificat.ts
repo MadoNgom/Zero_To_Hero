@@ -1,4 +1,6 @@
-class Certificat {
+import { Module } from "../cours/Module";
+
+export class Certificat {
     private _numeroCertificat: string;
     private _module: Module;
     private _noteFinale: number;

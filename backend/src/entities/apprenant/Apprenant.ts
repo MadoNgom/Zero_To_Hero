@@ -1,4 +1,6 @@
-class Apprenant extends Utilisateur {
+import { Utilisateur } from "../Utilisateur";
+import { Module } from "../cours/Module";
+export class Apprenant extends Utilisateur {
     private _estPremium: boolean;
 
     constructor(idUtilisateur: string, nom: string, prenom: string, email: string, password: string, estPremium: boolean) {

@@ -1,4 +1,5 @@
-class Message {
+import { Utilisateur } from '../Utilisateur';
+export class Message {
     private _contenu: string;
     private _auteur: Utilisateur;
     private _dateEnvoi: Date;
