@@ -1,12 +1,12 @@
+/* TOP HEADER STYLING */
 .top-header {
   background-color: #0083ff;
-  margin-bottom: 0;
-}
-.top-header p {
-  font-size: 14px;
-  /* line-height: 150%; */
   font-family: Be Vietnam Pro, system-ui, -apple-system, "Segoe UI", Roboto,
     "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+}
+.top-header p {
+  margin-bottom: 0;
+  font-size: 14px;
 }
 /* NAV STYLING */
 .nav-item {
@@ -16,7 +16,12 @@
 .nav {
   box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
 }
-.active-link {
+.nav .navbar-toggler {
+  border: 0;
+  font-size: 2.2rem;
+}
+
+.nav .active-link {
   background-color: #e4e2e2;
   border-radius: 5px;
 }
