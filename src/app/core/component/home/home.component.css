@@ -32,7 +32,7 @@ ul {
   font-weight: 600;
 }
 
-.pointer:after {
+.pointer::after {
   content: "";
   position: absolute;
   left: 0px;
@@ -43,7 +43,7 @@ ul {
   border-top: 30px solid transparent;
   border-bottom: 30px solid transparent;
 }
-.pointer:before {
+.pointer::before {
   content: "";
   position: absolute;
   right: -30px;
@@ -66,7 +66,7 @@ ul {
   font-weight: 600;
 }
 
-.pointer-90:after {
+.pointer-90::after {
   content: "";
   position: absolute;
   left: 0px;
@@ -100,7 +100,7 @@ ul {
   font-weight: 600;
 }
 
-.pointer-75:after {
+.pointer-75::after {
   content: "";
   position: absolute;
   left: 0px;
@@ -111,7 +111,7 @@ ul {
   border-top: 30px solid transparent;
   border-bottom: 30px solid transparent;
 }
-.pointer-75:before {
+.pointer-75::before {
   content: "";
   position: absolute;
   right: -30px;
