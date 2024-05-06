@@ -1,18 +1,3 @@
-<<<<<<< HEAD
-/* SOME RESET */
-*::after,
-*::before {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-ul {
-  list-style: none;
-  line-height: 1.6;
-}
-/* SHOW SECTION STYLING */
-=======
->>>>>>> efde62c3dd4d6416ac971cca0d83fdf2bdf607df
 .showcase-content {
   max-width: min(800px, 80%);
   margin-inline: auto;
