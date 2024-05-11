@@ -1,0 +1,36 @@
+hr{
+  color: #E4E4E7;
+  margin-top: 0;
+}
+
+.custom-shadow {
+  box-shadow: 0px 0px 10px rgba(0, 0, 255, 0.2);
+}
+
+.card {
+  padding: 20px;
+}
+
+.icon-box {
+  display: inline-block;
+  background-color: #FFEACC;
+  padding: 8px;
+  border-radius: 10%;
+  margin-bottom: 15px;
+}
+
+/* shapes  */
+.div-shape {
+  position: absolute;
+  right: 0;
+  top: -53px;
+  width: 186px;
+  height: 178px;
+  overflow: visible;
+}
+
+.icon {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

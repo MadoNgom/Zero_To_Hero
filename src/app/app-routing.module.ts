@@ -2,10 +2,9 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './core/component/home/home.component';
 import { LoginComponent } from './core/component/login/login.component';
-import { SignupComponent } from './core/component/signup/signup.component';
 import { AboutComponent } from './core/component/about/about.component';
 import { ContactComponent } from './core/component/contact/contact.component';
-
+import { SignupComponent } from './core/component/signup/signup.component';
 const routes: Routes = [
   {
     path: 'portal',
@@ -22,10 +21,6 @@ const routes: Routes = [
     component: LoginComponent,
   },
   {
-    path: 'signup',
-    component: SignupComponent,
-  },
-  {
     path: 'about',
     component: AboutComponent,
   },
@@ -33,6 +28,10 @@ const routes: Routes = [
     path: 'contact',
     component: ContactComponent,
   },
+  {
+    path: 'signup',
+    component: SignupComponent,
+  }
 ];
 
 @NgModule({
