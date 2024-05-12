@@ -9,8 +9,9 @@ import { ContactComponent } from './core/component/contact/contact.component';
 const routes: Routes = [
   {
     path: 'portal',
-    loadChildren:  () => import('./portal/portal.module').then(x => x.PortalModule),
-    data: { preload: false }
+    loadChildren: () =>
+      import('./portal/portal.module').then((x) => x.PortalModule),
+    data: { preload: false },
   },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   {
@@ -37,6 +38,6 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
