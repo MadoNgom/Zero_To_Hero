@@ -1,40 +1,42 @@
-import { Database } from "../database";
-import { Utilisateur } from "../entities/Utilisateur";
+import bcrypt from "bcrypt";
+import utilisateurSchema, { IUtilisateur } from "../schemas/utilisateur.schema";
 
 export class UtilisateurService {
 
-    private database: Database;
+    /**
+     * 
+     * @param user 
+     * @returns 
+     */
+    async signup(user: IUtilisateur): Promise<IUtilisateur> {
+        const utilisateur = new utilisateurSchema(user);
 
-    constructor() {
-        this.database = new Database();
+        return utilisateur.save();
+       
     }
 
-    async register(user: Utilisateur): Promise<void> {
+    /**
+     * 
+     * @param email 
+     * @param password 
+     * @returns 
+     */
+    async login(email: string, password: string): Promise<IUtilisateur | null> {
 
-        const requete = `INSERT INTO Utilisateur (nom, prenom, email, password) VALUES (?, ?, ?, ?)`;
-        const valeurs = [user.nom, user.prenom, user.email, user.password];
+        const utilisateur = await utilisateurSchema.findOne({
+            email: email
+        });
 
-        await this.database.query(requete, valeurs);
-    }
-
-    async auth(email: string, password: string): Promise<Utilisateur | null> {
-
-        const requete = `SELECT * FROM Utilisateur WHERE email = ?`;
-
-        const params = [email];
-
-        const [rows] = await this.database.query(requete, params);
-
-        if (rows.length === 0) {
+        if(!utilisateur) {
             return null;
         }
-    
-          const utilisateur = rows[0];
-    
-          if (password !== utilisateur.password) {
+
+        const isPasswordValid = await bcrypt.compare(password, utilisateur.motDePasse);
+
+        if(!isPasswordValid) {
             return null;
-          }
-    
-          return new Utilisateur(utilisateur.id, utilisateur.nom, utilisateur.prenom, utilisateur.email, utilisateur.password);
+        }
+
+        return utilisateur;
     }
 }
