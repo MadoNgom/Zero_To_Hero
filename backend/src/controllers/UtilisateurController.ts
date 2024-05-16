@@ -41,16 +41,11 @@ export class UtilisateurController {
                     error: "Email ou mot de passe invalide"
                 });
             }
-            
             response.json({
                 message: "Connexion réussi"
             }); 
         } catch (error) {
             
         }
-
-        
-
-
     }
 }

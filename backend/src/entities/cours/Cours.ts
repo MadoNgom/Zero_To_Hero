@@ -9,9 +9,9 @@ export class Cours {
     private _estPayant: boolean;
     private _prixCours: number;
     private _contenu: string;
-    private _niveauDifficulter : niveauDifficulte;
+    private _niveauDifficulter: niveauDifficulte;
 
-    constructor(idCours: string, nomCours: string, description: string, duree: Date, estPayant: boolean, prixCours: number, contenu: string, niveauDifficulter : niveauDifficulte) {
+    constructor(idCours: string, nomCours: string, description: string, duree: Date, estPayant: boolean, prixCours: number, contenu: string, niveauDifficulter: niveauDifficulte) {
         this._idCours = idCours;
         this._nomCours = nomCours;
         this._description = description;
@@ -83,15 +83,8 @@ export class Cours {
     set contenu(value: string) {
         this._contenu = value;
     }
-    
+
     set niveauDifficulter(value: niveauDifficulte) {
         this._niveauDifficulter = value;
     }
-    
-    public ajouterEvaluation(evaluation: any): void {
-        //logic
-    }
 }
-
-
-

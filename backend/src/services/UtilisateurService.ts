@@ -19,11 +19,11 @@ export class UtilisateurService {
 
     async auth(email: string, password: string): Promise<Utilisateur | null> {
 
-        const requete = `SELECT * FROM Utilisateur WHERE email = ?`;
+        const request = `SELECT * FROM Utilisateur WHERE email = ?`;
 
         const params = [email];
 
-        const [rows] = await this.database.query(requete, params);
+        const [rows] = await this.database.query(request, params);
 
         if (rows.length === 0) {
             return null;
