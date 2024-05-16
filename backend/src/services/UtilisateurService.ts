@@ -1,19 +1,33 @@
-import { Database } from "../database";
-import { Utilisateur } from "../entities/Utilisateur";
-
+import bcrypt from "bcrypt";
+import utilisateurSchema, { IUtilisateur } from "../schemas/utilisateur.schema";
+import 
 export class UtilisateurService {
 
-    private database: Database;
+    /**
+     * 
+     * @param user 
+     * @returns 
+     */
+    async signup(user: IUtilisateur): Promise<IUtilisateur> {
+        const utilisateur = new utilisateurSchema(user);
 
-    constructor() {
-        this.database = new Database();
+        return utilisateur.save();
+       
     }
 
-    async register(user: Utilisateur): Promise<void> {
+    /**
+     * 
+     * @param email 
+     * @param password 
+     * @returns 
+     */
+    async login(email: string, password: string): Promise<IUtilisateur | null> {
 
-        const requete = `INSERT INTO Utilisateur (nom, prenom, email, password) VALUES (?, ?, ?, ?)`;
-        const valeurs = [user.nom, user.prenom, user.email, user.password];
+        const utilisateur = await utilisateurSchema.findOne({
+            email: email
+        });
 
+<<<<<<< HEAD
         await this.database.query(requete, valeurs);
     }
 
@@ -26,15 +40,18 @@ export class UtilisateurService {
         const [rows] = await this.database.query(request, params);
 
         if (rows.length === 0) {
+=======
+        if(!utilisateur) {
+>>>>>>> 5bf07eead0ecd7affac4eee99c0516de31c5968d
             return null;
         }
-    
-          const utilisateur = rows[0];
-    
-          if (password !== utilisateur.password) {
+
+        const isPasswordValid = await bcrypt.compare(password, utilisateur.motDePasse);
+
+        if(!isPasswordValid) {
             return null;
-          }
-    
-          return new Utilisateur(utilisateur.id, utilisateur.nom, utilisateur.prenom, utilisateur.email, utilisateur.password);
+        }
+
+        return utilisateur;
     }
 }
