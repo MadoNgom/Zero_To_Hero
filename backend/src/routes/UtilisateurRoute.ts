@@ -13,11 +13,18 @@ export class UtilisateurRoute {
     this.initRoutes();
   }
 
+  /**
+   * 
+   */
   private initRoutes(): void {
-    this.router.post('/register', this.utilisateurController.register.bind(this.utilisateurController));
-    this.router.post('/auth', this.utilisateurController.auth.bind(this.utilisateurController));
+    this.router.post('/signup', this.utilisateurController.signup.bind(this.utilisateurController));
+    this.router.post('/login', this.utilisateurController.login.bind(this.utilisateurController));
   }
 
+  /**
+   * 
+   * @returns 
+   */
   getRouter(): express.Router {
     return this.router;
   }
