@@ -3,9 +3,16 @@ import * as dotenv from 'dotenv';
 
 dotenv.config();
 
-const MONGODB_URI = process.env.MONGO_DB_URI || "";
+const connectMongoDB = async () => {
+    const MONGODB_URI = process.env.MONGO_DB_URI || 'mongodb://localhost:27017/yourDatabaseName';
 
-mongoose.connect(MONGODB_URI)
-.then(() => console.log("Connexion à la base Mongo réussie"))
-.catch((error) => console.error("Connexion à la base Mongo échouée", error));
+    try {
+        await mongoose.connect(MONGODB_URI);
+        console.log("MongoDB connected successfully.");
+    } catch (error) {
+        console.error("MongoDB connection failed:", error);
+        process.exit(1);
+    }
+};
 
+export default connectMongoDB;
