@@ -54,28 +54,6 @@ export class Utilisateur {
     set password(value: string) {
         this._password = value;
     }
-
-
-    public afficherInformation(): void {
-        //logic
-    }
-    
-    public modifierProfil(utilisateur: Utilisateur): Utilisateur {
-        // logic
-        return utilisateur;
-    }
-    
-    public ouvrirDiscussion(discussion: Discussion): void {
-        //logic
-    }
-    
-    public publierMessage(message: Message): void {
-        //logic
-    }
-    
-    public accederPlayground(): void {
-        //logic
-    }
 }
 
 

@@ -107,5 +107,5 @@
     "skipLibCheck": true                                 /* Skip type checking all .d.ts files. */
   },
 
-  "include": ["./src/**/*.ts"]
+  "include": ["./src/**/*.ts", "src/api/routes/cours.js", "src/api/models/Cours.js"]
 }
