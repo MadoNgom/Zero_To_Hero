@@ -1,10 +1,10 @@
 import express from 'express';
 import * as dotenv from 'dotenv';
 import bodyParser from 'body-parser';
-import { UtilisateurRoute } from './routes/UtilisateurRoute';
 import connectMongoDB from './config/mongodb.config';
 import courseRoutes from './routes/course.route';
 import moduleRoutes from './routes/module.route';
+import userRoutes from './routes/user.route';
 
 dotenv.config();
 
@@ -17,11 +17,9 @@ app.use(bodyParser.json());
 connectMongoDB();
 
 // Routes
-app.use('/api/courses', courseRoutes);
-app.use('/api/modules', moduleRoutes);
-
-const utilisateurRoute = new UtilisateurRoute();
-app.use("/api/auth", utilisateurRoute.getRouter());
+app.use(`/${process.env.API_PREFIX}/courses`, courseRoutes);
+app.use(`/${process.env.API_PREFIX}/modules`, moduleRoutes);
+app.use(`/${process.env.API_PREFIX}/users`, userRoutes);
 
 // Basic route for testing
 app.get('/', (req, res) => {
