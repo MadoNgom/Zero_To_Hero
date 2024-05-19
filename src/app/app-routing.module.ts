@@ -23,6 +23,12 @@ const routes: Routes = [
     pathMatch: 'full',
   },
   {
+    path: 'apprenant',
+    loadChildren: () =>
+      import('./apprenant/apprenant.module').then((m) => m.ApprenantModule),
+  },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  {
     // Route for the 'home' path, loading the HomeComponent
     path: 'home',
     component: HomeComponent,
