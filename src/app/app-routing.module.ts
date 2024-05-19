@@ -13,6 +13,11 @@ const routes: Routes = [
       import('./portal/portal.module').then((x) => x.PortalModule),
     data: { preload: false },
   },
+  {
+    path: 'apprenant',
+    loadChildren: () =>
+      import('./apprenant/apprenant.module').then((m) => m.ApprenantModule),
+  },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   {
     path: 'home',
