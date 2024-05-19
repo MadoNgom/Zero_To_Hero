@@ -1,28 +1,37 @@
 import express from 'express';
-import { Database } from './database';
 import * as dotenv from 'dotenv';
 import bodyParser from 'body-parser';
-import { UtilisateurRoute } from './routes/UtilisateurRoute';
+import connectMongoDB from './config/mongodb.config';
+import courseRoutes from './routes/course.route';
+import moduleRoutes from './routes/module.route';
+import userRoutes from './routes/user.route';
+import formateurRoutes from './routes/formateur.route';
+import { Request, Response } from 'express';
 
 dotenv.config();
 
 const PORT = process.env.PORT || 3000;
 const app = express();
 app.use(express.json());
-
 app.use(bodyParser.json());
 
-const utilisateurRoute = new UtilisateurRoute();
-app.use("/api/utilisateur", utilisateurRoute.getRouter());
+// Connect to MongoDB
+connectMongoDB();
 
-app.get('/', (req, res) => {
-    res.send("Zero_to_Hero API");
+// Routes
+app.use(`/${process.env.API_PREFIX}/formateurs`, formateurRoutes);
+app.use(`/${process.env.API_PREFIX}/courses`, courseRoutes);
+app.use(`/${process.env.API_PREFIX}/modules`, moduleRoutes);
+app.use(`/${process.env.API_PREFIX}/users`, userRoutes);
+
+// Basic route for testing
+app.get('/', (req: Request, res: Response) => {
+    res.send('Hello from Express server!');
 });
 
 app.listen(PORT, () => {
-    console.log(`Server started on port ${process.env.PORT || 3000}`);
+    console.log(`Server running on port ${PORT}`);
 });
 
-const database = new Database();
-database.connect();
-database.createUserTable();
+export default app;
+
