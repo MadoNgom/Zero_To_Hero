@@ -5,6 +5,8 @@ import { LoginComponent } from './component/login/login.component';
 import { SignupComponent } from './component/signup/signup.component';
 import { AboutComponent } from './component/about/about.component';
 import { ContactComponent } from './component/contact/contact.component';
+import { SharedModule } from '../shared/shared.module';
+import { BrowserModule } from '@angular/platform-browser';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,7 @@ import { ContactComponent } from './component/contact/contact.component';
     AboutComponent,
     ContactComponent,
   ],
-  imports: [CommonModule],
   exports: [HomeComponent],
+  imports: [CommonModule, SharedModule, BrowserModule],
 })
 export class CoreModule {}
