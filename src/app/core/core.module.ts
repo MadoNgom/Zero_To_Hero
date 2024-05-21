@@ -5,7 +5,6 @@ import { LoginComponent } from './component/login/login.component';
 import { AboutComponent } from './component/about/about.component';
 import { ContactComponent } from './component/contact/contact.component';
 
-
 @NgModule({
   declarations: [
     HomeComponent,
@@ -19,4 +18,4 @@ import { ContactComponent } from './component/contact/contact.component';
     HomeComponent,
   ]
 })
-export class CoreModule { }
+export class CoreModule {}

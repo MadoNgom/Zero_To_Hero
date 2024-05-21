@@ -1,0 +1,19 @@
+.card-img-top {
+  height: 230px;
+  object-fit: cover;
+}
+.card-content {
+  max-width: 200px;
+  margin: 0 auto;
+}
+.card {
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  max-width: 390px;
+  background-color: rgb(248, 249, 249);
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+.card:hover {
+  transform: scale(1.1);
+}

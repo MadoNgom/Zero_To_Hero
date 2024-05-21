@@ -1,0 +1,278 @@
+/* SOME RESEcleaT */
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+ul {
+  list-style: none;
+  line-height: 1.6;
+}
+/* SHOW SECTION STYLING */
+.showcase-content {
+  max-width: min(840px, 90%);
+  margin-inline: auto;
+}
+.showCase-icon {
+  border-radius: 8px;
+  padding: 0 8px;
+  background-color: #00d7f8;
+}
+.pointer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 250px;
+  height: 60px;
+  cursor: pointer;
+  position: relative;
+  background: blue;
+  color: #fff;
+  font-weight: 600;
+}
+
+.pointer::after {
+  content: "";
+  position: absolute;
+  left: 0px;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-left: 30px solid white;
+  border-top: 30px solid transparent;
+  border-bottom: 30px solid transparent;
+}
+.pointer::before {
+  content: "";
+  position: absolute;
+  right: -30px;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-left: 30px solid blue;
+  border-top: 30px solid transparent;
+  border-bottom: 30px solid transparent;
+}
+.pointer-90 {
+  width: 250px;
+  height: 60px;
+  cursor: pointer;
+  position: relative;
+  background: #0083ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+}
+
+.pointer-90::after {
+  content: "";
+  position: absolute;
+  left: 0px;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-left: 30px solid white;
+  border-top: 30px solid transparent;
+  border-bottom: 30px solid transparent;
+}
+.pointer-90::before {
+  content: "";
+  position: absolute;
+  right: -30px;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-left: 30px solid #0083ff;
+  border-top: 30px solid transparent;
+  border-bottom: 30px solid transparent;
+}
+.pointer-75 {
+  width: 250px;
+  height: 60px;
+  cursor: pointer;
+  position: relative;
+  background: #00bcff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+}
+
+.pointer-75::after {
+  content: "";
+  position: absolute;
+  left: 0px;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-left: 30px solid white;
+  border-top: 30px solid transparent;
+  border-bottom: 30px solid transparent;
+}
+.pointer-75::before {
+  content: "";
+  position: absolute;
+  right: -30px;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-left: 30px solid #00bcff;
+  border-top: 30px solid transparent;
+  border-bottom: 30px solid transparent;
+}
+.pointer-50 {
+  width: 250px;
+  height: 60px;
+  cursor: pointer;
+  position: relative;
+  background: #00d7f8;
+  font-size: 1em;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pointer-50::after {
+  content: "";
+  position: absolute;
+  left: 0px;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-left: 30px solid white;
+  border-top: 30px solid transparent;
+  border-bottom: 30px solid transparent;
+}
+.pointer-50::before {
+  content: "";
+  position: absolute;
+  right: -30px;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-left: 30px solid #00d7f8;
+  border-top: 30px solid transparent;
+  border-bottom: 30px solid transparent;
+}
+/* LANDING NUMBERS */
+
+.numbers {
+  color: #fff;
+  font-size: 1.5em;
+}
+.numbers :nth-child(1) {
+  background-color: #0013ff;
+}
+.numbers :nth-child(2) {
+  background-color: #0083ff;
+}
+.numbers :nth-child(3) {
+  background-color: #00bcff;
+}
+.numbers :nth-child(4) {
+  background-color: #00d7f8;
+}
+.number {
+  display: grid;
+  place-items: center;
+  width: 43px;
+  height: 43px;
+  border-radius: 50%;
+}
+
+/* SECTION STYLING */
+
+/* IMAGE LEFT */
+.img-left {
+  height: 350px;
+  position: relative;
+}
+
+.img-right .overlay {
+  height: 100%;
+  width: 100%;
+  background-color: #0083ff;
+  opacity: 0.2;
+  position: absolute;
+  border-radius: 14px;
+}
+.img-left img {
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+}
+.img-right {
+  height: 200px;
+  position: relative;
+  left: -35px;
+}
+.img-right img {
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.img-right .play-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #0013ff;
+  font-size: 1rem;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  text-align: center;
+}
+.card-content {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  padding: 0.8rem;
+  border-radius: 15px;
+}
+.content-left {
+  margin-right: 10px;
+  background-color: #0083ff;
+  padding: 1rem;
+  color: #fff;
+  font-size: 1rem;
+  border-radius: 50%;
+}
+/* Pricing styling */
+.cart {
+  background: #ffff;
+  padding: 0.8rem;
+  line-height: 1.5;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 15px;
+}
+.cart .cart-btn {
+  color: #0013ff;
+  border: none;
+  padding: 0.4rem;
+  font-weight: 700;
+  border-radius: 5px;
+}
+
+.bi-check2-circle {
+  background-color: #0013ff;
+  color: #fff;
+  border-radius: 50%;
+}
+.price-info {
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 10px;
+  cursor: pointer;
+  padding: 2rem 1rem;
+}
+.price-plan {
+  border-radius: 5px;
+  background-color: rgba(148, 201, 251, 0.8);
+  margin-bottom: 10px;
+}
+.checked {
+  color: #0013ff;
+  font-size: 1em;
+}

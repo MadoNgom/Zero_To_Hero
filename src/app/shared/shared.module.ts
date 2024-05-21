@@ -1,11 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './header/header.component';
+import { RouterLink } from '@angular/router';
 import { FooterComponent } from './footer/footer.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { TestimonialComponent } from './testimonial/testimonial.component';
-
-
 
 @NgModule({
   declarations: [
@@ -15,7 +14,8 @@ import { TestimonialComponent } from './testimonial/testimonial.component';
   ],
   imports: [
     CommonModule,
-    NgbModule
+    NgbModule,
+    RouterLink
   ],
   exports: [
     HeaderComponent,
@@ -23,4 +23,4 @@ import { TestimonialComponent } from './testimonial/testimonial.component';
     TestimonialComponent
   ]
 })
-export class SharedModule { }
+export class SharedModule {}
