@@ -1,0 +1,21 @@
+<aside class="aside" [ngClass]="hideSideBar ? '' : ''">
+  <div class="aside-content">
+    <h1 class="aside-title">
+      <a href="#" class="logo text-primary" *ngIf="sideBarData"> Zero2Hero </a>
+    </h1>
+  </div>
+  <span class="p-3 text-black-50 d-block mb-1">Overview</span>
+  <ul class="nav" *ngFor="let item of sideBarData" [class]="item.active">
+    <li class="nav-item">
+      <a
+        href="#"
+        class="nav-link fs-6"
+        [routerLink]="[item.routeName]"
+        [class]="item.active"
+      >
+        <i [class]="item.icon"></i>
+        <span class="nav-text">{{ item.name }}</span></a
+      >
+    </li>
+  </ul>
+</aside>

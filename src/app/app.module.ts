@@ -9,6 +9,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
 import { AdminModule } from './admin/admin.module';
+import { CoreModule } from './core/core.module';
+import { ApprenantModule } from './apprenant/apprenant.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -19,8 +21,10 @@ import { AdminModule } from './admin/admin.module';
     HttpClientModule, 
     ReactiveFormsModule,
     AdminModule,
+    CoreModule,
+    ApprenantModule
   ],
   providers: [ { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true } ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {}

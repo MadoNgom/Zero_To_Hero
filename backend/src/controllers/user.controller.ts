@@ -19,7 +19,7 @@ export const signup = async (request: Request, response: Response) => {
                 type: ROLE.APPRENANT,
                 isPremium: false
         });
-       
+
         const user = await service.signup(newUser);
 
         response.status(201).json({

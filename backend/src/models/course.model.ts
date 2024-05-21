@@ -6,7 +6,6 @@ export interface ICourse extends Document {
     description: string;
     duration: number; // Assuming duration is in hours
     level: 'difficult' | 'intermediate' | 'beginner';
-    price: { type: 'free' | 'value', amount: number };
     module: IModule['_id'];
 }
 
@@ -15,14 +14,7 @@ const courseSchema: Schema = new Schema({
     description: { type: String, required: true },
     duration: { type: Number, required: true },
     level: { type: String, enum: ['difficult', 'intermediate', 'beginner'], required: true },
-    price: {
-        type: {
-            type: String,
-            enum: ['free', 'value'],
-            required: true
-        },
-        amount: { type: Number, required: function(this: any) { return this.get('price.type') === 'value'; } }
-    },
+ 
     module: { type: Schema.Types.ObjectId, ref: 'Module', required: true }
 });
 
