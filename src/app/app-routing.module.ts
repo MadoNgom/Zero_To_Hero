@@ -20,17 +20,22 @@ const routes: Routes = [
     pathMatch: 'full',
   },
   {
+    path: 'login',
+    component: LoginComponent,
+  },
+  {
     path: 'apprenant',
     loadChildren: () =>
       import('./apprenant/apprenant.module').then((m) => m.ApprenantModule),
   },
   {
-    path: 'home',
-    component: HomeComponent,
+    path: 'admin',
+    loadChildren: () =>
+      import('./admin/admin.module').then((m) => m.AdminModule),
   },
   {
-    path: 'login',
-    component: LoginComponent,
+    path: 'home',
+    component: HomeComponent,
   },
   {
     path: 'signup',

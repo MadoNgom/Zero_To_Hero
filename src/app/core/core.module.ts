@@ -5,6 +5,7 @@ import { LoginComponent } from './component/login/login.component';
 import { SignupComponent } from './component/signup/signup.component';
 import { AboutComponent } from './component/about/about.component';
 import { ContactComponent } from './component/contact/contact.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,10 @@ import { ContactComponent } from './component/contact/contact.component';
     AboutComponent,
     ContactComponent,
   ],
-  imports: [CommonModule],
+  imports: [
+    CommonModule,
+    ReactiveFormsModule,
+  ],
   exports: [HomeComponent],
 })
 export class CoreModule {}
