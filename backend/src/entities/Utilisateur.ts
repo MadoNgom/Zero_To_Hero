@@ -6,7 +6,6 @@ export class Utilisateur {
     private _prenom: string;
     private _email: string;
     private _password: string;
-
     constructor(idUtilisateur: string, nom: string, prenom: string, email: string, password: string) {
         this._idUtilisateur = idUtilisateur;
         this._nom = nom;

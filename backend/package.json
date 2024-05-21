@@ -13,6 +13,7 @@
   "license": "Edacy",
   "dependencies": {
     "@types/body-parser": "^1.19.5",
+    "@types/jsonwebtoken": "^9.0.6",
     "@types/mysql": "^2.15.26",
     "@types/node": "^20.12.7",
     "bcrypt": "^5.1.1",

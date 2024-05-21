@@ -10,7 +10,6 @@ export class UtilisateurController {
     constructor() {
         this.utilisateurService = new UtilisateurService();
     }
-
     /**
      * 
      * @param request 

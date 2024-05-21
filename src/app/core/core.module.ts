@@ -6,21 +6,15 @@ import { SignupComponent } from './component/signup/signup.component';
 import { AboutComponent } from './component/about/about.component';
 import { ContactComponent } from './component/contact/contact.component';
 
-
-
 @NgModule({
   declarations: [
     HomeComponent,
     LoginComponent,
     SignupComponent,
     AboutComponent,
-    ContactComponent
+    ContactComponent,
   ],
-  imports: [
-    CommonModule
-  ],
-  exports: [
-    HomeComponent
-  ]
+  imports: [CommonModule],
+  exports: [HomeComponent],
 })
-export class CoreModule { }
+export class CoreModule {}
