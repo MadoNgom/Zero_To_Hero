@@ -1,117 +1,83 @@
-<div class="container mt-4">
-  <div class="row gx-5">
-    <div class="col-md-6 col-sm-12">
-      <h3>Contact Us</h3>
-    </div>
-    <div class="col-md-6">
-      <p class="contact-text">
-        Need help ? Don't hesitate to contact us! <br />
-        At From Zero to Hero, we're here to support you every step of the way.
-        Whether you have questions about our training offerings, difficulties
-        with a particular concept or simply want to know more about our
-        pedagogical approach, our team will be delighted to answer you.
-      </p>
-    </div>
-  </div>
-</div>
-<!-- FORMS AND CONTACT INFO-->
-<div class="container mt-4">
-  <div class="form">
+<section class="py-3 py-md-5 py-xl-8">
+  <div class="container">
     <div class="row">
-      <div class="col-lg-8">
-        <form>
-          <div class="row">
-            <div class="col">
-              <label for="firstname">First Name</label>
-              <input
-                type="text"
-                name="firstname"
-                id="firstname"
-                class="form-control"
-                placeholder="Enter your first name"
-              />
-            </div>
-            <div class="col">
-              <label for="lastname">Last Name</label>
-              <input
-                type="text"
-                name="lastname"
-                id="lastname"
-                class="form-control"
-                placeholder="Enter your last name"
-              />
-            </div>
-          </div>
-          <!-- SECOND INOUTS -->
-          <div class="row mt-2">
-            <div class="col">
-              <label for="email">Email</label>
-              <input
-                type="email"
-                name="email"
-                id="email"
-                class="form-control"
-                placeholder="Enter your Email"
-              />
-            </div>
-            <div class="col">
-              <label for="phone">Phone</label>
-              <input
-                type="number"
-                name="phone"
-                id="phone"
-                class="form-control"
-                placeholder="Enter your last name"
-              />
-            </div>
-          </div>
-          <div>
-            <label for="Subject" class="mt-2">Subject</label>
-            <input
-              type="text"
-              name="subject"
-              id="subject"
-              class="form-control"
-              placeholder="Subject"
-            />
-            <label for="message " class="mt-2">Message</label>
-            <textarea
-              name=""
-              id=""
-              class="form-control mt-2"
-              placeholder="Enter your message here ..."
-            ></textarea>
-            <div class="text-center">
-              <button class="btn btn-primary mt-4 mb-3">
-                send your Message
-              </button>
-            </div>
-          </div>
-        </form>
+      <!-- Div text contact -->
+      <div class="col-md-8">
+        <h3>Contact Us</h3>
+        <p>Feel free to reach out to us with any questions or inquiries. We're here to help!</p>
       </div>
-      <div class="col-lg-4">
-        <!-- CONTACT DETAILS -->
-        <div class="item text-center">
-          <span class="icon"><i class="bi bi-envelope-fill fs-1"></i></span>
-          <p>Zero2hero&#64;digitalrise.com</p>
+    </div>
+    <!-- Div form contact -->
+    <div class="row gy-4 align-items-center">
+      <div class="col-md-8">
+        <div class="card">
+          <div class="card-body">
+            <!-- Form -->
+            <form>
+              <div class="row mb-3">
+                <div class="col-md-6">
+                  <label for="firstName" class="form-label">First Name</label>
+                  <input type="text" class="form-control" id="firstName" name="firstName">
+                </div>
+                <div class="col-md-6">
+                  <label for="lastName" class="form-label">Last Name</label>
+                  <input type="text" class="form-control" id="lastName" name="lastName">
+                </div>
+              </div>
+              <div class="row mb-3">
+                <div class="col-md-6">
+                  <label for="email" class="form-label">Email</label>
+                  <input type="email" class="form-control" id="email" name="email">
+                </div>
+                <div class="col-md-6">
+                  <label for="phone" class="form-label">Phone</label>
+                  <input type="tel" class="form-control" id="phone" name="phone">
+                </div>
+              </div>
+              <div class="row mb-3">
+                <div class="col-md-12">
+                  <label for="subject" class="form-label">Subject</label>
+                  <input type="text" class="form-control" id="subject" name="subject">
+                </div>
+              </div>
+              <div class="row mb-3">
+                <div class="col-md-12">
+                  <label for="message" class="form-label">Message</label>
+                  <textarea class="form-control" id="message" name="message" rows="4"></textarea>
+                </div>
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+          </div>
         </div>
-        <!-- FIRST DETAILS -->
-        <div class="item mt-4 text-center">
-          <span class="icon"><i class="bi bi-telephone-fill fs-1"></i></span>
-          <p>+221 33 999 99 99</p>
-        </div>
-        <div class="item mt-4 text-center">
-          <span class="icon"><i class="bi bi-geo-alt-fill fs-1"></i></span>
-          <p>Some where in the world</p>
-        </div>
-        <div class="item mt-4 text-center gx-2">
-          <span class="icon"><i class="bi bi-facebook fs-1"></i></span>
-          <span class="icon"><i class="bi bi-twitter mx-1 fs-1"></i></span>
-          <span class="icon"><i class="bi bi-linkedin fs-1"></i></span>
-
-          <p>Social Profiles</p>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-12">
+                <!-- Boxes -->
+                <div class="box mb-3">
+                  <i class="bi bi-envelope-fill"></i>
+                  <p>Email: info.example.com</p>
+                </div>
+                <div class="box mb-3">
+                  <i class="bi bi-telephone-fill"></i>
+                  <p>Phone: +123456789</p>
+                </div>
+                <div class="box mb-3">
+                  <i class="bi bi-geo-alt-fill"></i>
+                  <p>Address: 123 Street, City, Country</p>
+                </div>
+                <div class="box">
+                  <i class="bi bi-clock-fill"></i>
+                  <p>Opening Hours: Mon-Fri, 9am-5pm</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
+</section>

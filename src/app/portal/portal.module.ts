@@ -17,4 +17,4 @@ import { PortalRoutingModule } from './portal-routing.module';
     PortalRoutingModule
   ]
 })
-export class PortalModule { }
+export class PortalModule {}
