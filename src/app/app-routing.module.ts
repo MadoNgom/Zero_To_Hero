@@ -5,6 +5,7 @@ import { LoginComponent } from './core/component/login/login.component';
 import { SignupComponent } from './core/component/signup/signup.component';
 import { AboutComponent } from './core/component/about/about.component';
 import { ContactComponent } from './core/component/contact/contact.component';
+import { ProgramsComponent } from './apprenant/components/programs/programs.component';
 
 const routes: Routes = [
   {
@@ -38,6 +39,10 @@ const routes: Routes = [
   {
     path: 'contact',
     component: ContactComponent,
+  },
+  {
+    path: 'programs',
+    component: ProgramsComponent,
   },
 ];
 
