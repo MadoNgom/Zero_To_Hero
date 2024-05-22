@@ -6,6 +6,7 @@ import { SignupComponent } from './core/component/signup/signup.component';
 import { AboutComponent } from './core/component/about/about.component';
 import { ContactComponent } from './core/component/contact/contact.component';
 import { AuthGuard } from './auth.guard';
+import { ProgramsComponent } from './apprenant/components/programs/programs.component';
 
 const routes: Routes = [
   {
@@ -45,14 +46,13 @@ const routes: Routes = [
     component: ContactComponent,
   },
   {
-    path: 'apprenant',
-    canActivate: [AuthGuard],
-    loadChildren: () => import('./apprenant/apprenant.module').then(m => m.ApprenantModule)
-  }
+    path: 'programs',
+    component: ProgramsComponent,
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class AppRoutingModule {}
