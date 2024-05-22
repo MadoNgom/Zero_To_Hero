@@ -35,11 +35,11 @@ export const signup = async (request: Request, response: Response) => {
 
 export const login = async (request: Request, response: Response) => {
     try {
-        const {email, password} = request.body;
+        const { email, password } = request.body;
 
         const authenticatedUser = await service.login(email, password);
 
-        if(!authenticatedUser) {
+        if (!authenticatedUser) {
             return response.status(401).json({
                 message: "Invalid email and/or password"
             })
@@ -58,7 +58,7 @@ export const login = async (request: Request, response: Response) => {
         });
     } catch (error) {
         console.log(error);
-        response.status(500).json({
+        return response.status(500).json({
             message: error
         })
     }
