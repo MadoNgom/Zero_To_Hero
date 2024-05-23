@@ -1,20 +1,27 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HomeComponent } from './component/home/home.component';
-import { LoginComponent } from './component/login/login.component';
-import { SignupComponent } from './component/signup/signup.component';
+
 import { AboutComponent } from './component/about/about.component';
 import { ContactComponent } from './component/contact/contact.component';
 import { SharedModule } from '../shared/shared.module';
 import { BrowserModule } from '@angular/platform-browser';
+import { LoginComponent } from './component/login/login.component';
+import { SignupComponent } from './component/signup/signup.component';
+import { TestimonialComponent } from './component/testimonial/testimonial.component';
+import { FormComponent } from './component/form/form.component';
+import { SignupFormComponent } from './component/signup-form/signup-form.component';
 
 @NgModule({
   declarations: [
     HomeComponent,
-    LoginComponent,
-    SignupComponent,
     AboutComponent,
     ContactComponent,
+    LoginComponent,
+    SignupComponent,
+    TestimonialComponent,
+    FormComponent,
+    SignupFormComponent,
   ],
   exports: [HomeComponent],
   imports: [CommonModule, SharedModule, BrowserModule],
