@@ -5,12 +5,12 @@
         <div class="mb-4">
           <h2 class="h3 text-center">Login</h2>
           <h3 class="fs-6 fw-normal text-center text-secondary m-0">
-            Welcom back! Please log in to access your account
+            Welcome back! Please log in to access your account
           </h3>
         </div>
       </div>
     </div>
-    <form action="#!">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
       <div class="row gy-2 overflow-hidden">
         <!-- input email -->
         <div class="col-12">
@@ -20,7 +20,8 @@
               type="email"
               class="form-control form-control-lg"
               id="emailInput"
-              placeholder="Enter your name"
+              placeholder="Enter your email"
+              formControlName="email"
             />
           </div>
         </div>
@@ -29,35 +30,18 @@
           <div class="mb-2">
             <label for="passInput" class="form-label">Password</label>
             <input
-              type="text"
+              type="password"
               class="form-control form-control-lg"
               id="passInput"
               placeholder="Enter your password"
+              formControlName="password"
             />
-          </div>
-        </div>
-
-        <div class="col-12 mb-3">
-          <div class="form-check">
-            <input
-              class="form-check-input"
-              type="checkbox"
-              value=""
-              name="iAgree"
-              id="iAgree"
-              required
-            />
-            <label class="form-check-label text-secondary" for="iAgree">
-              I agree to the
-              <a href="#!" class="style-links-forms">Terms of Use</a> and
-              <a href="#!" class="style-links-forms">Privacy Policy</a>
-            </label>
           </div>
         </div>
         <div class="col-12 mb-3">
           <div class="d-grid">
-            <button class="btn btn-primary btn-lg p-2" type="submit">
-              Sign up
+            <button class="btn btn-primary btn-lg p-2" type="submit" [disabled]="!loginForm.valid">
+              Sign in
             </button>
           </div>
         </div>
@@ -76,13 +60,13 @@
     <div class="row">
       <div class="col-12">
         <div class="d-grid">
-          <button class="btn btn-lg p-2 btn-google text-black" type="submit">
+          <button class="btn btn-lg p-2 btn-google text-black" type="button">
             <img
               src="../../../../assets/image/google.png"
               width="25px"
               alt=""
             />
-            Login width Google
+            Login with Google
           </button>
         </div>
       </div>
