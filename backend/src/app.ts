@@ -25,8 +25,6 @@ app.use(`/${process.env.API_PREFIX}/courses`, courseRoutes);
 app.use(`/${process.env.API_PREFIX}/modules`, moduleRoutes);
 app.use(`/${process.env.API_PREFIX}/users`, userRoutes);
 // route pour inscription 
-app.use(`/${process.env.API_PREFIX}/courses`, courseRoutes);
-app.use(`/${process.env.API_PREFIX}/users`, userRoutes);
 app.use(`/${process.env.API_PREFIX}/inscriptions`, inscriptionRoutes);
 
 // Basic route for testing
