@@ -1,0 +1,26 @@
+footer {
+  /* background-color: #fff !important;
+  background-color: #e6e6e6 !important; */
+  background-color: #fcfcfd !important;
+}
+
+p {
+  color: black;
+}
+
+a:link {
+  text-decoration: none;
+  color: #59595a;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+.icons-color {
+  color: #0083ff;
+}
+
+.h5-color {
+  color: #262626;
+}
