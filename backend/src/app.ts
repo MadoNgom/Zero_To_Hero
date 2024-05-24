@@ -7,6 +7,7 @@ import moduleRoutes from './routes/module.route';
 import userRoutes from './routes/user.route';
 import formateurRoutes from './routes/formateur.route';
 import { Request, Response } from 'express';
+import cors from 'cors';
 
 dotenv.config();
 
@@ -17,6 +18,10 @@ app.use(bodyParser.json());
 
 // Connect to MongoDB
 connectMongoDB();
+
+app.use(cors({
+    origin: 'http://localhost:4200'
+}));
 
 // Routes
 app.use(`/${process.env.API_PREFIX}/formateurs`, formateurRoutes);

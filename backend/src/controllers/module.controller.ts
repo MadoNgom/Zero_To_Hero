@@ -16,7 +16,7 @@ export const createModule = async (req: Request, res: Response) => {
 
 export const getModules = async (req: Request, res: Response) => {
     try {
-        const modules = await Module.find();
+        const modules = await Module.find().populate('formateur');
         res.json(modules);
     } catch (error) {
         res.status(500).json(error);
