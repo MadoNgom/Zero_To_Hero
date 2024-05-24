@@ -4,7 +4,7 @@ dotenv.config();
 
 const jwtConfig = {
     jwt : {
-        secret: process.env.JWT_SECRET || ""
+        secret: process.env.JWT_SECRET || "default_secret"
     }
 };
 

@@ -15,16 +15,18 @@ import { ApprenantModule } from './apprenant/apprenant.module';
 @NgModule({
   declarations: [AppComponent],
   imports: [
-    BrowserModule, 
-    AppRoutingModule, 
-    SharedModule, 
-    HttpClientModule, 
+    BrowserModule,
+    AppRoutingModule,
+    SharedModule,
+    HttpClientModule,
     ReactiveFormsModule,
     AdminModule,
     CoreModule,
-    ApprenantModule
+    ApprenantModule,
   ],
-  providers: [ { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true } ],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

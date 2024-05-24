@@ -36,7 +36,7 @@
   <div class="container py-5">
     <h2 class="mb-5">Nos Formations Disponible</h2>
     <div class="row">
-      <div class="col-lg-4 col-md-6 mb-4" *ngFor="let module of listeModules">
+      <div class="col-lg-4 col-md-6 mb-4" *ngFor="let module of listeModules" routerLink="/react">
         <div class="card">
           <img
             [src]="module.imageUrl"
@@ -77,3 +77,4 @@
     </div>
   </div>
 </section>
+<app-footer></app-footer>
