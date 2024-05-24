@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import Inscription from '../models/inscription';
+import Inscription from '../models/inscription.model';
 import User from '../models/user.model';
 import Course from '../models/course.model';
 
