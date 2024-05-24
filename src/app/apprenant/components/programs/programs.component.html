@@ -1,0 +1,80 @@
+<app-header></app-header>
+<section>
+  <div class="container py-5">
+    <div class="row">
+      <!-- LEFT CONTENT -->
+      <article class="col-lg-6 order-lg-1 order-2">
+        <div class="left-content">
+          <h1 class="mb-3">
+            Découvrez les Compétences du Futur avec Nos Programmes de Formation
+          </h1>
+          <p>
+            En rejoignant notre plateforme, vous allez non seulement acquérir
+            des compétences techniques de pointe, mais aussi développer une
+            compréhension approfondie des meilleures pratiques de l'industrie.
+            Préparez-vous à transformer votre avenir professionnel avec nos
+            programmes de formation de classe mondiale.
+          </p>
+          <button class="btn btn-primary">Voir notre Programme</button>
+        </div>
+      </article>
+      <!-- RIGHT CONTENT -->
+      <article class="col-lg-6 order-lg-2 order-1">
+        <div class="rigth-content">
+          <img
+            src="../../../../assets/student1.webp"
+            alt=""
+            class="img-fluid rounded-3"
+          />
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+<!-- FORMATION SECTION -->
+<section>
+  <div class="container py-5">
+    <h2 class="mb-5">Nos Formations Disponible</h2>
+    <div class="row">
+      <div class="col-lg-4 col-md-6 mb-4" *ngFor="let module of listeModules" routerLink="/react">
+        <div class="card">
+          <img
+            [src]="module.imageUrl"
+            class="card-img-top rounded-5"
+            alt="Course Image"
+          />
+          <div class="card-body">
+            <h6 class="card-title">{{ module.title }}</h6>
+            <p class="author">{{ module.formateur?.name }}</p>
+            <div class="card-info d-flex justify-content-between">
+              <!-- FIRST ITEM  -->
+              <div class="rating">
+                <h6>
+                  <!-- {{ course.ratingValue }} -->
+                  <i class="bi bi-star-fill text-warning"></i>
+                  <i class="bi bi-star-fill text-warning"></i>
+                  <i class="bi bi-star-fill text-warning"></i>
+                  <i class="bi bi-star-fill text-warning"></i>
+                  <i class="bi bi-star-half text-warning"></i>
+                  <!-- {{ course.value }} -->
+                </h6>
+
+                <div class="py-2">
+                  <i class="bi bi-bar-chart-line"></i> Débutant
+                </div>
+              </div>
+              <!-- SECOND ITEM -->
+              <div>
+                <p><i class="bi bi-clock"></i> {{module.duration}} heures</p>
+
+                <p><i class="bi bi-ui-checks"></i> 5 cours</p>
+              </div>
+              <!-- END OF THE POSITIONING -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<app-footer></app-footer>

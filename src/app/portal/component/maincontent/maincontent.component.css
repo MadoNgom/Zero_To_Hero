@@ -1,0 +1,10 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.nav {
+  width: 83vw;
+  margin-top: 0;
+  padding: 1rem;
+}

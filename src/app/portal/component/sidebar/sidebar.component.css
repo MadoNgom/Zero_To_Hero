@@ -1,0 +1,43 @@
+.aside {
+  position: sticky;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 15vw;
+  min-height: 100vh;
+  overflow: hidden;
+  transform: all 0.4s linear;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+.aside-content {
+  padding: 0.75rem;
+}
+.aside-title {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #0a19e6;
+}
+
+.nav {
+  padding: 0.75rem 0;
+}
+.nav .nav-link {
+  color: #000;
+}
+.nav-item {
+  transition: 0.3s ease-in-out;
+  width: 100%;
+}
+.nav-item:hover {
+  background-color: hsla(203, 55%, 85%, 0.93);
+}
+
+.nav .nav-text {
+  margin-left: 20px;
+}
