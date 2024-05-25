@@ -25,7 +25,7 @@ export const getModules = async (req: Request, res: Response) => {
 
 export const getModule = async (req: Request, res: Response) => {
     try {
-        const module = await Module.findById(req.params.id);
+        const module = await Module.findById(req.params['id']);
         res.json(module);
     } catch (error) {
         res.status(404).json(error);
@@ -34,7 +34,7 @@ export const getModule = async (req: Request, res: Response) => {
 
 export const updateModule = async (req: Request, res: Response) => {
     try {
-        const updatedModule = await Module.findByIdAndUpdate(req.params.id, req.body, { new: true });
+        const updatedModule = await Module.findByIdAndUpdate(req.params['id'], req.body, { new: true });
         res.json(updatedModule);
     } catch (error) {
         res.status(400).json(error);
@@ -43,7 +43,7 @@ export const updateModule = async (req: Request, res: Response) => {
 
 export const deleteModule = async (req: Request, res: Response) => {
     try {
-        await Module.findByIdAndDelete(req.params.id);
+        await Module.findByIdAndDelete(req.params['id']);
         res.status(204).send();
     } catch (error) {
         res.status(500).json(error);

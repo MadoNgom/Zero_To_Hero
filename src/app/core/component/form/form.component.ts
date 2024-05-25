@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../../../auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-form',
@@ -10,7 +11,7 @@ import { AuthService } from '../../../auth.service';
 export class FormComponent implements OnInit {
   loginForm!: FormGroup;
 
-  constructor(private fb: FormBuilder, private authService: AuthService) {}
+  constructor(private fb: FormBuilder, private authService: AuthService, private router: Router,) {}
 
   ngOnInit() {
     this.loginForm = this.fb.group({
@@ -23,7 +24,21 @@ export class FormComponent implements OnInit {
     if (this.loginForm.valid) {
       this.authService.login(this.loginForm.value).subscribe({
         next: (res) => {
-          console.log('Login Successful');
+          console.log(res);
+          this.authService.storeJwtToken(res.token)
+          this.authService.setCurruntUser(res.user)
+          
+          switch (res.user.type) {
+            case 'Apprenant':
+              this.router.navigate(['dashboard'])
+              break;
+              case 'Admin':
+                this.router.navigate(['admin'])
+                break;
+            default:
+              this.router.navigate(['admin/'])
+              break;
+          }
           // Handle successful login here
         },
         error: (err) => {

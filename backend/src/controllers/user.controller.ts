@@ -8,7 +8,7 @@ import jwtConfig from '../config/jwt.config';
 
 export const signup = async (request: Request, response: Response) => {
     try {
-        const { fullName, email, password, iAgree } = request.body;
+        const { fullName, email, password } = request.body;
 
         const hash = await bcrypt.hash(password, 10);
 
@@ -17,10 +17,9 @@ export const signup = async (request: Request, response: Response) => {
                 email: email,
                 password: hash,
                 type: ROLE.APPRENANT,
-                isPremium: false,
-                iAgree: iAgree
+                isPremium: false
         });
-
+       
         const user = await service.signup(newUser);
 
         response.status(201).json({
@@ -36,22 +35,32 @@ export const signup = async (request: Request, response: Response) => {
 
 export const login = async (request: Request, response: Response) => {
     try {
-        const { email, password } = request.body;
+        const { email: loginEmail, password } = request.body;
 
-        const authenticatedUser = await service.login(email, password);
+        const authenticatedUser = await service.login(loginEmail, password);
 
-        if (!authenticatedUser.success) {
+        if (!authenticatedUser) {
             return response.status(401).json({
                 message: "Invalid email and/or password"
             })
         }
 
+        const { _id, fullName, email, type } = authenticatedUser.user!;
+
         return response.status(200).json({
-            message: "Login successful"
+            user: authenticatedUser.user,
+            token: jwt.sign({
+                userId: _id,
+                fullName,
+                email,
+                role: type
+            }, jwtConfig.jwt.secret!, {
+                expiresIn: '2h'
+            })
         });
     } catch (error) {
         console.log(error);
-        return response.status(500).json({
+        response.status(500).json({
             message: error
         })
     }
