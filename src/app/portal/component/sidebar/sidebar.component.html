@@ -1,10 +1,19 @@
 <aside class="aside" [ngClass]="hideSideBar ? '' : ''">
   <div class="aside-content">
     <h1 class="aside-title">
-      <a href="#" class="logo text-primary" *ngIf="sideBarData"> Zero2Hero </a>
+      <div class="nav-brand d-lg-none">
+        <a href="#"><img src="../../../../assets/logo_laptop.png" alt="" /></a>
+      </div>
+      <a
+        href="#"
+        class="logo text-primary d-none d-lg-block"
+        *ngIf="sideBarData"
+      >
+        Zero2Hero
+      </a>
     </h1>
   </div>
-  <span class="p-3 text-black-50 d-block mb-1">Overview</span>
+  <span class="p-3 text-black-50 d-block mb-1 d-none">Overview</span>
   <ul class="nav" *ngFor="let item of sideBarData" [class]="item.active">
     <li class="nav-item">
       <a

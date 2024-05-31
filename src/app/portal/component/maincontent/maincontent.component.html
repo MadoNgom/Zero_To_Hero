@@ -1,23 +1,93 @@
-<nav class="nav navbar navbar-expand-lg align-items-center">
-  <div class="container d-flex justify-content-between">
-    <div class="title">
-      <h4>Dashboard</h4>
-    </div>
-    <div class="user-info d-flex justify-content-center align-items-center">
-      <i class="bi bi-search fs-5"></i>
-      <i class="bi bi-chat-left-text mx-4 fs-5"></i>
-      <i class="bi bi-bell fs-5"></i>
-      <div class="user-profile fs-5 mx-2">
-        <img
-          src="../../../../assets/image/user-1.jpg"
-          width="48px"
-          height="48px"
-          class="rounded-circle"
-        />
+<app-reusable-header></app-reusable-header>
+<section class="first-section">
+  <div class="showcase"></div>
+  <div class="container p-3">
+    <div>
+      <div>
+        <p class="icon-text">
+          Ce cours vous guidera à travers les concepts fondamentaux de React
+        </p>
+        <!-- RATINGS -->
+        <div class="d-lg-flex">
+          <!-- COURSE RATING -->
+          <div>
+            <div class="rating fs-6 mb-3">
+              <i class="bi bi-star-fill text-warning"></i>
+              <i class="bi bi-star-fill text-warning"></i>
+              <i class="bi bi-star-fill text-warning"></i>
+              <i class="bi bi-star-fill text-warning"></i>
+              <i class="bi bi-star-half text-warning"></i>
+              150K
+            </div>
+          </div>
+          <!-- COURSE OFFERS -->
+          <div class="mx-lg-3 icon-text">
+            <i class="bi bi-patch-check mb-3"></i> Certificat
+            <i class="bi bi-bar-chart-line"></i> Débutant
+          </div>
+        </div>
+        <div class="left-content">
+          <h4>
+            Qu'est-ce que React et pourquoi l'utiliser ?
+            <img
+              src="../../../../assets/image/icons8-react-native-48.png"
+              alt=""
+            />
+          </h4>
+        </div>
       </div>
-      <i class="bi bi-caret-down-fill fs-5"></i>
+      <div class="d-flex">
+        <div class="video-container col-md-6">
+          <video controls>
+            <source
+              src="../../../../assets/video/reactjs.mp4"
+              type="video/mp4"
+            />
+          </video>
+        </div>
+        <div class="col-xl-3 col-lg-6 mx-4">
+          <div class="bg-white rounded-lg p-5 shadow">
+            <h2 class="h6 font-weight-bold text-center mb-4">
+              Overall progress
+            </h2>
+
+            <!-- Progress bar 1 -->
+            <div class="progress mx-auto" data-value="80">
+              <span class="progress-left">
+                <span class="progress-bar border-primary"></span>
+              </span>
+              <span class="progress-right">
+                <span class="progress-bar border-primary"></span>
+              </span>
+              <div
+                class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center"
+              >
+                <div class="h2 font-weight-bold">
+                  0<sup class="small">%</sup>
+                </div>
+              </div>
+            </div>
+            <!-- END -->
+
+            <!-- Demo info -->
+            <div class="row text-center mt-4">
+              <div class="col-6 border-right">
+                <div class="h4 font-weight-bold mb-0">28%</div>
+                <span class="small text-gray">Last week</span>
+              </div>
+              <div class="col-6">
+                <div class="h4 font-weight-bold mb-0">60%</div>
+                <span class="small text-gray">Last month</span>
+              </div>
+            </div>
+            <button class="btn btn-outline-primary p-7 d-block my-3 w-100">
+              Start learning
+            </button>
+            <!-- END -->
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-</nav>
-
-<app-calender></app-calender>
+</section>
+<app-cours></app-cours>

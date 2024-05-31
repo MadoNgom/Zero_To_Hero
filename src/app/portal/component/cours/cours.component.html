@@ -1,0 +1,34 @@
+<section class="module py-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 p-3 module" *ngFor="let module of moduleData">
+        <div
+          class="d-flex align-items-center module_card"
+          [ngStyle]="{ 'background-color': module.bgc }"
+        >
+          <div class="rigth-img aling-self-start">
+            <img [src]="module.img" alt="" />
+          </div>
+          <div class="left-card mx-3">
+            <h5>{{ module.title }}</h5>
+            <p class="fs-6 my-3">
+              {{ module.description }}
+            </p>
+            <div class="d-flex justify-content-between align-items-center">
+              <span>Create by Mr Djigo</span>
+              <span class="chevron" routerLink="/portal/course">
+                <i
+                  [ngClass]="
+                    module.isLock ? 'bi bi-chevron-right' : 'bi bi-lock-fill'
+                  "
+                ></i>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- END -->
+    </div>
+  </div>
+</section>
+<app-suggestion></app-suggestion>

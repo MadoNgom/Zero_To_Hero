@@ -1,0 +1,49 @@
+* {
+  box-sizing: border-box;
+}
+.accordion_button {
+  background-color: #fff;
+  padding: 0.5rem 0;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+  display: block;
+  font-size: 1.1rem;
+  padding: 0.2rem 0;
+  margin-right: 10px;
+  color: mediumorchid;
+}
+
+.label {
+  font-weight: 500;
+  margin-left: 10px;
+  width: 20px;
+  height: 20px;
+  border: 2px solid grey;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+.label.checked {
+  padding: 0.6rem;
+  background-color: rgb(6, 165, 6);
+  border: 0;
+}
+
+.accordion-item li {
+  transition: 0.3s ease-in-out;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+.accordion-item li:hover {
+  background-color: #f2f2f2;
+  border-radius: 4px;
+}

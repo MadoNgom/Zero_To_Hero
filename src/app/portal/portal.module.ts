@@ -6,8 +6,16 @@ import { PortalRoutingModule } from './portal-routing.module';
 import { DashboardComponent } from './component/dashboard/dashboard.component';
 import { SidebarComponent } from './component/sidebar/sidebar.component';
 import { MaincontentComponent } from './component/maincontent/maincontent.component';
-import { CalenderComponent } from './component/calender/calender.component';
+import { TabsComponent } from './component/tabs/tabs.component';
+import { CourseContentComponent } from './component/course-content/course-content.component';
+import { CourseComponent } from './component/course/course.component';
+import { ReusableHeaderComponent } from './component/reusable-header/reusable-header.component';
+import { CoursComponent } from './component/cours/cours.component';
+import { SharedModule } from '../shared/shared.module';
 
+import { ReviewsComponent } from './component/reviews/reviews.component';
+import { QuizzComponent } from './component/quizz/quizz.component';
+import { SuggestionComponent } from './component/suggestion/suggestion.component';
 @NgModule({
   declarations: [
     PortalComponent,
@@ -15,8 +23,15 @@ import { CalenderComponent } from './component/calender/calender.component';
     DashboardComponent,
     SidebarComponent,
     MaincontentComponent,
-    CalenderComponent,
+    TabsComponent,
+    CourseContentComponent,
+    CourseComponent,
+    ReusableHeaderComponent,
+    CoursComponent,
+    ReviewsComponent,
+    QuizzComponent,
+    SuggestionComponent,
   ],
-  imports: [CommonModule, PortalRoutingModule],
+  imports: [CommonModule, PortalRoutingModule, SharedModule],
 })
 export class PortalModule {}
