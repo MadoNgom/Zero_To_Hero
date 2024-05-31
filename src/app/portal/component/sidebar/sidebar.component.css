@@ -3,7 +3,8 @@
   top: 0;
   left: 0;
   bottom: 0;
-  width: 15vw;
+  /* width: 5vw; */
+
   min-height: 100vh;
   overflow: hidden;
   transform: all 0.4s linear;
@@ -40,4 +41,14 @@ a {
 
 .nav .nav-text {
   margin-left: 20px;
+  display: none;
+}
+
+@media (min-width: 750px) {
+  .aside {
+    width: 15vw;
+  }
+  .nav .nav-text {
+    display: inline-block;
+  }
 }

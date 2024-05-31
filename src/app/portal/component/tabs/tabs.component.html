@@ -1,0 +1,11 @@
+<ul class="nav nav-tabs">
+  <li
+    class="nav-item"
+    *ngFor="let tab of tabsArr; let src = index"
+    (click)="getTab(src)"
+  >
+    <a class="nav-link text-black" [ngClass]="activeTab == src ? 'active' : ''"
+      >{{ tab }}
+    </a>
+  </li>
+</ul>

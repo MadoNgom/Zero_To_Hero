@@ -1,0 +1,34 @@
+.nav {
+  width: 83vw;
+  margin: 0 auto;
+  margin-top: 0;
+  padding: 1rem;
+  visibility: 0;
+}
+.search {
+  width: 650px;
+
+  position: relative;
+}
+.search input {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 11px;
+  outline: none;
+  border: 0;
+  background-color: #eee;
+}
+.search .bi-search {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translate(-50%, -50%);
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+@media (min-width: 750px) {
+  .nav {
+    display: flex;
+    visibility: 1;
+  }
+}

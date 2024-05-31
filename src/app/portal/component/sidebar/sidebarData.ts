@@ -9,6 +9,7 @@ export const sideBarData: any[] = [
     RouteName: 'cours',
     icon: 'bi bi-mortarboard-fill  fs-5',
     name: 'Cours',
+    routeName: '/portal/course',
   },
   {
     RouteName: 'forum',

@@ -1,0 +1,111 @@
+<app-reusable-header></app-reusable-header>
+<div class="container">
+  <h3>Module 1:Introduction à ReactJs</h3>
+  <div class="row">
+    <div class="col-md-9">
+      <div class="video-content">
+        <video controls>
+          <source src="../../../../assets/video/reactjs.mp4" type="video/mp4" />
+        </video>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="aside">
+        <div class="card shadow mb-4">
+          <div class="card-body py-5 px-4 bg-light">
+            <h5>Votre Progression</h5>
+            <div class="d-flex justify-content-between align-items-center">
+              <p>3 Sessions</p>
+              <p>30% compete</p>
+            </div>
+            <!-- Regular progress bar-->
+            <div style="height: 4px" class="progress">
+              <div
+                role="progressbar"
+                aria-valuenow="30"
+                aria-valuemin="0"
+                aria-valuemax="100"
+                style="width: 30%; background-color: rgb(7, 163, 7)"
+                class="progress-bar"
+              ></div>
+            </div>
+            <div class="btns mt-3">
+              <button class="btn btn-primary d-block w-100 mb-4">
+                Terminez le cour
+              </button>
+              <button class="btn btn-outline-primary d-block w-100">
+                Module suivant
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-9">
+      <section class="course-content">
+        <div class="row">
+          <div class="text-dark">
+            <app-tabs
+              [tabsArr]="tabs"
+              (onChangeTab)="changeTab($event)"
+            ></app-tabs>
+            <div>
+              <div *ngIf="activatedIndex == 0">
+                <app-course-content></app-course-content>
+              </div>
+              <div *ngIf="activatedIndex == 1">
+                <app-reviews></app-reviews>
+              </div>
+              <div *ngIf="activatedIndex == 2">Contenu Anouncements</div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div class="col-md-3">
+      <div class="aside">
+        <div class="card mb-4">
+          <div class="card-body py-5 px-1">
+            <ul>
+              <li class="fw-semibold">Ce cours comprend :</li>
+              <li>
+                <i class="bi bi-play-btn"></i> Vidéo à la demande de 8 heures
+              </li>
+              <li>
+                <i class="bi bi-file-earmark-arrow-down"></i> 12 ressources
+                téléchargeables
+              </li>
+              <li>
+                <i class="bi bi-card-checklist"></i> Test de connaissances
+              </li>
+              <li>
+                <i class="bi bi-trophy"></i> Certificat de fin de formation
+              </li>
+            </ul>
+            <!-- Regular progress bar-->
+          </div>
+        </div>
+        <div class="card mb-4 bg-light">
+          <div class="card-body py-5 px-1">
+            <ul>
+              <li class="fw-semibold">Les Prerequis :</li>
+              <li>Compréhension des bases Html et CSS.</li>
+              <li>
+                Maitrise des bases de JavaScript (variables, boucles, fonctions,
+                conditions).
+              </li>
+              <li>Familiarité avec les nouvelles fonctionnalités d'ES6</li>
+              <li>
+                <i class="bi bi-trophy"></i> Certificat de fin de formation
+              </li>
+            </ul>
+            <!-- Regular progress bar-->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>
