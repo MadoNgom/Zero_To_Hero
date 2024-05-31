@@ -10,6 +10,7 @@ import inscriptionRoutes from './routes/inscription.route';
 import { Request, Response } from 'express';
 import cors from 'cors';
 
+
 dotenv.config();
 
 const PORT = process.env.PORT || 3000;
