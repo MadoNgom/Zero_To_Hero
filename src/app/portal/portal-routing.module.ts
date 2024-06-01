@@ -3,8 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { PortalComponent } from './portal.component';
 import { UserComponent } from './component/user/user.component';
 import { DashboardComponent } from './component/dashboard/dashboard.component';
-import { CourseComponent } from './component/course/course.component';
 import { QuizzComponent } from './component/quizz/quizz.component';
+import { Module1Component } from './component/module1/module1.component';
 
 const routes: Routes = [
   {
@@ -20,8 +20,8 @@ const routes: Routes = [
         component: DashboardComponent,
       },
       {
-        path: 'course',
-        component: CourseComponent,
+        path: 'module1',
+        component: Module1Component,
       },
       {
         path: 'quizz',

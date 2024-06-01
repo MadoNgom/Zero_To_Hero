@@ -1,11 +1,11 @@
-import { Component, Input, EventEmitter, Output, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
-  selector: 'app-tabs',
-  templateUrl: './tabs.component.html',
-  styleUrl: './tabs.component.css',
+  selector: 'app-tab-nav',
+  templateUrl: './tab-nav.component.html',
+  styleUrl: './tab-nav.component.css',
 })
-export class TabsComponent implements OnInit {
+export class TabNavComponent {
   @Input() tabsArr: string[] = [];
   @Output() onChangeTab = new EventEmitter<number>();
 

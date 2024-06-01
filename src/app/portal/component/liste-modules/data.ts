@@ -1,5 +1,3 @@
-import { Title } from '@angular/platform-browser';
-
 export const moduleData: any[] = [
   {
     id: 1,

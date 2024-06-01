@@ -6,16 +6,17 @@ import { PortalRoutingModule } from './portal-routing.module';
 import { DashboardComponent } from './component/dashboard/dashboard.component';
 import { SidebarComponent } from './component/sidebar/sidebar.component';
 import { MaincontentComponent } from './component/maincontent/maincontent.component';
-import { TabsComponent } from './component/tabs/tabs.component';
-import { CourseContentComponent } from './component/course-content/course-content.component';
-import { CourseComponent } from './component/course/course.component';
+
 import { ReusableHeaderComponent } from './component/reusable-header/reusable-header.component';
-import { CoursComponent } from './component/cours/cours.component';
+
 import { SharedModule } from '../shared/shared.module';
 
-import { ReviewsComponent } from './component/reviews/reviews.component';
 import { QuizzComponent } from './component/quizz/quizz.component';
 import { SuggestionComponent } from './component/suggestion/suggestion.component';
+import { TabsModule } from '../tabs/tabs.module';
+import { Module1Component } from './component/module1/module1.component';
+
+import { ListeModulesComponent } from './component/liste-modules/liste-modules.component';
 @NgModule({
   declarations: [
     PortalComponent,
@@ -23,15 +24,12 @@ import { SuggestionComponent } from './component/suggestion/suggestion.component
     DashboardComponent,
     SidebarComponent,
     MaincontentComponent,
-    TabsComponent,
-    CourseContentComponent,
-    CourseComponent,
     ReusableHeaderComponent,
-    CoursComponent,
-    ReviewsComponent,
     QuizzComponent,
     SuggestionComponent,
+    Module1Component,
+    ListeModulesComponent,
   ],
-  imports: [CommonModule, PortalRoutingModule, SharedModule],
+  imports: [CommonModule, PortalRoutingModule, SharedModule, TabsModule],
 })
 export class PortalModule {}
