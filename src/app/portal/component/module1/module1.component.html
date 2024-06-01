@@ -2,12 +2,14 @@
 <div class="container">
   <h3>Module 1:Introduction à ReactJs</h3>
   <div class="row">
+    <!-- VIDEO INTRODUCTIVE -->
     <div class="col-md-9">
       <div class="video-content">
         <video controls>
           <source src="../../../../assets/video/reactjs.mp4" type="video/mp4" />
         </video>
       </div>
+      <!-- FIN DE LA VIDEO -->
     </div>
     <div class="col-md-3">
       <div class="aside">
@@ -18,7 +20,7 @@
               <p>3 Sessions</p>
               <p>30% compete</p>
             </div>
-            <!-- Regular progress bar-->
+            <!-- LA BAR DE PROGRESSION-->
             <div style="height: 4px" class="progress">
               <div
                 role="progressbar"
@@ -29,6 +31,7 @@
                 class="progress-bar"
               ></div>
             </div>
+            <!-- LES BOUTTONS -->
             <div class="btns mt-3">
               <button class="btn btn-primary d-block w-100 mb-4">
                 Terminez le cour
@@ -46,66 +49,68 @@
     <div class="col-md-9">
       <section class="course-content">
         <div class="row">
+          <!-- les TABS -->
           <div class="text-dark">
-            <app-tabs
+            <app-tab-nav
               [tabsArr]="tabs"
               (onChangeTab)="changeTab($event)"
-            ></app-tabs>
+            ></app-tab-nav>
             <div>
+              <!-- AFFICHE LE CONTENU TAB 1 -->
               <div *ngIf="activatedIndex == 0">
-                <app-course-content></app-course-content>
+                <app-tab1></app-tab1>
               </div>
+              <!-- AFFICHE LE CONTENU TAB 2 -->
               <div *ngIf="activatedIndex == 1">
-                <app-reviews></app-reviews>
+                <app-tab2></app-tab2>
               </div>
-              <div *ngIf="activatedIndex == 2">Contenu Anouncements</div>
+              <!-- AFFICHE LE CONTENU TAB 3 -->
+              <div *ngIf="activatedIndex == 2">
+                <app-tab3></app-tab3>
+              </div>
             </div>
           </div>
         </div>
       </section>
     </div>
     <div class="col-md-3">
-      <div class="aside">
-        <div class="card mb-4">
-          <div class="card-body py-5 px-1">
-            <ul>
-              <li class="fw-semibold">Ce cours comprend :</li>
-              <li>
-                <i class="bi bi-play-btn"></i> Vidéo à la demande de 8 heures
-              </li>
-              <li>
-                <i class="bi bi-file-earmark-arrow-down"></i> 12 ressources
-                téléchargeables
-              </li>
-              <li>
-                <i class="bi bi-card-checklist"></i> Test de connaissances
-              </li>
-              <li>
-                <i class="bi bi-trophy"></i> Certificat de fin de formation
-              </li>
-            </ul>
-            <!-- Regular progress bar-->
-          </div>
-        </div>
-        <div class="card mb-4 bg-light">
-          <div class="card-body py-5 px-1">
-            <ul>
-              <li class="fw-semibold">Les Prerequis :</li>
-              <li>Compréhension des bases Html et CSS.</li>
-              <li>
-                Maitrise des bases de JavaScript (variables, boucles, fonctions,
-                conditions).
-              </li>
-              <li>Familiarité avec les nouvelles fonctionnalités d'ES6</li>
-              <li>
-                <i class="bi bi-trophy"></i> Certificat de fin de formation
-              </li>
-            </ul>
-            <!-- Regular progress bar-->
-          </div>
+      <!-- INFO SUR LE COURS -->
+      <div class="card mb-4">
+        <div class="card-body py-5 px-1">
+          <ul>
+            <li class="fw-semibold">Ce cours comprend :</li>
+            <li>
+              <i class="bi bi-play-btn"></i> Vidéo à la demande de 8 heures
+            </li>
+            <li>
+              <i class="bi bi-file-earmark-arrow-down"></i> 12 ressources
+              téléchargeables
+            </li>
+            <li><i class="bi bi-card-checklist"></i> Test de connaissances</li>
+            <li><i class="bi bi-trophy"></i> Certificat de fin de formation</li>
+          </ul>
+          <!-- Regular progress bar-->
         </div>
       </div>
+      <!-- LES PREREQUIS DU MODULE -->
+      <div class="card mb-4 bg-light">
+        <div class="card-body py-5 px-1">
+          <ul>
+            <li class="fw-semibold">Les Prerequis :</li>
+            <li>Compréhension des bases Html et CSS.</li>
+            <li>
+              Maitrise des bases de JavaScript (variables, boucles, fonctions,
+              conditions).
+            </li>
+            <li>Familiarité avec les nouvelles fonctionnalités d'ES6</li>
+            <li><i class="bi bi-trophy"></i> Certificat de fin de formation</li>
+          </ul>
+          <!-- Regular progress bar-->
+        </div>
+      </div>
+      <!-- FIN -->
     </div>
   </div>
 </div>
+
 <app-footer></app-footer>
