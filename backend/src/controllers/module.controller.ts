@@ -3,6 +3,7 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import mongoose from'mongoose';
 import Module, { IModule } from '../models/module.model';
+import Course, { ICourse } from '../models/course.model';
 
 export const createModule = async (req: Request, res: Response) => {
     try {
@@ -16,7 +17,7 @@ export const createModule = async (req: Request, res: Response) => {
 
 export const getModules = async (req: Request, res: Response) => {
     try {
-        const modules = await Module.find().populate('formateur');
+        const modules = await Module.find().populate('course');
         res.json(modules);
     } catch (error) {
         res.status(500).json(error);
@@ -29,6 +30,18 @@ export const getModule = async (req: Request, res: Response) => {
         res.json(module);
     } catch (error) {
         res.status(404).json(error);
+    }
+};
+
+export const getModulesByCourseId = async (req: Request, res: Response) => {
+    try {
+        const course = await Course.findById(req.params['id']);
+        if (!course) {
+            return res.status(404).json({ message: 'Course not found' });
+        }
+        res.json(course.modules);
+    } catch (error) {
+        res.status(500).json(error);
     }
 };
 

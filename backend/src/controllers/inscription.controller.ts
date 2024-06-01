@@ -1,13 +1,13 @@
 import { Request, Response } from 'express';
 import Inscription from '../models/inscription.model';
 import User from '../models/user.model';
-import Course from '../models/course.model';
+import Course from '../models/module.model';
 
 
 // GET toutes les inscriptions
 export const getInscriptions = async (req: Request, res: Response) => {
     try {
-        const inscriptions = await Inscription.find().populate('user course');
+        const inscriptions = (await Inscription.find().populate('user', 'course'));
         res.json(inscriptions);
     } catch (err) {
         res.status(500).send(err);
@@ -30,7 +30,7 @@ export const getInscriptionById = async (req: Request, res: Response) => {
 // POST créer une nouvelle inscription
 export const createInscription = async (req: Request, res: Response) => {
     try {
-        const { userId, courseId, paymentMode, transactionId } = req.body;
+        const { userId, courseId, paymentMode } = req.body;
         const user = await User.findById(userId);
         const course = await Course.findById(courseId);
 
@@ -42,7 +42,6 @@ export const createInscription = async (req: Request, res: Response) => {
             user: userId, 
             course: courseId,
             paymentMode: paymentMode,
-            transactionId: transactionId 
         });
         await newInscription.save();
         res.status(201).json(newInscription);

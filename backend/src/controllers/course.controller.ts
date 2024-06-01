@@ -14,7 +14,7 @@ export const createCourse = async (req: Request, res: Response) => {
 
 export const getCourses = async (req: Request, res: Response) => {
     try {
-        const courses = await Course.find().populate('modules');
+        const courses = await Course.find().populate('formateur');  // Populate formateur with name and expertise fields
         res.json(courses);
     } catch (error) {
         res.status(500).json(error);
@@ -23,7 +23,7 @@ export const getCourses = async (req: Request, res: Response) => {
 
 export const getCourse = async (req: Request, res: Response) => {
     try {
-        const course = await Course.findById(req.params.id).populate('modules');
+        const course = await Course.findById(req.params.id).populate('formateur');  // Populate formateur with name and expertise fields
         res.json(course);
     } catch (error) {
         res.status(404).json(error);

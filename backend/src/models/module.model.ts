@@ -1,20 +1,19 @@
 import mongoose, { Schema, Document } from 'mongoose';
-import { IFormateur } from './formateur.model';
+import { ICourse } from './course.model';
 
 export interface IModule extends Document {
-    title: string;
+    name: string;
     description: string;
-    imageUrl: string;
-    duration: number;
-    formateur: IFormateur['_id'];
+    file : string;
+    course: ICourse['_id'];
 }
 
 const moduleSchema: Schema = new Schema({
-    title: { type: String, required: true },
+    name: { type: String, required: true },
     description: { type: String, required: true },
-    imageUrl: { type: String, required: true },
-    duration: { type: Number, required: true },
-    formateur: { type: Schema.Types.ObjectId, ref: 'Formateur', required: true }
+    file: { type: String, required: true },
+    course: { type: Schema.Types.ObjectId, ref: 'Course', required: true }
 });
 
-export default mongoose.model<IModule>('Module', moduleSchema);
+export default mongoose.model<IModule>('Modules', moduleSchema);
+

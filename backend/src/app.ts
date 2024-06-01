@@ -5,7 +5,6 @@ import connectMongoDB from './config/mongodb.config';
 import courseRoutes from './routes/course.route';
 import moduleRoutes from './routes/module.route';
 import userRoutes from './routes/user.route';
-import formateurRoutes from './routes/formateur.route';
 import inscriptionRoutes from './routes/inscription.route';
 import { Request, Response } from 'express';
 import cors from 'cors';
@@ -32,7 +31,6 @@ app.use(cors({
 }));
 
 // Routes
-app.use(`/${process.env.API_PREFIX}/formateurs`, formateurRoutes);
 app.use(`/${process.env.API_PREFIX}/courses`, courseRoutes);
 app.use(`/${process.env.API_PREFIX}/modules`, moduleRoutes);
 app.use(`/${process.env.API_PREFIX}/users`, userRoutes);
