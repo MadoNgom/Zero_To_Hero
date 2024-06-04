@@ -1,0 +1,9 @@
+.items-center {
+  min-height: 80vh;
+  display: grid;
+  place-items: center;
+}
+
+h1 {
+  font-size: 5rem;
+}
