@@ -1,14 +1,11 @@
 import { Request, Response } from 'express';
-import express from 'express';
-import bodyParser from 'body-parser';
-import mongoose from'mongoose';
-import Module, { IModule } from '../models/module.model';
+import Module from '../models/module.model';
 import Course, { ICourse } from '../models/course.model';
+import * as service from '../services/module.service';
 
 export const createModule = async (req: Request, res: Response) => {
     try {
-        const newModule = new Module(req.body);
-        const savedModule = await newModule.save();
+        const savedModule = await service.createModule(new Module(req.body));
         res.status(201).json(savedModule);
     } catch (error) {
         res.status(400).json(error);
@@ -17,7 +14,7 @@ export const createModule = async (req: Request, res: Response) => {
 
 export const getModules = async (req: Request, res: Response) => {
     try {
-        const modules = await Module.find().populate('course');
+        const modules = await service.findAllModules();
         res.json(modules);
     } catch (error) {
         res.status(500).json(error);
@@ -26,7 +23,7 @@ export const getModules = async (req: Request, res: Response) => {
 
 export const getModule = async (req: Request, res: Response) => {
     try {
-        const module = await Module.findById(req.params['id']);
+        const module = await service.findModuleById(req.params['id']);
         res.json(module);
     } catch (error) {
         res.status(404).json(error);
@@ -47,7 +44,7 @@ export const getModulesByCourseId = async (req: Request, res: Response) => {
 
 export const updateModule = async (req: Request, res: Response) => {
     try {
-        const updatedModule = await Module.findByIdAndUpdate(req.params['id'], req.body, { new: true });
+        const updatedModule = await service.updateModuleById(req.params['id'], req.body);
         res.json(updatedModule);
     } catch (error) {
         res.status(400).json(error);
@@ -56,7 +53,7 @@ export const updateModule = async (req: Request, res: Response) => {
 
 export const deleteModule = async (req: Request, res: Response) => {
     try {
-        await Module.findByIdAndDelete(req.params['id']);
+        await service.deleteModuleById(req.params['id']);
         res.status(204).send();
     } catch (error) {
         res.status(500).json(error);

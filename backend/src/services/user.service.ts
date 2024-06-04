@@ -5,6 +5,7 @@ export const signup = async (user: IUser) => {
     const newUser = new User(user);
     try {
         await newUser.save();
+        console.log(newUser.fullName);
         return { success: true, message: "User registered successfully." };
     } catch (error) {
         const message = (error instanceof Error) ? error.message : 'An unknown error occurred';

@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { courseData } from './course';
-import { Module } from '../../../models/module.model';
-import { ModuleService } from '../../../services/module.service';
-import { Observable } from 'rxjs';
+import { CourseService } from '../../../services/course.service';
+import { Course } from '../../../models/course.model';
 
 @Component({
   selector: 'app-programs',
@@ -11,19 +9,19 @@ import { Observable } from 'rxjs';
 })
 export class ProgramsComponent implements OnInit {
   
-  listeModules!: Module[];
+  listeCourses!: Course[];
 
-  constructor(private moduleService: ModuleService) {
+  constructor(private courseService: CourseService) {
 
   }
 
   ngOnInit(): void {
-    this.getModules();
+    this.getCourses();
   }
 
-  getModules(): void {
-    this.moduleService.getModules().subscribe(data => {
-      this.listeModules = data;
+  private getCourses(): void {
+    this.courseService.getCourses().subscribe(data => {
+      this.listeCourses = data;
       console.log(data);
     })
   }
