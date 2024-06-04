@@ -16,13 +16,13 @@ import { ApprenantModule } from './apprenant/apprenant.module';
   declarations: [AppComponent],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     SharedModule,
     HttpClientModule,
     ReactiveFormsModule,
     AdminModule,
     CoreModule,
     ApprenantModule,
+    AppRoutingModule,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true },

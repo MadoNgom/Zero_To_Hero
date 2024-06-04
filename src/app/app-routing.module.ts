@@ -8,6 +8,7 @@ import { AuthGuard } from './auth.guard';
 import { ProgramsComponent } from './apprenant/components/programs/programs.component';
 import { LoginComponent } from './core/component/login/login.component';
 import { SignupComponent } from './core/component/signup/signup.component';
+import { NotFoundComponent } from './shared/not-found/not-found.component';
 
 const routes: Routes = [
   {
@@ -55,6 +56,10 @@ const routes: Routes = [
   {
     path: 'programs',
     component: ProgramsComponent,
+  },
+  {
+    path: '**',
+    component: NotFoundComponent,
   },
 ];
 

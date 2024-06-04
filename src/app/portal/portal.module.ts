@@ -17,6 +17,7 @@ import { TabsModule } from '../tabs/tabs.module';
 import { Module1Component } from './component/module1/module1.component';
 
 import { ListeModulesComponent } from './component/liste-modules/liste-modules.component';
+
 @NgModule({
   declarations: [
     PortalComponent,
