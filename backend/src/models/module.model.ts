@@ -4,14 +4,12 @@ import { ICourse } from './course.model';
 export interface IModule extends Document {
     name: string;
     description: string;
-    file : string;
     course: ICourse['_id'];
 }
 
 const moduleSchema: Schema = new Schema({
     name: { type: String, required: true },
     description: { type: String, required: true },
-    file: { type: String, required: true },
     course: { type: Schema.Types.ObjectId, ref: 'Course', required: true }
 });
 

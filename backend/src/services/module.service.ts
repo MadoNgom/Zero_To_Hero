@@ -1,4 +1,4 @@
-import Module, { IModule } from '../models/course.model';
+import Module, { IModule } from '../models/module.model';
 
 export const createModule = async (moduleData: IModule) => {
     const module = new Module(moduleData);

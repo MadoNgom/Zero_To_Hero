@@ -1,11 +1,9 @@
-import { Formateur } from "./formateur.model";
+import { Course } from "./course.model";
 
 export class Module {
     _id?: number;
-    title: string | undefined;
+    name: string | undefined;
     description: string | undefined;
-    imageUrl: string | undefined;
-    duration: number | undefined;
-    formateur: Formateur | undefined;
+    course: Course | undefined;
 
 }
