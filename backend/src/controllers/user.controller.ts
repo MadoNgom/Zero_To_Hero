@@ -8,7 +8,7 @@ import jwtConfig from '../config/jwt.config';
 
 export const signup = async (request: Request, response: Response) => {
     try {
-        const { fullName, email, password } = request.body;
+        const { fullName, email, password, type } = request.body;
 
         const hash = await bcrypt.hash(password, 10);
 
@@ -16,14 +16,15 @@ export const signup = async (request: Request, response: Response) => {
                 fullName: fullName,
                 email: email,
                 password: hash,
-                type: ROLE.APPRENANT,
+                type: type,
                 isPremium: false
         });
        
-        await service.signup(newUser);
+        const add = await service.AddUser(newUser);
+        
 
         response.status(201).json({
-            message: `Successful registration ${newUser.fullName} OK.`
+            message: `Successful registration ${add.fullName} OK.`
         });
     } catch (error) {
         console.error(error);
@@ -46,7 +47,6 @@ export const addTrainer = async (request: Request, response: Response) => {
                 type: ROLE.FORMATEUR,
                 isPremium: true
         });
-       
         const user = await service.signup(newUser);
 
         response.status(201).json({
@@ -92,3 +92,44 @@ export const login = async (request: Request, response: Response) => {
         })
     }
 };
+
+// crud admin
+
+export const getUserById = async (req: Request, res: Response) => {
+    try {
+        const user = await service.findUserById(req.params['id']);
+        res.json(user);
+    } catch (error) {
+        res.status(400).json(error);
+    }
+};
+export const updateUserById = async (req: Request, res: Response) => {
+    try {
+        const updatedUser = await service.updateUserById(req.params['id'], req.body);
+        res.json(updatedUser);
+    } catch (error) {
+        res.status(400).json(error);
+    }
+};
+
+export const deleteUser = async (req: Request, res: Response) => {
+    try {
+        await service.deleteUserById(req.params['id']);
+        res.status(204).send();
+        res.status(204).json({
+            message: 'Utilisateur supprimer avec success'
+        });
+    } catch (error) {
+        res.status(500).json(error);
+    }
+};
+
+export const getUsers = async (req: Request, res: Response) => {
+    try {
+        const User = await service.findAllUsers();
+        res.json(User);
+    } catch (error) {
+        res.status(500).json(error);
+    }
+};
+
