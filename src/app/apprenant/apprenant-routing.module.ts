@@ -5,10 +5,20 @@ import { ProgramsComponent } from './components/programs/programs.component';
 import { PaymentComponent } from './components/payment/payment.component';
 
 const routes: Routes = [
-  { path: '', component: ProgramsComponent },
-  { path: 'programs', component: ProgramsComponent },
-  { path: 'react', component: ReactComponent },
-  { path: 'payment', component: PaymentComponent },
+  {
+    path: '',
+    component: ProgramsComponent,
+    children: [
+      {
+        path: '',
+        redirectTo: 'dashboard',
+        pathMatch: 'full',
+      },
+      { path: 'dashboard', component: ProgramsComponent },
+      { path: 'react', component: ReactComponent },
+      { path: 'payment', component: PaymentComponent },
+    ],
+  },
 ];
 
 @NgModule({

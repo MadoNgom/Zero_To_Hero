@@ -5,6 +5,7 @@ import { UserComponent } from './component/user/user.component';
 import { DashboardComponent } from './component/dashboard/dashboard.component';
 import { QuizzComponent } from './component/quizz/quizz.component';
 import { Module1Component } from './component/module1/module1.component';
+import { CoursComponent } from './component/cours/cours.component';
 
 const routes: Routes = [
   {
@@ -26,6 +27,10 @@ const routes: Routes = [
       {
         path: 'quizz',
         component: QuizzComponent,
+      },
+      {
+        path: 'cours',
+        component: CoursComponent,
       },
     ],
   },

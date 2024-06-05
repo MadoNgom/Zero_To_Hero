@@ -17,6 +17,7 @@ import { TabsModule } from '../tabs/tabs.module';
 import { Module1Component } from './component/module1/module1.component';
 
 import { ListeModulesComponent } from './component/liste-modules/liste-modules.component';
+import { CoursComponent } from './component/cours/cours.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { ListeModulesComponent } from './component/liste-modules/liste-modules.c
     SuggestionComponent,
     Module1Component,
     ListeModulesComponent,
+    CoursComponent,
   ],
   imports: [CommonModule, PortalRoutingModule, SharedModule, TabsModule],
 })
