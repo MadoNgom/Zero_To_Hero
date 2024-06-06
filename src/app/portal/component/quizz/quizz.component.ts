@@ -3,8 +3,6 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-quizz',
   templateUrl: './quizz.component.html',
-  styleUrl: './quizz.component.css'
+  styleUrl: './quizz.component.css',
 })
-export class QuizzComponent {
-
-}
+export class QuizzComponent {}
