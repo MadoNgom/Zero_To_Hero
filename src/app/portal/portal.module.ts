@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+
 import { PortalComponent } from './portal.component';
 import { UserComponent } from './component/user/user.component';
 import { PortalRoutingModule } from './portal-routing.module';
@@ -17,6 +18,7 @@ import { TabsModule } from '../tabs/tabs.module';
 import { Module1Component } from './component/module1/module1.component';
 
 import { ListeModulesComponent } from './component/liste-modules/liste-modules.component';
+import { QuestionsComponent } from './component/questions/questions.component';
 @NgModule({
   declarations: [
     PortalComponent,
@@ -29,6 +31,7 @@ import { ListeModulesComponent } from './component/liste-modules/liste-modules.c
     SuggestionComponent,
     Module1Component,
     ListeModulesComponent,
+    QuestionsComponent,
   ],
   imports: [CommonModule, PortalRoutingModule, SharedModule, TabsModule],
 })

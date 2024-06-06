@@ -36,16 +36,20 @@
   <div class="container py-5">
     <h2 class="mb-5">Nos Formations Disponible</h2>
     <div class="row">
-      <div class="col-lg-4 col-md-6 mb-4" *ngFor="let module of listeModules" routerLink="/react">
+      <div
+        class="col-lg-4 col-md-6 mb-4"
+        *ngFor="let course of listeCourses"
+        routerLink="/react"
+      >
         <div class="card">
           <img
-            [src]="module.imageUrl"
-            class="card-img-top rounded-5"
+            [src]="course.imageUrl"
+            class="card-img-top rounded-3 img-fluid"
             alt="Course Image"
           />
           <div class="card-body">
-            <h6 class="card-title">{{ module.title }}</h6>
-            <p class="author">{{ module.formateur?.name }}</p>
+            <h6 class="card-title">{{ course.title }}</h6>
+            <p class="author">{{ course.formateur?.fullName }}</p>
             <div class="card-info d-flex justify-content-between">
               <!-- FIRST ITEM  -->
               <div class="rating">
@@ -60,12 +64,12 @@
                 </h6>
 
                 <div class="py-2">
-                  <i class="bi bi-bar-chart-line"></i> Débutant
+                  <i class="bi bi-bar-chart-line"></i> {{ course.level }}
                 </div>
               </div>
               <!-- SECOND ITEM -->
               <div>
-                <p><i class="bi bi-clock"></i> {{module.duration}} heures</p>
+                <p><i class="bi bi-clock"></i> {{ course.duration }} heures</p>
 
                 <p><i class="bi bi-ui-checks"></i> 5 cours</p>
               </div>

@@ -6,20 +6,16 @@ import { ManageUsersComponent } from './components/manage-users/manage-users.com
 import { SettingsComponent } from './components/settings/settings.component';
 import { FormsModule } from '@angular/forms';
 import { AdminRoutingModule } from './admin-routing.module';
-
-
+import { AdminComponent } from './admin.component';
 
 @NgModule({
   declarations: [
     DashboardComponent,
     AddFormateurComponent,
     ManageUsersComponent,
-    SettingsComponent
+    SettingsComponent,
+    AdminComponent,
   ],
-  imports: [
-    CommonModule,
-    FormsModule,
-    AdminRoutingModule
-  ]
+  imports: [CommonModule, FormsModule, AdminRoutingModule],
 })
-export class AdminModule { }
+export class AdminModule {}

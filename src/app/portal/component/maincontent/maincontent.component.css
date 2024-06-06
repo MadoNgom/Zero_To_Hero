@@ -21,13 +21,19 @@
   object-fit: cover;
 }
 .showcase {
-  background-image: url("../../../../assets/image/banner.png");
+  background-image: url("../../../../assets/top2.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   color: #fff;
   position: relative;
-  padding: 5rem 0rem;
+  padding: 5rem 1rem;
+  min-height: 40vh;
+  margin: 1rem;
+  border-radius: 20px;
+}
+.section-title {
+  font-size: 3rem;
 }
 .progress {
   width: 150px;
