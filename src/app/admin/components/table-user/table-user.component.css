@@ -7,6 +7,7 @@
 }
 
 .table thead tr {
+  background-color: #921d21;
   color: #fff;
   text-align: left;
   border-radius: 15px;
@@ -16,7 +17,7 @@
 }
 .table th,
 .table tr {
-  padding: 20px 10px;
+  padding: 15px 10px;
 }
 .table tbody tr {
   border-bottom: 2px solid #dddd;
@@ -31,13 +32,14 @@
   display: flex;
   gap: 1rem;
 }
-.edit {
-  color: #0ad66d;
+.success {
+  background-color: #50f4a0;
+  color: #fff;
+}
+.danger {
+  background-color: rgb(240, 130, 130);
+  color: #fff;
 }
 .delete {
   color: red;
-}
-.btn-blue {
-  background-color: #3636e5;
-  color: #fff;
 }
