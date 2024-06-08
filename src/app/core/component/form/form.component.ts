@@ -6,17 +6,22 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
-  styleUrls: ['./form.component.css']
+  styleUrls: ['./form.component.css'],
 })
 export class FormComponent implements OnInit {
   loginForm!: FormGroup;
+  currentUser: any;
 
-  constructor(private fb: FormBuilder, private authService: AuthService, private router: Router,) {}
+  constructor(
+    private fb: FormBuilder,
+    private authService: AuthService,
+    private router: Router
+  ) {}
 
   ngOnInit() {
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required]]
+      password: ['', [Validators.required]],
     });
   }
 
@@ -25,18 +30,18 @@ export class FormComponent implements OnInit {
       this.authService.login(this.loginForm.value).subscribe({
         next: (res) => {
           console.log(res);
-          this.authService.storeJwtToken(res.token)
-          this.authService.setCurruntUser(res.user)
-          
+          this.authService.storeJwtToken(res.token);
+          this.authService.setCurruntUser(res.user);
+
           switch (res.user.type) {
             case 'Apprenant':
-              this.router.navigate(['dashboard'])
+              this.router.navigate(['dashboard']);
               break;
-              case 'Admin':
-                this.router.navigate(['admin'])
-                break;
+            case 'Admin':
+              this.router.navigate(['admin']);
+              break;
             default:
-              this.router.navigate(['admin/'])
+              this.router.navigate(['admin/']);
               break;
           }
           // Handle successful login here
@@ -44,7 +49,7 @@ export class FormComponent implements OnInit {
         error: (err) => {
           console.error('Login Failed', err);
           // Handle login error here
-        }
+        },
       });
     }
   }

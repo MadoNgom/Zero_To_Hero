@@ -3,25 +3,25 @@
     <h3 class="logo">Zero2hero <i class="bi bi-rocket-takeoff"></i></h3>
   </div>
   <ul>
-    <li class="active">
+    <li class="active" *ngIf="currentUser?.type === 'Administrateur'">
       <a class="nav-link" routerLink="/dashboard"
         ><i class="bi bi-grid-1x2-fill"></i>
         <span class="nav-item">Dashboard</span>
       </a>
     </li>
-    <li>
+    <li *ngIf="currentUser?.type === 'Administrateur'">
       <a class="nav-link" routerLink="/admin/manage-users"
         ><i class="bi bi-people-fill fs-3"></i>
         <span class="nav-item">Manage Users</span>
       </a>
     </li>
-    <li>
+    <!-- <li *ngIf="currentUser?.type === 'Administrateur'">
       <a class="nav-link" routerLink="/admin/add-formateur"
         ><i class="bi bi-person-circle fs-3"></i>
         <span class="nav-item">Add Formateur</span>
       </a>
-    </li>
-    <li>
+    </li> -->
+    <li *ngIf="currentUser?.type === 'Formateur'">
       <a class="nav-link" href="#">
         <i class="bi bi-camera-video-fill fs-3"></i>
         <span class="nav-item">video</span>
