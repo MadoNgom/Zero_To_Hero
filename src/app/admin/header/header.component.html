@@ -12,35 +12,6 @@
         <a
           data-mdb-dropdown-init
           class="nav-link dropdown-toggle hidden-arrow"
-          href="#"
-          id="navbarDropdownMenuLink"
-          role="button"
-          aria-expanded="false"
-        >
-          <i class="bi bi-chat-dots-fill fs-3"></i>
-
-          <span class="badge rounded-pill badge-notification bg-danger">6</span>
-        </a>
-        <ul
-          class="dropdown-menu dropdown-menu-end"
-          aria-labelledby="navbarDropdownMenuLink"
-        >
-          <li>
-            <a class="dropdown-item" href="#">Some news</a>
-          </li>
-          <li>
-            <a class="dropdown-item" href="#">Another news</a>
-          </li>
-          <li>
-            <a class="dropdown-item" href="#">Something else here</a>
-          </li>
-        </ul>
-      </li>
-      <li class="nav-item dropdown me-3 me-lg-1">
-        <a
-          data-mdb-dropdown-init
-          class="nav-link dropdown-toggle hidden-arrow"
-          href="#"
           id="navbarDropdownMenuLink"
           role="button"
           aria-expanded="false"
@@ -51,14 +22,39 @@
           >
         </a>
       </li>
-      <div class="user-profile fs-5 mx-2">
-        <img
-          src="../../../../assets/image/user-1.jpg"
-          width="40px"
-          height="40px"
-          class="rounded-circle"
-        />
-      </div>
+
+      <li class="nav-item dropdown" (click)="toggleDropdown()">
+        <a
+          id="dropdownMenuButton"
+          [attr.aria-expanded]="isDropdownOpen ? 'true' : 'false'"
+          data-mdb-dropdown-init
+          class="nav-link dropdown-toggle hidden-arrow fs-5"
+          href="#"
+        >
+          <span class="user-profile">
+            <img
+              src="../../../../assets/image/user-1.jpg"
+              width="40px"
+              height="40px"
+              class="rounded-circle"
+            />
+          </span>
+        </a>
+        <ul
+          class="dropdown-menu"
+          [ngClass]="{ show: isDropdownOpen }"
+          aria-labelledby="dropdownMenuButton"
+        >
+          <li class="border-bottom-1">
+            <a class="dropdown-item" routerLink="/admin/add-cours">Admin</a>
+          </li>
+          <li>
+            <a class="dropdown-item" routerLink="/admin/add-formateur"
+              >Formateur</a
+            >
+          </li>
+        </ul>
+      </li>
     </ul>
 
     <!-- Right elements -->

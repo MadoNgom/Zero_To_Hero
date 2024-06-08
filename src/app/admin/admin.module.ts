@@ -13,6 +13,8 @@ import { MainComponent } from './main/main.component';
 import { TabsModule } from '../tabs/tabs.module';
 import { TableFormateurComponent } from './components/table-formateur/table-formateur.component';
 import { TableUserComponent } from './components/table-user/table-user.component';
+import { AddCoursComponent } from './Formateur/add-cours/add-cours.component';
+import { CoursComponent } from './components/cours/cours.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +28,8 @@ import { TableUserComponent } from './components/table-user/table-user.component
     MainComponent,
     TableFormateurComponent,
     TableUserComponent,
+    AddCoursComponent,
+    CoursComponent,
   ],
   imports: [CommonModule, FormsModule, AdminRoutingModule, TabsModule],
 })

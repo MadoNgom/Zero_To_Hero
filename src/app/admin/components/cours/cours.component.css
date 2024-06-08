@@ -1,0 +1,15 @@
+.table-image td,
+th {
+  vertical-align: middle;
+}
+
+.edit {
+  color: #0ad66d;
+}
+.delete {
+  color: red;
+}
+.btn-blue {
+  background-color: #3636e5;
+  color: #fff;
+}
