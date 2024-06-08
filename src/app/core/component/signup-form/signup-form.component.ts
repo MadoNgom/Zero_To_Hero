@@ -37,4 +37,4 @@ export class SignupFormComponent implements OnInit {
       console.error('Form is invalid', this.signupForm.errors);
     }
   }
-}
+} 
