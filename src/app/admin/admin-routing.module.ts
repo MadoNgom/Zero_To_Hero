@@ -5,11 +5,14 @@ import { AddFormateurComponent } from './components/add-formateur/add-formateur.
 import { ManageUsersComponent } from './components/manage-users/manage-users.component';
 import { SettingsComponent } from './components/settings/settings.component';
 import { AdminComponent } from './admin.component';
+import { AddCoursComponent } from './Formateur/add-cours/add-cours.component';
+import { CoursComponent } from './components/cours/cours.component';
 
 const routes: Routes = [
   {
     path: '',
     component: AdminComponent,
+
     children: [
       {
         path: 'dashboard',
@@ -26,6 +29,10 @@ const routes: Routes = [
       {
         path: 'settings',
         component: SettingsComponent,
+      },
+      {
+        path: 'cours',
+        component: CoursComponent,
       },
     ],
   },

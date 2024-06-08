@@ -18,7 +18,7 @@
     <!-- <li *ngIf="currentUser?.type === 'Administrateur'">
       <a class="nav-link" routerLink="/admin/add-formateur"
         ><i class="bi bi-person-circle fs-3"></i>
-        <span class="nav-item">Add Formateur</span>
+        <span class="nav-item">Formateur</span>
       </a>
     </li> -->
     <li *ngIf="currentUser?.type === 'Formateur'">
@@ -28,7 +28,7 @@
       </a>
     </li>
     <li>
-      <a class="nav-link"
+      <a class="nav-link" routerLink="/admin/cours"
         ><i class="bi bi-mortarboard-fill fs-3"></i>
         <span class="nav-item">Cours</span>
       </a>
