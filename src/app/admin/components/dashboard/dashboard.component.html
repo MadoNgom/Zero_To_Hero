@@ -1,1 +1,66 @@
-<p>dashboard admin works!</p>
+<div class="container-fluid">
+  <!-- ADMIN INFO -->
+  <div class="grid mt-4">
+    <div class="card">
+      <div class="d-flex">
+        <div class="box">
+          <span><i class="bi bi-graph-up-arrow"></i></span>
+        </div>
+        <div class="mx-4">
+          <h3>Module</h3>
+          <h5>Vendus</h5>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="d-flex">
+        <div class="box">
+          <span><i class="bi bi-people-fill fs-3"></i></span>
+        </div>
+        <div class="mx-4">
+          <h3>Total Users</h3>
+          <h5>120K</h5>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="d-flex">
+        <div class="box">
+          <span>
+            <i class="bi bi-mortarboard-fill fs-3"></i>
+          </span>
+        </div>
+        <div class="mx-4">
+          <h3>Cours</h3>
+          <h5>12 Modules</h5>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="d-flex">
+        <div class="box">
+          <span><i class="bi bi-person-circle fs-3"></i></span>
+        </div>
+        <div class="mx-4">
+          <h3>Formateurs</h3>
+          <h5>Vendus</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- END -->
+</div>
+<div class="text-dark mt-4">
+  <app-tab-nav [tabsArr]="tabs" (onChangeTab)="changeTab($event)"></app-tab-nav>
+  <div>
+    <!-- AFFICHE LE CONTENU TAB 1 -->
+    <div *ngIf="activatedIndex == 0">
+      <app-table-user></app-table-user>
+    </div>
+    <!-- AFFICHE LE CONTENU TAB 2 -->
+    <div *ngIf="activatedIndex == 1">
+      <app-table-formateur></app-table-formateur>
+    </div>
+    >
+  </div>
+</div>

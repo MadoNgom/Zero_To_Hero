@@ -22,7 +22,6 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full',
   },
-
   {
     path: 'about',
     component: AboutComponent,

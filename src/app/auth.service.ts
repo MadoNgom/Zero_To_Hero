@@ -13,14 +13,22 @@ export class AuthService {
   constructor(private http: HttpClient, private router: Router) {}
 
   login(user: { email: string; password: string }) {
-    return this.http.post<any>(`${this.apiUrl}/login`, user).pipe(
-//      tap(res => this.storeJwtToken(res.accessToken))
-    );
+    return this.http
+      .post<any>(`${this.apiUrl}/login`, user)
+      .pipe
+      //      tap(res => this.storeJwtToken(res.accessToken))
+      ();
   }
 
-  signup(user: { fullName: string; email: string; password: string; iAgree: boolean }) {
-    return this.http.post<{ accessToken: string }>(`${this.apiUrl}/signup`, user).pipe(
-    );
+  signup(user: {
+    fullName: string;
+    email: string;
+    password: string;
+    iAgree: boolean;
+  }) {
+    return this.http
+      .post<{ accessToken: string }>(`${this.apiUrl}/signup`, user)
+      .pipe();
   }
 
   storeJwtToken(jwt: string) {
@@ -36,6 +44,10 @@ export class AuthService {
   getCurruntUser() {
     const userString = localStorage.getItem('user');
     return userString ? JSON.parse(userString) : null;
+  }
+
+  loggedIn() {
+    return !!this.getJwtToken();
   }
 
   logout() {

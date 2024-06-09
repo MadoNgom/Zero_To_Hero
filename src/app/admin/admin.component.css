@@ -1,0 +1,23 @@
+.admin-container {
+  display: grid;
+  height: 100vh;
+  grid-template-columns: 300px 1fr;
+  grid-template-rows: 60px 1fr;
+  grid-template-areas:
+    "sidebar header"
+    "sidebar main";
+}
+
+.sidebar {
+  grid-area: sidebar;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+.header {
+  background-color: #ffff;
+  grid-area: header;
+}
+
+.content {
+  grid-area: main;
+  background-color: #f9f8f9;
+}
