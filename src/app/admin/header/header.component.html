@@ -22,15 +22,8 @@
           >
         </a>
       </li>
-
-      <li class="nav-item dropdown" (click)="toggleDropdown()">
-        <a
-          id="dropdownMenuButton"
-          [attr.aria-expanded]="isDropdownOpen ? 'true' : 'false'"
-          data-mdb-dropdown-init
-          class="nav-link dropdown-toggle hidden-arrow fs-5"
-          href="#"
-        >
+      <li>
+        <a href="#">
           <span class="user-profile">
             <img
               src="../../../../assets/image/user-1.jpg"
@@ -40,7 +33,18 @@
             />
           </span>
         </a>
-        <ul
+      </li>
+      <!-- 
+      <li class="nav-item dropdown">
+        <a
+          id="dropdownMenuButton"
+          [attr.aria-expanded]="isDropdownOpen ? 'true' : 'false'"
+          data-mdb-dropdown-init
+          class="nav-link dropdown-toggle hidden-arrow fs-5"
+          href="#"
+        >
+        </a>
+         <ul
           class="dropdown-menu"
           [ngClass]="{ show: isDropdownOpen }"
           aria-labelledby="dropdownMenuButton"
@@ -53,8 +57,8 @@
               >Formateur</a
             >
           </li>
-        </ul>
-      </li>
+        </ul> -->
+      <!-- </li> -->
     </ul>
 
     <!-- Right elements -->
