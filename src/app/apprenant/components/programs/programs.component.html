@@ -39,7 +39,7 @@
       <div
         class="col-lg-4 col-md-6 mb-4"
         *ngFor="let course of listeCourses"
-        routerLink="/react"
+        [routerLink]="['/programs', course._id]"
       >
         <div class="card">
           <img

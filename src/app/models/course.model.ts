@@ -2,8 +2,8 @@ import { Module } from "./module.model";
 import { User } from "./user.model";
 
 export class Course {
-    id?: number;
-    title: string | undefined;
+    _id?: number;
+    title?: string;
     description: string | undefined;
     imageUrl: string | undefined;
     duration: number | undefined;
@@ -11,5 +11,5 @@ export class Course {
     categorie: string | undefined;
     price: { type: 'free' | 'value', amount: number } | undefined;
     formateur: User | undefined;
-    modules: Module[] | undefined; // Assuming module ID is a number
+    modules!: Module[]; // Assuming module ID is a number
 }

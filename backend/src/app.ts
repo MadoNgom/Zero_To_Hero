@@ -3,7 +3,6 @@ import * as dotenv from 'dotenv';
 import bodyParser from 'body-parser';
 import connectMongoDB from './config/mongodb.config';
 import courseRoutes from './routes/course.route';
-import moduleRoutes from './routes/module.route';
 import userRoutes from './routes/user.route';
 import inscriptionRoutes from './routes/inscription.route';
 import { Request, Response } from 'express';
@@ -32,9 +31,7 @@ app.use(cors({
 
 // Routes
 app.use(`/${process.env.API_PREFIX}/courses`, courseRoutes);
-app.use(`/${process.env.API_PREFIX}/modules`, moduleRoutes);
 app.use(`/${process.env.API_PREFIX}/users`, userRoutes);
-
 app.use(`/${process.env.API_PREFIX}/inscriptions`, inscriptionRoutes);
 
 // Basic route for testing
