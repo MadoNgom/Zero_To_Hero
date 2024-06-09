@@ -22,7 +22,6 @@ export class ProgramsComponent implements OnInit {
   private getCourses(): void {
     this.courseService.getCourses().subscribe(data => {
       this.listeCourses = data;
-      console.log(data);
     })
   }
 

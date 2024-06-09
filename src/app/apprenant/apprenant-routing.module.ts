@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ReactComponent } from './components/react/react.component';
 import { ProgramsComponent } from './components/programs/programs.component';
 import { PaymentComponent } from './components/payment/payment.component';
+import { DetailCourseComponent } from './components/detail-course/detail-course.component';
 
 const routes: Routes = [
   {
@@ -15,10 +16,11 @@ const routes: Routes = [
         pathMatch: 'full',
       },
       { path: 'dashboard', component: ProgramsComponent },
-      { path: 'react', component: ReactComponent },
       { path: 'payment', component: PaymentComponent },
     ],
   },
+  { path: 'react', component: ReactComponent },
+  { path: 'programs/:_id', component: DetailCourseComponent }
 ];
 
 @NgModule({
