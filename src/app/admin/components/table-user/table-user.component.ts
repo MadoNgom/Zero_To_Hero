@@ -1,6 +1,7 @@
 import { User } from './../../../models/user.model';
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../../services/user.service';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-table-user',
@@ -9,17 +10,26 @@ import { UserService } from '../../../services/user.service';
 })
 export class TableUserComponent implements OnInit {
   users: User[] = [];
+  userForm!: FormGroup;
+  showForm: boolean = false;
+  selectedUser: User | null = null;
 
-  constructor(private userService: UserService) { }
+  constructor(private fb: FormBuilder, private userService: UserService) {}
 
   ngOnInit(): void {
+    this.userForm = this.fb.group({
+      fullName: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      type: ['', Validators.required],
+      isPremium: ['']
+    });
     this.loadUsers();
   }
 
   loadUsers(): void {
     this.userService.getUsers().subscribe({
       next: (data) => {
-        console.log('Loaded users:', data);  // Added this log to check the data
+        console.log('Loaded users:', data);
         this.users = data;
       },
       error: (error) => {
@@ -29,9 +39,30 @@ export class TableUserComponent implements OnInit {
   }
 
   editUser(user: User): void {
-    // Logique pour éditer l'utilisateur
-    // Cela pourrait inclure la navigation vers un formulaire d'édition avec les données de l'utilisateur
-    console.log('Editing user:', user);
+    this.selectedUser = user;
+    this.userForm.patchValue({
+      fullName: user.fullName,
+      email: user.email,
+      type: user.type,
+      isPremium: user.isPremium
+    });
+    this.showForm = true;
+  }
+
+  saveUser(): void {
+    if (this.userForm.valid && this.selectedUser && this.selectedUser._id) {
+      const updatedUser = { ...this.userForm.value, _id: this.selectedUser._id };
+      this.userService.updateUser(this.selectedUser._id, updatedUser).subscribe({
+        next: () => {
+          this.loadUsers();
+          this.showForm = false;
+          this.selectedUser = null;
+        },
+        error: (error) => console.error('Failed to update user', error)
+      });
+    } else {
+      console.error('Form is invalid or no user selected');
+    }
   }
 
   deleteUser(userId: string): void {
@@ -50,4 +81,3 @@ export class TableUserComponent implements OnInit {
     });
   }
 }
-

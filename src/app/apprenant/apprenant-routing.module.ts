@@ -4,6 +4,8 @@ import { ReactComponent } from './components/react/react.component';
 import { ProgramsComponent } from './components/programs/programs.component';
 import { PaymentComponent } from './components/payment/payment.component';
 import { DetailCourseComponent } from './components/detail-course/detail-course.component';
+import { AuthGuard } from '../auth.guard';
+import { isApprenantGuard } from '../is-apprenant.guard';
 
 const routes: Routes = [
   {
@@ -15,8 +17,8 @@ const routes: Routes = [
         redirectTo: 'dashboard',
         pathMatch: 'full',
       },
-      { path: 'dashboard', component: ProgramsComponent },
-      { path: 'payment', component: PaymentComponent },
+      { path: 'dashboard', component: ProgramsComponent , canActivate: [isApprenantGuard]},
+      { path: 'payment', component: PaymentComponent , canActivate: [AuthGuard, isApprenantGuard]},
     ],
   },
   { path: 'react', component: ReactComponent },

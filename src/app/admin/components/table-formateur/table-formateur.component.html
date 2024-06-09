@@ -1,163 +1,51 @@
-<table class="table w-85 nowrap mt-4">
-  <thead>
-    <tr>
-      <th>Profile</th>
-      <th>First name</th>
-      <th>Last name</th>
-      <th>E-mail</th>
-      <th>Programe</th>
-    </tr>
-  </thead>
-  <tbody>
-    <!-- first row -->
-    <tr>
-      <td class="table-user">
-        <img
-          src="https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-          alt="table-user"
-          class="rounded-circle"
-          width="40px"
-          height="40px"
-        />
-      </td>
-      <td>Tiger</td>
-      <td>Nixon</td>
-      <td>System Architect</td>
-      <td>
-        React js
-        <img
-          src="../../../../assets/image/icons8-react-native-48.png"
-          width="35px"
-          height="35px"
-          class="mx-2"
-          alt=""
-        />
-      </td>
-    </tr>
-    <!-- second  row -->
-    <tr>
-      <td class="table-user">
-        <img
-          src="https://images.pexels.com/photos/1036623/pexels-photo-1036623.jpeg?auto=compress&cs=tinysrgb&w=600"
-          alt="table-user"
-          class="rounded-circle"
-          width="40px"
-          height="40px"
-        />
-      </td>
-      <td>Tiger</td>
-      <td>Nixon</td>
-      <td>System Architect</td>
-      <td>
-        Angular
-        <img
-          src="../../../../assets/image/icons8-angular-48.png"
-          width="35px"
-          height="35px"
-          class="mx-2"
-          alt=""
-        />
-      </td>
-    </tr>
-    <!-- first row -->
-    <tr>
-      <td class="table-user">
-        <img
-          src="https://images.pexels.com/photos/1181519/pexels-photo-1181519.jpeg?auto=compress&cs=tinysrgb&w=600"
-          alt="table-user"
-          class="rounded-circle"
-          width="40px"
-          height="40px"
-        />
-      </td>
-      <td>Tiger</td>
-      <td>Nixon</td>
-      <td>System Architect</td>
-      <td>
-        Python
-        <img
-          src="../../../../assets/image/icons8-python-48.png"
-          width="35px"
-          height="35px"
-          class="mx-2"
-          alt=""
-        />
-      </td>
-    </tr>
-    <!-- first row -->
-    <tr>
-      <td class="table-user">
-        <img
-          src="https://images.pexels.com/photos/428364/pexels-photo-428364.jpeg?auto=compress&cs=tinysrgb&w=600"
-          alt="table-user"
-          class="rounded-circle"
-          width="40px"
-          height="40px"
-        />
-      </td>
-      <td>Tiger</td>
-      <td>Nixon</td>
-      <td>System Architect</td>
-      <td>
-        Tailwind
-        <img
-          src="../../../../assets/image/icons8-tailwind-css-48.png"
-          width="35px"
-          height="35px"
-          class="mx-2"
-          alt=""
-        />
-      </td>
-    </tr>
-    <!-- first row -->
-    <tr>
-      <td class="table-user">
-        <img
-          src="https://images.pexels.com/photos/762020/pexels-photo-762020.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-          alt="table-user"
-          class="rounded-circle"
-          width="40px"
-          height="40px"
-        />
-      </td>
-      <td>Tiger</td>
-      <td>Nixon</td>
-      <td>System Architect</td>
-      <td>
-        Javascript
-        <img
-          src="../../../../assets/image/icons8-javascript-48.png"
-          width="35px"
-          height="35px"
-          class="mx-2"
-          alt=""
-        />
-      </td>
-    </tr>
-    <!-- first row -->
-    <tr>
-      <td class="table-user">
-        <img
-          src="https://images.pexels.com/photos/262391/pexels-photo-262391.jpeg?auto=compress&cs=tinysrgb&w=600"
-          alt="table-user"
-          class="rounded-circle"
-          width="40px"
-          height="40px"
-        />
-      </td>
-      <td>Tiger</td>
-      <td>Nixon</td>
-      <td>System Architect</td>
-      <td>
-        Redux Tool
-        <img
-          src="../../../../assets/image/icons8-redux-48.png"
-          width="35px"
-          height="35px"
-          class="mx-2"
-          alt=""
-        />
-      </td>
-    </tr>
-  </tbody>
-</table>
+<div class="container-fluid" *ngIf="showForm">
+  <br><br>
+  <h4>Edit User</h4>
+  <form [formGroup]="userForm" (ngSubmit)="saveUser()">
+    <div class="d-flex">
+      <div class="form-group" data-mdb-input-init>
+        <input type="text" formControlName="fullName" class="form-control form-control-lg" placeholder="Full Name">
+      </div>
+      <div class="form-group" data-mdb-input-init>
+        <input type="email" formControlName="email" class="form-control form-control-lg" placeholder="Email">
+      </div>
+      <div class="form-group mx-2" data-mdb-input-init>
+        <input type="text" formControlName="type" class="form-control form-control-lg" placeholder="Type">
+      </div>
+      <div class="form-group mx-2" data-mdb-input-init>
+        <input type="text" formControlName="isPremium" class="form-control form-control-lg" placeholder="Premium">
+      </div>
+      <button type="submit" class="btn btn-primary btn-sm">Save Changes</button>
+    </div>
+  </form>
+</div>
+<br>
+<div class="container-fluid">
+  <table class="table table-striped w-100 nowrap mt-4">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Full Name</th>
+        <th>Email</th>
+        <th>Type</th>
+        <th>Premium</th>
+        <th>Operations</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of formateurs; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>{{ user.fullName }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.type }}</td>
+        <td>{{ user.isPremium }}</td>
+        <td class="d-flex fs-4">
+          <div class="edit mx-2" (click)="editUser(user)"><i class="bi bi-pencil-square"></i></div>
+          <div class="delete" *ngIf="user._id" (click)="deleteUser(user._id)"><i class="bi bi-trash3-fill"></i></div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+

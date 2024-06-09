@@ -23,10 +23,7 @@ export class DetailCourseComponent implements OnInit {
       this.courseService.getCourseById(id)
         .subscribe(course => this.course = course);
     });
-
+//formulaire incription [id cours, paymentMode]
     console.log(this.course.description);
   }
-
-
-
 }
