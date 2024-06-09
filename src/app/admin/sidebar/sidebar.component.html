@@ -9,7 +9,11 @@
         *ngIf="hasRole(item.roles)"
         [class.active]="item.link === '/admin/dashboard'"
       >
-        <a class="nav-link" [routerLink]="item.link">
+        <a
+          class="nav-link"
+          [routerLink]="item.link"
+          (click)="handleItemClick(item)"
+        >
           <i [class]="item.icon"></i>
           <span class="nav-item fs-6">{{ item.label }}</span>
         </a>

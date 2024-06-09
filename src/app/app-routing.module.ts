@@ -4,11 +4,9 @@ import { HomeComponent } from './core/component/home/home.component';
 
 import { AboutComponent } from './core/component/about/about.component';
 import { ContactComponent } from './core/component/contact/contact.component';
-import { AuthGuard } from './auth.guard';
 import { ProgramsComponent } from './apprenant/components/programs/programs.component';
 import { LoginComponent } from './core/component/login/login.component';
 import { SignupComponent } from './core/component/signup/signup.component';
-import { NotFoundComponent } from './shared/not-found/not-found.component';
 
 const routes: Routes = [
   {
@@ -18,10 +16,16 @@ const routes: Routes = [
     data: { preload: false },
   },
   {
-    path: '',
-    redirectTo: 'home',
-    pathMatch: 'full',
+    path: 'apprenant',
+    loadChildren: () =>
+      import('./apprenant/apprenant.module').then((m) => m.ApprenantModule),
   },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  {
+    path: 'home',
+    component: HomeComponent,
+  },
+
   {
     path: 'about',
     component: AboutComponent,
@@ -29,20 +33,6 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent,
-  },
-  {
-    path: 'apprenant',
-    loadChildren: () =>
-      import('./apprenant/apprenant.module').then((m) => m.ApprenantModule),
-  },
-  {
-    path: 'admin',
-    loadChildren: () =>
-      import('./admin/admin.module').then((m) => m.AdminModule),
-  },
-  {
-    path: 'home',
-    component: HomeComponent,
   },
   {
     path: 'signup',
@@ -55,10 +45,6 @@ const routes: Routes = [
   {
     path: 'programs',
     component: ProgramsComponent,
-  },
-  {
-    path: '**',
-    component: NotFoundComponent,
   },
 ];
 

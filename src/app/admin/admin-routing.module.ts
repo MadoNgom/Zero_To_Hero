@@ -13,8 +13,12 @@ const routes: Routes = [
   {
     path: '',
     component: AdminComponent,
-
     children: [
+      {
+        path: '',
+        redirectTo: 'dashboard', // Redirect to dashboard by default
+        pathMatch: 'full',
+      },
       {
         path: 'dashboard',
         component: DashboardComponent,

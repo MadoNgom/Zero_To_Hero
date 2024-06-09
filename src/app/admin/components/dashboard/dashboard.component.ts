@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrl: './dashboard.component.css',
 })
 export class DashboardComponent {
-  tabs: string[] = ['Apprenants', 'Formateurs'];
+  tabs: string[] = ['Users', 'Formateurs'];
   ngOnInit(): void {}
   activatedIndex: number = 0;
   changeTab(tabIndex: number) {

@@ -4,6 +4,7 @@ export interface MenuItem {
   link: string;
   icon: string;
   roles?: string[];
+  clickHandler?: string;
 }
 
 export const MENU_ITEMS: MenuItem[] = [
@@ -62,5 +63,6 @@ export const MENU_ITEMS: MenuItem[] = [
     label: 'Logout',
     link: '',
     icon: 'bi bi-box-arrow-right fs-3',
+    clickHandler: 'logout',
   },
 ];

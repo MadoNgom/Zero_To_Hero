@@ -18,4 +18,10 @@ export class SidebarComponent {
   hasRole(roles?: string[]): boolean {
     return roles ? roles.includes(this.currentUser?.type) : true;
   }
+  // TO LOGOUT THE PAGE
+  handleItemClick(item: MenuItem): void {
+    if (item.clickHandler === 'logout') {
+      this.authService.logout();
+    }
+  }
 }
