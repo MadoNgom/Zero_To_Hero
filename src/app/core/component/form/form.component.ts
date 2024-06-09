@@ -35,13 +35,13 @@ export class FormComponent implements OnInit {
 
           switch (res.user.type) {
             case 'Apprenant':
-              this.router.navigate(['dashboard']);
+              this.router.navigate(['portal/dashboard']);
               break;
-            case 'Admin':
-              this.router.navigate(['admin']);
+            case 'Administrateur':
+              this.router.navigate(['admin/dashboard']);
               break;
             default:
-              this.router.navigate(['admin/']);
+              this.router.navigate(['admin/programe']);
               break;
           }
           // Handle successful login here
