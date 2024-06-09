@@ -1,8 +1,4 @@
 <div class="container-fluid">
-  <div class="d-flex justify-content-between align-items-center py-2">
-    <h2>Manage Users</h2>
-    <button class="btn btn-blue" (click)="toggleForm()">Add Users</button>
-  </div>
   <form *ngIf="showForm">
     <div class="d-flex">
       <!-- forms group -->
@@ -11,16 +7,7 @@
           type="text"
           id="formControlLg"
           class="form-control form-control-lg"
-          placeholder="FirstName"
-        />
-      </div>
-      <!-- forms group -->
-      <div class="form-group mx-2" data-mdb-input-init>
-        <input
-          type="text"
-          id="formControlLg"
-          class="form-control form-control-lg"
-          placeholder="LastName"
+          placeholder="Full Name"
         />
       </div>
       <!-- forms group -->
@@ -38,145 +25,17 @@
         <input
           type="text"
           class="form-control form-control-lg"
-          placeholder="Position"
+          placeholder="Type"
         />
       </div>
       <!-- forms group -->
       <div class="form-group mx-2" data-mdb-input-init>
         <input
-          type="date"
+          type="text"
           class="form-control form-control-lg"
-          placeholder="date start"
+          placeholder="Premium"
         />
       </div>
     </div>
   </form>
-
-  <table class="table table-striped w-100 nowrap mt-4">
-    <thead>
-      <tr>
-        <th>First name</th>
-        <th>Last name</th>
-        <th>Position</th>
-
-        <th>Age</th>
-        <th>Start date</th>
-        <th>End Date</th>
-        <th>E-mail</th>
-        <th>Operations</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Tiger</td>
-        <td>Nixon</td>
-        <td>System Architect</td>
-
-        <td>61</td>
-        <td>2011/04/25</td>
-        <td>2011/04/25</td>
-        <td>t.nixondatatables.net</td>
-        <td class="d-flex fs-4">
-          <div class="edit mx-2"><i class="bi bi-pencil-square"></i></div>
-          <div class="delete"><i class="bi bi-trash3-fill"></i></div>
-        </td>
-      </tr>
-      <tr>
-        <td>Garrett</td>
-        <td>Winters</td>
-        <td>Accountant</td>
-
-        <td>63</td>
-        <td>2011/07/25</td>
-        <td>2011/07/25</td>
-        <td>g.wintersdatatables.net</td>
-        <td class="d-flex fs-4">
-          <div class="edit mx-2"><i class="bi bi-pencil-square"></i></div>
-          <div class="delete"><i class="bi bi-trash3-fill"></i></div>
-        </td>
-      </tr>
-      <tr>
-        <td>Garrett</td>
-        <td>Winters</td>
-        <td>Accountant</td>
-
-        <td>63</td>
-        <td>2011/07/25</td>
-        <td>2011/07/25</td>
-        <td>g.wintersdatatables.net</td>
-        <td class="d-flex fs-4">
-          <div class="edit mx-2"><i class="bi bi-pencil-square"></i></div>
-          <div class="delete"><i class="bi bi-trash3-fill"></i></div>
-        </td>
-      </tr>
-      <tr>
-        <td>Garrett</td>
-        <td>Winters</td>
-        <td>Accountant</td>
-
-        <td>63</td>
-        <td>2011/07/25</td>
-        <td>2011/07/25</td>
-        <td>g.wintersdatatables.net</td>
-        <td class="d-flex fs-4">
-          <div class="edit mx-2"><i class="bi bi-pencil-square"></i></div>
-          <div class="delete"><i class="bi bi-trash3-fill"></i></div>
-        </td>
-      </tr>
-      <tr>
-        <td>Garrett</td>
-        <td>Winters</td>
-        <td>Accountant</td>
-
-        <td>63</td>
-        <td>2011/07/25</td>
-        <td>$170,750</td>
-
-        <td>g.wintersdatatables.net</td>
-        <td class="d-flex fs-4">
-          <div class="edit mx-2"><i class="bi bi-pencil-square"></i></div>
-          <div class="delete"><i class="bi bi-trash3-fill"></i></div>
-        </td>
-      </tr>
-      <tr>
-        <td>Garrett</td>
-        <td>Winters</td>
-        <td>Accountant</td>
-        <td>63</td>
-        <td>2011/07/25</td>
-        <td>2011/07/25</td>
-        <td>g.wintersdatatables.net</td>
-        <td class="d-flex fs-4">
-          <div class="edit mx-2"><i class="bi bi-pencil-square"></i></div>
-          <div class="delete"><i class="bi bi-trash3-fill"></i></div>
-        </td>
-      </tr>
-      <tr>
-        <td>Garrett</td>
-        <td>Winters</td>
-        <td>Accountant</td>
-        <td>63</td>
-        <td>2011/07/25</td>
-        <td>2011/07/25</td>
-        <td>g.wintersdatatables.net</td>
-        <td class="d-flex fs-4">
-          <div class="edit mx-2"><i class="bi bi-pencil-square"></i></div>
-          <div class="delete"><i class="bi bi-trash3-fill"></i></div>
-        </td>
-      </tr>
-      <tr>
-        <td>Garrett</td>
-        <td>Winters</td>
-        <td>Accountant</td>
-        <td>63</td>
-        <td>2011/07/25</td>
-        <td>2011/07/25</td>
-        <td>g.wintersdatatables.net</td>
-        <td class="d-flex fs-4">
-          <div class="edit mx-2"><i class="bi bi-pencil-square"></i></div>
-          <div class="delete"><i class="bi bi-trash3-fill"></i></div>
-        </td>
-      </tr>
-    </tbody>
-  </table>
 </div>

@@ -4,12 +4,12 @@ import { UserService } from '../../../services/user.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-table-formateur',
-  templateUrl: './table-formateur.component.html',
-  styleUrls: ['./table-formateur.component.css']
+  selector: 'app-table-apprenant',
+  templateUrl: './table-apprenant.component.html',
+  styleUrls: ['./table-apprenant.component.css']
 })
-export class TableFormateurComponent implements OnInit {
-  formateurs: User[] = [];
+export class TableApprenantComponent implements OnInit {
+  apprenants: User[] = [];
   userForm!: FormGroup;
   showForm: boolean = false;
   selectedUser: User | null = null;
@@ -23,14 +23,14 @@ export class TableFormateurComponent implements OnInit {
       type: ['', Validators.required],
       isPremium: ['']
     });
-    this.loadFormateurs();
+    this.loadApprenants();
   }
 
-  loadFormateurs(): void {
+  loadApprenants(): void {
     this.userService.getUsers().subscribe({
       next: (data) => {
         console.log('Loaded users:', data);
-        this.formateurs = data.filter(user => user.type === 'Formateur');
+        this.apprenants = data.filter(user => user.type === 'Apprenant');
       },
       error: (error) => {
         console.error('Error loading users', error);
@@ -54,7 +54,7 @@ export class TableFormateurComponent implements OnInit {
       const updatedUser = { ...this.userForm.value, _id: this.selectedUser._id };
       this.userService.updateUser(this.selectedUser._id, updatedUser).subscribe({
         next: () => {
-          this.loadFormateurs();
+          this.loadApprenants();
           this.showForm = false;
           this.selectedUser = null;
         },
@@ -72,7 +72,7 @@ export class TableFormateurComponent implements OnInit {
     }
     this.userService.deleteUser(userId).subscribe({
       next: () => {
-        this.formateurs = this.formateurs.filter(user => user._id !== userId);
+        this.apprenants = this.apprenants.filter(user => user._id !== userId);
         console.log('User deleted successfully');
       },
       error: (error) => {
