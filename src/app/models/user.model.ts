@@ -1,9 +1,9 @@
 export class User {
-    id?: Number | undefined;
-    fullName: string | undefined;
-    email: string | undefined;
-    password: string | undefined;
-    type: string | undefined;
-    isPremium: boolean | undefined;
-    isAgree: boolean | undefined
+    _id?: string;
+    fullName: string = '';
+    email: string = '';
+    password: string = '';
+    type: string = '';
+    isPremium: boolean = false;
+    isAgree: boolean = false;
 }

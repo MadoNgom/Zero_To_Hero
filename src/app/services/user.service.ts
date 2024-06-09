@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { IUser } from '../models/user.model';
+import { User } from '../models/user.model'; // Corrected import name from IUser to User
 import { environment } from '../../environments/environment.prod';
 
 @Injectable({
@@ -12,23 +12,26 @@ export class UserService {
 
   constructor(private http: HttpClient) { }
 
-  addUser(user: IUser): Observable<IUser> {
-    return this.http.post<IUser>(this.apiUrl, user);
+  addUser(user: User): Observable<User> {
+    return this.http.post<User>(this.apiUrl, user);
   }
 
-  getUsers(): Observable<IUser[]> {
-    return this.http.get<IUser[]>(this.apiUrl);
+  getUsers(): Observable<User[]> {
+    return this.http.get<User[]>(this.apiUrl);
   }
 
-  getUserById(id: number): Observable<IUser> {
-    return this.http.get<IUser>(`${this.apiUrl}/${id}`);
+  getUserById(id: number): Observable<User> {
+    return this.http.get<User>(`${this.apiUrl}/${id}`);
   }
 
-  updateUser(id: number, user: IUser): Observable<IUser> {
-    return this.http.put<IUser>(`${this.apiUrl}/${id}`, user);
+  updateUser(id: number, user: User): Observable<User> {
+    return this.http.put<User>(`${this.apiUrl}/${id}`, user);
   }
 
-  deleteUser(id: number): Observable<any> {
-    return this.http.delete(`${this.apiUrl}/${id}`);
+  deleteUser(userId: string | undefined): Observable<any> {
+    if (!userId) {
+        throw new Error('User ID is undefined');
+    }
+    return this.http.delete(`${this.apiUrl}/${userId}`);
   }
 }
