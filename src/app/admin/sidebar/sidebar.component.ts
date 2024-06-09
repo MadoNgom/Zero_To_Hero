@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../../auth.service';
+import { MENU_ITEMS, MenuItem } from './menu-items';
 
 @Component({
   selector: 'app-sidebar',
@@ -8,7 +9,13 @@ import { AuthService } from '../../auth.service';
 })
 export class SidebarComponent {
   currentUser: any;
+  menuItems: MenuItem[] = MENU_ITEMS;
+
   constructor(private authService: AuthService) {
     this.currentUser = this.authService.getCurruntUser();
+  }
+
+  hasRole(roles?: string[]): boolean {
+    return roles ? roles.includes(this.currentUser?.type) : true;
   }
 }

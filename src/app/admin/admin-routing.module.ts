@@ -5,8 +5,9 @@ import { AddFormateurComponent } from './components/add-formateur/add-formateur.
 import { ManageUsersComponent } from './components/manage-users/manage-users.component';
 import { SettingsComponent } from './components/settings/settings.component';
 import { AdminComponent } from './admin.component';
-import { AddCoursComponent } from './Formateur/add-cours/add-cours.component';
+
 import { CoursComponent } from './components/cours/cours.component';
+import { ProgrameComponent } from './components/programe/programe.component';
 
 const routes: Routes = [
   {
@@ -33,6 +34,10 @@ const routes: Routes = [
       {
         path: 'cours',
         component: CoursComponent,
+      },
+      {
+        path: 'programe',
+        component: ProgrameComponent,
       },
     ],
   },

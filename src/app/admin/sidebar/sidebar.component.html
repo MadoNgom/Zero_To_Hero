@@ -1,62 +1,19 @@
+<!-- sidebar.component.html -->
 <nav class="py-3">
-  <div class="nav-brand py-3">
-    <h3 class="logo">Zero2hero <i class="bi bi-rocket-takeoff"></i></h3>
+  <div class="nav-brand p-3">
+    <h3 class="logo fs-4">Zero2hero <i class="bi bi-rocket-takeoff"></i></h3>
   </div>
   <ul>
-    <li class="active" *ngIf="currentUser?.type === 'Administrateur'">
-      <a class="nav-link" routerLink="/dashboard"
-        ><i class="bi bi-grid-1x2-fill"></i>
-        <span class="nav-item">Dashboard</span>
-      </a>
-    </li>
-    <li *ngIf="currentUser?.type === 'Administrateur'">
-      <a class="nav-link" routerLink="/admin/manage-users"
-        ><i class="bi bi-people-fill fs-3"></i>
-        <span class="nav-item">Manage Users</span>
-      </a>
-    </li>
-    <!-- <li *ngIf="currentUser?.type === 'Administrateur'">
-      <a class="nav-link" routerLink="/admin/add-formateur"
-        ><i class="bi bi-person-circle fs-3"></i>
-        <span class="nav-item">Formateur</span>
-      </a>
-    </li> -->
-    <li *ngIf="currentUser?.type === 'Formateur'">
-      <a class="nav-link" href="#">
-        <i class="bi bi-camera-video-fill fs-3"></i>
-        <span class="nav-item">video</span>
-      </a>
-    </li>
-    <li>
-      <a class="nav-link" routerLink="/admin/cours"
-        ><i class="bi bi-mortarboard-fill fs-3"></i>
-        <span class="nav-item">Cours</span>
-      </a>
-    </li>
-    <li>
-      <a class="nav-link"
-        ><i class="bi bi-graph-up-arrow fs-3"></i>
-        <span class="nav-item">Analystics</span>
-      </a>
-    </li>
-    <li>
-      <a class="nav-link"
-        ><i class="bi bi-cash-coin fs-3"></i>
-        <span class="nav-item">Sales</span>
-      </a>
-    </li>
-
-    <li>
-      <a class="nav-link" routerLink="/admin/settings"
-        ><i class="bi bi-gear-fill fs-3"></i>
-        <span class="nav-item">Settings</span>
-      </a>
-    </li>
-    <li class="logout">
-      <a class="nav-link"
-        ><i class="bi bi-box-arrow-right fs-3"></i>
-        <span class="nav-item">Logout</span>
-      </a>
-    </li>
+    <ng-container *ngFor="let item of menuItems">
+      <li
+        *ngIf="hasRole(item.roles)"
+        [class.active]="item.link === '/admin/dashboard'"
+      >
+        <a class="nav-link" [routerLink]="item.link">
+          <i [class]="item.icon"></i>
+          <span class="nav-item fs-6">{{ item.label }}</span>
+        </a>
+      </li>
+    </ng-container>
   </ul>
 </nav>

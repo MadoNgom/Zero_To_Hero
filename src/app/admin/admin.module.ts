@@ -13,10 +13,11 @@ import { MainComponent } from './main/main.component';
 import { TabsModule } from '../tabs/tabs.module';
 import { TableFormateurComponent } from './components/table-formateur/table-formateur.component';
 import { TableUserComponent } from './components/table-user/table-user.component';
-import { AddCoursComponent } from './Formateur/add-cours/add-cours.component';
+
 import { CoursComponent } from './components/cours/cours.component';
 import { TableApprenantComponent } from './components/table-apprenant/table-apprenant.component';
 import { TableAdminComponent } from './components/table-admin/table-admin.component';
+import { ProgrameComponent } from './components/programe/programe.component';
 
 @NgModule({
   declarations: [
@@ -30,10 +31,10 @@ import { TableAdminComponent } from './components/table-admin/table-admin.compon
     MainComponent,
     TableFormateurComponent,
     TableUserComponent,
-    AddCoursComponent,
     CoursComponent,
     TableApprenantComponent,
     TableAdminComponent,
+    ProgrameComponent,
   ],
   imports: [CommonModule, FormsModule, AdminRoutingModule, TabsModule, ReactiveFormsModule],
 })
