@@ -1,3 +1,28 @@
+<div class="container-fluid">
+  <br><br>
+  <h4>Add Formateur</h4>
+  <form [formGroup]="addUserForm" (ngSubmit)="saveUser()">
+    <div class="d-flex">
+      <div class="form-group" data-mdb-input-init>
+        <input type="text" formControlName="fullName" class="form-control form-control-lg" placeholder="Full Name">
+      </div>
+      <div class="form-group" data-mdb-input-init>
+        <input type="email" formControlName="email" class="form-control form-control-lg" placeholder="Email">
+      </div>
+      <div class="form-group mx-2" data-mdb-input-init>
+        <input type="password" formControlName="password" class="form-control form-control-lg" placeholder="Password">
+      </div>
+      <div class="form-group mx-2" data-mdb-input-init>
+        <input type="text" formControlName="type" class="form-control form-control-lg" placeholder="Type">
+      </div>
+      <div class="form-group mx-2" data-mdb-input-init>
+        <input type="text" formControlName="isPremium" class="form-control form-control-lg" placeholder="Premium">
+      </div>
+      <button type="submit" class="btn btn-primary btn-sm">Register</button>
+    </div>
+  </form>
+</div>
+
 <div class="container-fluid" *ngIf="showForm">
   <br><br>
   <h4>Edit User</h4>

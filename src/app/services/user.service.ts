@@ -13,7 +13,7 @@ export class UserService {
   constructor(private http: HttpClient) { }
 
   addUser(user: User): Observable<User> {
-    return this.http.post<User>(this.apiUrl, user);
+    return this.http.post<User>('http://localhost:3000/api/users/signup', user);
   }
 
   getUsers(): Observable<User[]> {

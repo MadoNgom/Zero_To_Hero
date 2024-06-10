@@ -1,7 +1,5 @@
 import * as mysql from 'mysql';
 import * as dotenv from 'dotenv';
-import { Utilisateur } from './entities/Utilisateur';
-import { resolve } from 'path';
 
 dotenv.config();
 

@@ -11,6 +11,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 export class TableFormateurComponent implements OnInit {
   formateurs: User[] = [];
   userForm!: FormGroup;
+  addUserForm!: FormGroup; // Separate form for adding users
   showForm: boolean = false;
   selectedUser: User | null = null;
 
@@ -23,6 +24,15 @@ export class TableFormateurComponent implements OnInit {
       type: ['', Validators.required],
       isPremium: ['']
     });
+
+    this.addUserForm = this.fb.group({
+      fullName: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      password: ['passer123', Validators.required], // Assuming password is required for registration
+      type: ['Formateur', Validators.required],
+      isPremium: ['false']
+    });
+
     this.loadFormateurs();
   }
 
@@ -37,6 +47,7 @@ export class TableFormateurComponent implements OnInit {
       }
     });
   }
+
 
   editUser(user: User): void {
     this.selectedUser = user;
@@ -60,8 +71,18 @@ export class TableFormateurComponent implements OnInit {
         },
         error: (error) => console.error('Failed to update user', error)
       });
+    } else if(this.addUserForm.valid) {
+      this.userService.addUser(this.addUserForm.value).subscribe({
+        next: () => {
+          this.loadFormateurs();
+          console.log('User registered successfully');
+          this.loadFormateurs(); 
+          this.addUserForm.reset(); 
+        },
+        error: (error) => console.error('Failed to register formateur', error)
+      });
     } else {
-      console.error('Form is invalid or no user selected');
+      console.error('Form is invalid');
     }
   }
 
@@ -81,3 +102,4 @@ export class TableFormateurComponent implements OnInit {
     });
   }
 }
+
