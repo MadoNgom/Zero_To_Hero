@@ -19,7 +19,7 @@ export const signup = async (request: Request, response: Response) => {
                 type: type,
                 isPremium: false
         });
-       
+       // hehe boi
         const add = await service.AddUser(newUser);
         
 
