@@ -1,21 +1,28 @@
-<div class="accordion" id="accordionExample">
+<div
+  class="accordion"
+  id="accordionExample"
+  *ngFor="let module of course.modules; let i = index"
+>
   <!-- FIRST ITEM -->
   <div class="accordion-item">
-    <h2 class="accordion-header">
+    <h2 class="accordion-header" [attr.id]="'heading' + (i + 1)">
       <button
         class="accordion-button bg-white shadow-sm h5"
         type="button"
         data-bs-toggle="collapse"
-        data-bs-target="#collapseOne"
         aria-expanded="true"
-        aria-controls="collapseOne"
+        [attr.data-bs-target]="'#collapse' + (i + 1)"
+        aria-expanded="false"
+        [attr.aria-controls]="'collapse' + (i + 1)"
       >
-        <h5>Introduction à ReactJs</h5>
+        Module {{ course.modules.indexOf(module) + 1 }}:
+        {{ module.description }}
       </button>
     </h2>
     <div
-      id="collapseOne"
-      class="accordion-collapse collapse show"
+      [attr.id]="'collapse' + (i + 1)"
+      class="accordion-collapse collapse"
+      [attr.aria-labelledby]="'heading' + (i + 1)"
       data-bs-parent="#accordionExample"
     >
       <div class="accordion-body">
@@ -23,9 +30,7 @@
           <li>
             <div class="d-flex justify-content-between align-items-center">
               <div>
-                <a href="#"
-                  ><i class="bi bi-play-btn"></i> Qu'est ce que React js</a
-                >
+                <a href="#"><i class="bi bi-play-btn"></i> {{ module.name }}</a>
               </div>
               <div
                 class="duration d-flex align-items-center justify-content-center"
@@ -46,9 +51,8 @@
             <div class="d-flex justify-content-between align-items-center">
               <div>
                 <a href="#" class="text-black"
-                  ><i class="bi bi-play-btn"></i> Configuration de
-                  l'environnement React</a
-                >
+                  ><i class="bi bi-play-btn"></i> {{ module.description }}
+                </a>
               </div>
               <div
                 class="duration d-flex align-items-center justify-content-center"
@@ -60,174 +64,6 @@
                   (click)="toggleChecked()"
                   [ngClass]="{ checked: isChecked }"
                 >
-                  <span><i class="bi bi-check-lg"></i></span>
-                </div>
-              </div>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-  <!-- SECOND ITEM -->
-  <div class="accordion-item">
-    <h2 class="accordion-header">
-      <button
-        class="accordion-button bg-white shadow-sm h5"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#collapseOne"
-        aria-expanded="true"
-        aria-controls="collapseOne"
-      >
-        <h5>Les Bases de ReactJs</h5>
-      </button>
-    </h2>
-    <div
-      id="collapseOne"
-      class="accordion-collapse collapse show"
-      data-bs-parent="#accordionExample"
-    >
-      <div class="accordion-body">
-        <ul>
-          <li>
-            <div class="d-flex justify-content-between align-items-center">
-              <div>
-                <a href="#" class="text-dark"
-                  ><i class="bi bi-play-btn"></i> Syntaxe et utilisation de
-                  JSX</a
-                >
-              </div>
-              <div
-                class="duration d-flex align-items-center justify-content-center"
-              >
-                <span> <a href="#">Suivre</a></span>
-                <span>09:15</span>
-                <div class="label">
-                  <span><i class="bi bi-check-lg"></i></span>
-                </div>
-              </div>
-            </div>
-          </li>
-          <li>
-            <div class="d-flex justify-content-between align-items-center">
-              <div>
-                <a href="#" class="text-dark"
-                  ><i class="bi bi-play-btn"></i> Concepts de base : composants,
-                  état, props.
-                </a>
-              </div>
-              <div
-                class="duration d-flex align-items-center justify-content-center"
-              >
-                <span> <a href="">Suivre</a></span>
-                <span>10:05</span>
-                <div class="label">
-                  <span><i class="bi bi-check-lg"></i></span>
-                </div>
-              </div>
-            </div>
-          </li>
-          <li>
-            <div class="d-flex justify-content-between align-items-center">
-              <div>
-                <a href="#" class="text-dark"
-                  ><i class="bi bi-play-btn"></i> Fonctionnels vs Class
-                  components.
-                </a>
-              </div>
-              <div
-                class="duration d-flex align-items-center justify-content-center"
-              >
-                <span> <a href="">Suivre</a></span>
-                <span>04:05</span>
-                <div class="label">
-                  <span><i class="bi bi-check-lg"></i></span>
-                </div>
-              </div>
-            </div>
-          </li>
-          <li>
-            <div class="d-flex justify-content-between align-items-center">
-              <div>
-                <a href="#" class="text-dark"
-                  ><i class="bi bi-play-btn"></i> Props et composition de
-                  composants
-                </a>
-              </div>
-              <div
-                class="duration d-flex align-items-center justify-content-center"
-              >
-                <span> <a href="">Suivre</a></span>
-                <span>30:05</span>
-                <div class="label">
-                  <span><i class="bi bi-check-lg"></i></span>
-                </div>
-              </div>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-  <!-- Third Item -->
-  <div class="accordion-item">
-    <h2 class="accordion-header">
-      <button
-        class="accordion-button bg-white shadow-sm h5"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#collapseOne"
-        aria-expanded="true"
-        aria-controls="collapseOne"
-      >
-        <h5>Ressources Supplementaire et Test de connaissance</h5>
-      </button>
-    </h2>
-    <div
-      id="collapseOne"
-      class="accordion-collapse collapse"
-      data-bs-parent="#accordionExample"
-    >
-      <div class="accordion-body">
-        <ul>
-          <li>
-            <div class="d-flex justify-content-between align-items-center">
-              <div>
-                <a href="#" class="text-dark"
-                  ><i class="bi bi-card-text"></i> Support de cour
-                </a>
-              </div>
-              <div
-                class="duration d-flex align-items-center justify-content-center"
-              >
-                <span> <a href="#"> 2 Pages</a></span>
-
-                <div class="label">
-                  <span><i class="bi bi-check-lg"></i></span>
-                </div>
-              </div>
-            </div>
-          </li>
-          <li>
-            <a href="#" class="text-dark"
-              ><i class="bi bi-chat-square-text"></i> Discuss about the
-              lesson</a
-            >
-          </li>
-          <li>
-            <div class="d-flex justify-content-between align-items-center">
-              <div>
-                <a href="#" class="text-dark"
-                  ><i class="bi bi-list-check"></i> Test Quizz
-                </a>
-              </div>
-              <div
-                class="duration d-flex align-items-center justify-content-center"
-              >
-                <a routerLink="/portal/quizz">Faire le Quizz</a>
-
-                <div class="label">
                   <span><i class="bi bi-check-lg"></i></span>
                 </div>
               </div>

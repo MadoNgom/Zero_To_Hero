@@ -36,6 +36,13 @@ import { ProgrameComponent } from './components/programe/programe.component';
     TableAdminComponent,
     ProgrameComponent,
   ],
-  imports: [CommonModule, FormsModule, AdminRoutingModule, TabsModule, ReactiveFormsModule],
+  imports: [
+    CommonModule,
+    FormsModule,
+    AdminRoutingModule,
+    TabsModule,
+    ReactiveFormsModule,
+  ],
+  exports: [SidebarComponent],
 })
 export class AdminModule {}

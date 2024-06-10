@@ -1,27 +1,34 @@
-<nav class="nav navbar navbar-expand-lg align-items-center">
-  <a class="navbar-brand" href="#">
-    <img
-      src="../../../../assets/logo_laptop.png"
-      width="30"
-      height="30"
-      alt=""
-    />
-  </a>
-  <div class="container d-flex justify-content-between">
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav d-flex">
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
+  <!-- Container wrapper -->
+  <div class="container-fluid">
+    <!-- Toggle button -->
+    <button
+      data-mdb-collapse-init
+      class="navbar-toggler"
+      type="button"
+      data-mdb-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Collapsible wrapper -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <!-- Left links -->
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item active-link">
-          <a href="#" class="nav-link active text-dark">Accueil</a>
+          <a href="#" class="nav-link active text-dark fs-5">Accueil</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-dark">MarketPlace</a>
+          <a class="nav-link text-dark fs-5">MarketPlace</a>
         </li>
         <li class="nav-item">
-          <a href="#" class="nav-link text-dark">Categories</a>
+          <a href="#" class="nav-link text-dark fs-5">Categories</a>
         </li>
       </ul>
-    </div>
-    <div class="user-info d-flex justify-content-center align-items-center">
       <div class="d-flex search me-auto">
         <input
           type="search"
@@ -31,18 +38,79 @@
         />
         <i class="bi bi-search"></i>
       </div>
-
-      <i class="fs-4 bi bi-cart3 mx-2 text-primary"></i> (0)
-      <i class="fs-4 bi bi-bell mx-4"></i>
-      <div class="user-profile fs-5 mx-2">
-        <img
-          src="../../../../assets/image/user-1.jpg"
-          width="48px"
-          height="48px"
-          class="rounded-circle"
-        />
-      </div>
-      <i class="bi bi-caret-down-fill fs-5"></i>
+      <!-- Left links -->
     </div>
+    <!-- Collapsible wrapper -->
+
+    <!-- Right elements -->
+    <div class="d-flex align-items-center">
+      <!-- Icon -->
+      <a class="text-reset me-3" href="#">
+        <i class="bi bi-cart-fill fs-4"></i>
+        <span class="badge rounded-pill badge-notification bg-danger">4</span>
+      </a>
+
+      <!-- Notifications -->
+      <div class="dropdown">
+        <a
+          data-mdb-dropdown-init
+          class="text-reset me-3 dropdown-toggle hidden-arrow"
+          href="#"
+          id="navbarDropdownMenuLink"
+          role="button"
+          aria-expanded="false"
+        >
+          <i class="bi bi-bell-fill fs-4"></i>
+          <span class="badge rounded-pill badge-notification bg-danger">1</span>
+        </a>
+        <ul
+          class="dropdown-menu dropdown-menu-end"
+          aria-labelledby="navbarDropdownMenuLink"
+        >
+          <li>
+            <a class="dropdown-item" href="#">Some news</a>
+          </li>
+          <li>
+            <a class="dropdown-item" href="#">Another news</a>
+          </li>
+          <li>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </li>
+        </ul>
+      </div>
+      <!-- Avatar -->
+      <div class="dropdown">
+        <a
+          data-mdb-dropdown-init
+          class="dropdown-toggle d-flex align-items-center hidden-arrow"
+          href="#"
+          id="navbarDropdownMenuAvatar"
+          role="button"
+          aria-expanded="false"
+        >
+          <img
+            src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp"
+            class="rounded-circle"
+            height="25"
+            alt="Black and White Portrait of a Man"
+            loading="lazy"
+          />
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuAvatar">
+          <li>
+            <a class="dropdown-item" href="#">My profile</a>
+          </li>
+          <li>
+            <a class="dropdown-item" href="#">Settings</a>
+          </li>
+          <li>
+            <a class="dropdown-item" href="#">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- Right elements -->
   </div>
+  <!-- Container wrapper -->
 </nav>
+<!-- Navbar -->

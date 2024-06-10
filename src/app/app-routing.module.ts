@@ -9,6 +9,12 @@ import { LoginComponent } from './core/component/login/login.component';
 import { SignupComponent } from './core/component/signup/signup.component';
 
 const routes: Routes = [
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  {
+    path: 'home',
+    component: HomeComponent,
+  },
+
   {
     path: 'portal',
     loadChildren: () =>
@@ -19,11 +25,6 @@ const routes: Routes = [
     path: 'apprenant',
     loadChildren: () =>
       import('./apprenant/apprenant.module').then((m) => m.ApprenantModule),
-  },
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
-  {
-    path: 'home',
-    component: HomeComponent,
   },
 
   {

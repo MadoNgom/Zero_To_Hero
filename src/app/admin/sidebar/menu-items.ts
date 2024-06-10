@@ -39,12 +39,6 @@ export const MENU_ITEMS: MenuItem[] = [
     roles: ['Formateur'],
   },
   {
-    label: 'Mes Cours',
-    link: '/portal/cours',
-    icon: 'bi bi-mortarboard-fill fs-3',
-    roles: ['User'],
-  },
-  {
     label: 'Analystics',
     link: '',
     icon: 'bi bi-graph-up-arrow fs-3',

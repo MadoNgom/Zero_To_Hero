@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { CourseService } from '../../services/course.service';
+import { Course } from '../../models/course.model';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-tab1',
@@ -10,5 +13,23 @@ export class Tab1Component {
   toggleChecked() {
     this.isChecked = !this.isChecked;
   }
-  ngOnInit(): void {}
+
+  course!: Course;
+  idCourse!: string;
+
+  constructor(
+    private courseService: CourseService,
+    private route: ActivatedRoute
+  ) {}
+
+  ngOnInit(): void {
+    this.route.params.subscribe((params) => {
+      const id = params['_id'];
+      this.courseService
+        .getCourseById(id)
+        .subscribe((course) => (this.course = course));
+    });
+
+    console.log(this.course.description);
+  }
 }
