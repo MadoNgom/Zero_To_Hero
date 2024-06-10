@@ -2,28 +2,28 @@ import { Request, Response } from 'express';
 import Inscription from '../models/inscription.model';
 import User from '../models/user.model';
 import Course from '../models/course.model';
-
+import InscriptionService from '../services/inscription.service';
 
 // GET toutes les inscriptions
 export const getInscriptions = async (req: Request, res: Response) => {
     try {
-        const inscriptions = (await Inscription.find().populate('user', 'course'));
+        const inscriptions = await Inscription.find().populate('user').populate('course');
         res.json(inscriptions);
     } catch (err) {
-        res.status(500).send(err);
+        res.status(500).send((err as Error).message);
     }
 };
 
 // GET une inscription par ID
 export const getInscriptionById = async (req: Request, res: Response) => {
     try {
-        const inscription = await Inscription.findById(req.params.id).populate('user course');
+        const inscription = await Inscription.findById(req.params.id).populate('user').populate('course');
         if (!inscription) {
             return res.status(404).send('Inscription not found');
         }
         res.json(inscription);
     } catch (err) {
-        res.status(500).send(err);
+        res.status(500).send((err as Error).message);
     }
 };
 
@@ -31,22 +31,10 @@ export const getInscriptionById = async (req: Request, res: Response) => {
 export const createInscription = async (req: Request, res: Response) => {
     try {
         const { userId, courseId, paymentMode } = req.body;
-        const user = await User.findById(userId);
-        const course = await Course.findById(courseId);
-
-        if (!user || !course) {
-            return res.status(404).send('User or Course not found');
-        }
-
-        const newInscription = new Inscription({ 
-            user: userId, 
-            course: courseId,
-            paymentMode: paymentMode,
-        });
-        await newInscription.save();
-        res.status(201).json(newInscription);
+        const inscription = await InscriptionService.inscrireApprenant(userId, courseId, paymentMode);
+        res.status(201).json(inscription);
     } catch (err) {
-        res.status(400).send(err);
+        res.status(400).send((err as Error).message);
     }
 };
 
@@ -59,6 +47,6 @@ export const deleteInscription = async (req: Request, res: Response) => {
         }
         res.json(deletedInscription);
     } catch (err) {
-        res.status(500).send(err);
+        res.status(500).send((err as Error).message);
     }
 };
