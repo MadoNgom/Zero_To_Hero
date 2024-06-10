@@ -3,6 +3,7 @@ import uniqueValidator from 'mongoose-unique-validator';
 import { ROLE } from "../utils/roles.utils";
 
 export interface IUser extends Document {
+    id: { type: Number, default: 0, unique: true },
     fullName: string; // Changed from 'name' to 'fullName' to match the signup form
     email: string;
     password: string;

@@ -6,11 +6,19 @@ import { ManageUsersComponent } from './components/manage-users/manage-users.com
 import { SettingsComponent } from './components/settings/settings.component';
 import { AdminComponent } from './admin.component';
 
+import { CoursComponent } from './components/cours/cours.component';
+import { ProgrameComponent } from './components/programe/programe.component';
+
 const routes: Routes = [
   {
     path: '',
     component: AdminComponent,
     children: [
+      {
+        path: '',
+        redirectTo: 'dashboard', // Redirect to dashboard by default
+        pathMatch: 'full',
+      },
       {
         path: 'dashboard',
         component: DashboardComponent,
@@ -26,6 +34,14 @@ const routes: Routes = [
       {
         path: 'settings',
         component: SettingsComponent,
+      },
+      {
+        path: 'cours',
+        component: CoursComponent,
+      },
+      {
+        path: 'programe',
+        component: ProgrameComponent,
       },
     ],
   },

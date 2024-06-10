@@ -1,0 +1,166 @@
+<!-- FIRST SECTION -->
+<app-header></app-header>
+<section class="first-section">
+  <div class="container py-5">
+    <div class="row g-4">
+      <div class="col-12 col-md-8">
+        <div class="left-content">
+          <h1 class="mb-6 fs-2">
+            {{ course.title }}
+          </h1>
+          <!-- RATINGS -->
+          <div class="d-lg-flex">
+            <!-- COURSE RATING -->
+            <div>
+              <div class="rating fs-6 mb-3">
+                <i class="bi bi-star-fill text-warning"></i>
+                <i class="bi bi-star-fill text-warning"></i>
+                <i class="bi bi-star-fill text-warning"></i>
+                <i class="bi bi-star-fill text-warning"></i>
+                <i class="bi bi-star-half text-warning"></i>
+                150K
+              </div>
+              <!-- COURSE LEVEL -->
+              <div class="icon-text">
+                <i class="bi bi-bar-chart-line"></i> {{ course.level }}
+              </div>
+            </div>
+            <!-- COURSE OFFERS -->
+            <div class="mx-lg-3 icon-text">
+              <i class="bi bi-patch-check mb-3"></i> Certificat
+              <div class="mt-3">
+                <i class="bi bi-calendar4-week"></i>
+                {{ course.duration }} heures
+              </div>
+            </div>
+            <div class="mx-lg-3 icon-text">
+              <i class="bi bi-person-video3"></i> + 4h de contenu video
+              <div class="mt-3">
+                <i class="bi bi-ui-checks"></i> 14 Exercices Pratique
+              </div>
+            </div>
+          </div>
+          <button class="enroll-btn">Enroll now</button>
+        </div>
+      </div>
+      <!-- PRICING DETAILS CARD -->
+      <div class="col-md-4 me-auto d-none d-lg-block">
+        <div class="card p-1">
+          <img
+            [src]="course.imageUrl"
+            class="card-img-top"
+            alt="Course Image"
+          />
+          <div class="card-body">
+            <h5 *ngIf="course.price?.type === 'value'" class="card-price">
+              {{ course.price?.amount | number : "1.0-3" : "fr-FR" }} FCFA
+            </h5>
+            <h5 *ngIf="course.price?.type === 'free'" class="card-price">
+              Gratuit
+            </h5>
+
+            <a
+              href="#"
+              class="btn btn-primary w-100 d-block mb-3"
+              routerLink="/payment"
+              >Acheter maintenant</a
+            >
+            <a href="#" class="btn btn-outline-primary w-100"
+              >Gratuit pour les membres</a
+            >
+            <h6 class="mt-4">Paiement securisé</h6>
+            <div class="card-paiment d-flex align-items-center gx4">
+              <img
+                src="../../../../assets/paiments/paypal.png"
+                class="m-2"
+                alt=""
+              />
+              <img src="../../../../assets/paiments/visa.png" alt="" />
+              <img
+                src="../../../../assets/paiments/mastercard.png"
+                class="m-2"
+                alt=""
+              />
+              <img
+                src="../../../../assets/paiments/wave.png"
+                alt=""
+                width="40px"
+                height="40px"
+                class="m-2"
+              />
+              <img
+                src="../../../../assets/paiments/orangeMoney.png"
+                alt=""
+                width="48px"
+                height="48px"
+              />
+            </div>
+            <p class="text-black-50">7-Jours garantis satisfait ou Remboursé</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- SECOND SECTION -->
+<section class="py-4">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <h3>A Propos de ce cours</h3>
+        <p>
+          {{ course.description }}
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- THIRD SECTION -->
+<section>
+  <div class="container mt-5 mb-5">
+    <div class="row">
+      <div class="col-md-6">
+        <h4>Course guide</h4>
+        <ul
+          *ngFor="let module of course.modules; let i = index"
+          class="accordion timeline"
+          id="accordionExample"
+        >
+          <li>
+            <div class="accordion-item">
+              <h2 class="accordion-header" [attr.id]="'heading' + (i + 1)">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  [attr.data-bs-target]="'#collapse' + (i + 1)"
+                  aria-expanded="false"
+                  [attr.aria-controls]="'collapse' + (i + 1)"
+                >
+                  Module {{ course.modules.indexOf(module) + 1 }}:
+                  {{ module.name }}
+                </button>
+              </h2>
+              <div
+                [attr.id]="'collapse' + (i + 1)"
+                class="accordion-collapse collapse"
+                [attr.aria-labelledby]="'heading' + (i + 1)"
+                data-bs-parent="#accordionExample"
+              >
+                <div class="accordion-body">
+                  <ul>
+                    <li>
+                      <i class="bi bi-check text-success fs-4"></i>
+                      {{ module.description }}
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<app-footer></app-footer>

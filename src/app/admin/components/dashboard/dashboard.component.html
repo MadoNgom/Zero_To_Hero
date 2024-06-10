@@ -1,4 +1,5 @@
 <div class="container-fluid">
+  <!-- ADMIN INFO -->
   <div class="grid mt-4">
     <div class="card">
       <div class="d-flex">
@@ -47,6 +48,7 @@
       </div>
     </div>
   </div>
+  <!-- END -->
 </div>
 <div class="text-dark mt-4">
   <app-tab-nav [tabsArr]="tabs" (onChangeTab)="changeTab($event)"></app-tab-nav>
@@ -59,6 +61,11 @@
     <div *ngIf="activatedIndex == 1">
       <app-table-formateur></app-table-formateur>
     </div>
-    >
+    <div *ngIf="activatedIndex == 2">
+      <app-table-apprenant></app-table-apprenant>
+    </div>
+    <div *ngIf="activatedIndex == 3">
+      <app-table-admin></app-table-admin>
+    </div>
   </div>
 </div>

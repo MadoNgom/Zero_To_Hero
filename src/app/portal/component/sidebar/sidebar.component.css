@@ -1,54 +1,46 @@
-.aside {
-  position: sticky;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  /* width: 5vw; */
-
-  min-height: 100vh;
-  overflow: hidden;
-  transform: all 0.4s linear;
-  border-top-right-radius: 8px;
-  border-bottom-right-radius: 8px;
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
-a {
-  text-decoration: none;
-  cursor: pointer;
+nav {
+  position: relative;
+  height: 100%;
+  padding: 1rem 2rem;
 }
-.aside-content {
-  padding: 0.75rem;
-}
-.aside-title {
-  font-size: 1.4rem;
+.nav-link {
+  color: rgb(85, 83, 83s);
+  font-size: 18px;
   font-weight: 500;
-  color: #0a19e6;
+  text-wrap: nowrap;
+}
+.nav-link .bi {
+  font-size: 14px;
 }
 
-.nav {
-  padding: 0.75rem 0;
-}
-.nav .nav-link {
-  color: #000;
+ul li {
+  padding: 1rem 1.3rem;
 }
 .nav-item {
-  transition: 0.3s ease-in-out;
-  width: 100%;
+  position: relative;
+  padding: 0.5rem 1rem;
 }
-.nav-item:hover {
-  background-color: hsla(203, 55%, 85%, 0.93);
+.active {
+  background-color: #3636e5;
+  color: #fff;
+  border-radius: 15px;
 }
-
-.nav .nav-text {
-  margin-left: 20px;
-  display: none;
+.logout {
+  position: absolute;
+  bottom: 20px;
 }
-
-@media (min-width: 750px) {
-  .aside {
-    width: 15vw;
-  }
-  .nav .nav-text {
-    display: inline-block;
-  }
+.logout {
+  position: absolute;
+  bottom: 20px;
+}
+.logo {
+  color: #3636e5;
+  font-weight: 600;
 }

@@ -1,133 +1,51 @@
+<div class="container-fluid" *ngIf="showForm">
+  <br><br>
+  <h4>Edit User</h4>
+  <form [formGroup]="userForm" (ngSubmit)="saveUser()">
+    <div class="d-flex">
+      <div class="form-group" data-mdb-input-init>
+        <input type="text" formControlName="fullName" class="form-control form-control-lg" placeholder="Full Name">
+      </div>
+      <div class="form-group" data-mdb-input-init>
+        <input type="email" formControlName="email" class="form-control form-control-lg" placeholder="Email">
+      </div>
+      <div class="form-group mx-2" data-mdb-input-init>
+        <input type="text" formControlName="type" class="form-control form-control-lg" placeholder="Type">
+      </div>
+      <div class="form-group mx-2" data-mdb-input-init>
+        <input type="text" formControlName="isPremium" class="form-control form-control-lg" placeholder="Premium">
+      </div>
+      <button type="submit" class="btn btn-primary btn-sm">Save Changes</button>
+    </div>
+  </form>
+</div>
+<br>
 <div class="container-fluid">
   <table class="table table-striped w-100 nowrap mt-4">
     <thead>
       <tr>
         <th>ID</th>
-        <th>First name</th>
-        <th>Last name</th>
-        <th>Position</th>
-        <th>Teachers</th>
-        <th>Age</th>
-        <th>Start date</th>
-        <th>End Date</th>
-        <th>E-mail</th>
-        <th>Status</th>
+        <th>Full Name</th>
+        <th>Email</th>
+        <th>Type</th>
+        <th>Premium</th>
+        <th>Operations</th>
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td>1</td>
-        <td>Tiger</td>
-        <td>Nixon</td>
-        <td>System Architect</td>
-        <td>Edinburgh</td>
-        <td>61</td>
-        <td>2011/04/25</td>
-        <td>2011/04/25</td>
-        <td>t.nixondatatables.net</td>
-        <td>
-          <button class="btn success rounded-5">isActive</button>
-        </td>
-      </tr>
-      <tr>
-        <td>2</td>
-        <td>Garrett</td>
-        <td>Winters</td>
-        <td>Accountant</td>
-        <td>Tokyo</td>
-        <td>63</td>
-        <td>2011/07/25</td>
-        <td>2011/07/25</td>
-        <td>g.wintersdatatables.net</td>
-        <td>
-          <button class="btn danger rounded-5">isActive</button>
-        </td>
-      </tr>
-      <tr>
-        <td>3</td>
-        <td>Garrett</td>
-        <td>Winters</td>
-        <td>Accountant</td>
-        <td>Tokyo</td>
-        <td>63</td>
-        <td>2011/07/25</td>
-        <td>2011/07/25</td>
-        <td>g.wintersdatatables.net</td>
-        <td>
-          <button class="btn success rounded-5">isActive</button>
-        </td>
-      </tr>
-      <tr>
-        <td>4</td>
-        <td>Garrett</td>
-        <td>Winters</td>
-        <td>Accountant</td>
-        <td>Tokyo</td>
-        <td>63</td>
-        <td>2011/07/25</td>
-        <td>2011/07/25</td>
-        <td>g.wintersdatatables.net</td>
-        <td>
-          <button class="btn btn-warning text-light rounded-5">isActive</button>
-        </td>
-      </tr>
-      <tr>
-        <td>4</td>
-        <td>Garrett</td>
-        <td>Winters</td>
-        <td>Accountant</td>
-        <td>Tokyo</td>
-        <td>63</td>
-        <td>2011/07/25</td>
-        <td>$170,750</td>
-
-        <td>g.wintersdatatables.net</td>
-        <td>
-          <button class="btn success rounded-5">isActive</button>
-        </td>
-      </tr>
-      <tr>
-        <td>5</td>
-        <td>Garrett</td>
-        <td>Winters</td>
-        <td>Accountant</td>
-        <td>Tokyo</td>
-        <td>63</td>
-        <td>2011/07/25</td>
-        <td>2011/07/25</td>
-        <td>g.wintersdatatables.net</td>
-        <td>
-          <button class="btn danger rounded-5">isActive</button>
-        </td>
-      </tr>
-      <tr>
-        <td>6</td>
-        <td>Garrett</td>
-        <td>Winters</td>
-        <td>Accountant</td>
-        <td>Tokyo</td>
-        <td>63</td>
-        <td>2011/07/25</td>
-        <td>2011/07/25</td>
-        <td>g.wintersdatatables.net</td>
-        <td>
-          <button class="btn success rounded-5">isActive</button>
-        </td>
-      </tr>
-      <tr>
-        <td>7</td>
-        <td>Garrett</td>
-        <td>Winters</td>
-        <td>Accountant</td>
-        <td>Tokyo</td>
-        <td>63</td>
-        <td>2011/07/25</td>
-        <td>2011/07/25</td>
-        <td>g.wintersdatatables.net</td>
-        <td>
-          <button class="btn success rounded-5">isActive</button>
+      <tr *ngFor="let user of users; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>{{ user.fullName }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.type }}</td>
+        <td>{{ user.isPremium }}</td>
+        <td class="d-flex fs-4">
+          <div class="edit mx-2" (click)="editUser(user)"><i class="bi bi-pencil-square"></i></div>
+          <div class="delete" *ngIf="user._id" (click)="deleteUser(user._id)"><i class="bi bi-trash3-fill"></i></div>
         </td>
       </tr>
     </tbody>
   </table>
 </div>
+
+
