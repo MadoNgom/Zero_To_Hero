@@ -48,3 +48,11 @@ export const deleteCourse = async (req: Request, res: Response) => {
     }
 };
 
+export const getCourseCount = async (req: Request, res: Response) => {
+    try {
+        const count = await Course.countDocuments();
+        res.json({ totalCourses: count });
+    } catch (error) {
+        res.status(500).send(error);
+    }
+};

@@ -20,6 +20,10 @@ export class CourseService {
     return this.http.get<Course[]>(this.apiUrl);
   }
 
+  getCoursesCount(): Observable<{ totalCourses: number }> {
+    return this.http.get<{ totalCourses: number }>(`${this.apiUrl}/count`);
+  }
+
   getCourseById(id: number): Observable<Course> {
     return this.http.get<Course>(`${this.apiUrl}/${id}`);
   }
@@ -32,3 +36,4 @@ export class CourseService {
     return this.http.delete(`${this.apiUrl}/${id}`);
   }
 }
+

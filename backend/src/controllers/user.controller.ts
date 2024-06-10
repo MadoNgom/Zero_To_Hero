@@ -133,3 +133,20 @@ export const getUsers = async (req: Request, res: Response) => {
     }
 };
 
+export const getUserCount = async (req: Request, res: Response) => {
+    try {
+        const count = await User.countDocuments();
+        res.json({ totalUsers: count });
+    } catch (error) {
+        res.status(500).send(error);
+    }
+};
+
+export const getTrainerCount = async (req: Request, res: Response) => {
+    try {
+        const count = await User.countDocuments({ type: 'Formateur' });
+        res.json({ totalTrainers: count });
+    } catch (error) {
+        res.status(500).send(error);
+    }
+};

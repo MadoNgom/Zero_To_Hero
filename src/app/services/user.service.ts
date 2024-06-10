@@ -34,4 +34,12 @@ export class UserService {
     }
     return this.http.delete(`${this.apiUrl}/${userId}`);
   }
+
+  getUsersCount(): Observable<{ totalUsers: number }> {
+    return this.http.get<{ totalUsers: number }>(`${this.apiUrl}/count`);
+  }
+
+  getTrainersCount(): Observable<{ totalTrainers: number }> {
+    return this.http.get<{ totalTrainers: number }>(`${this.apiUrl}/trainers/count`);
+  }
 }
