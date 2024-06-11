@@ -38,10 +38,10 @@ export class FormComponent implements OnInit {
               this.router.navigate(['portal/dashboard']);
               break;
             case 'Administrateur':
-              this.router.navigate(['admin/manage-users']);
+              this.router.navigate(['admin/dashboard']);
               break;
             default:
-              this.router.navigate(['admin/manage-users']);
+              this.router.navigate(['admin/cours']);
               break;
           }
           // Handle successful login here
