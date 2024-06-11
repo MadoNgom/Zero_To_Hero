@@ -46,6 +46,7 @@ export class InscriptionService {
     return (error: any): Observable<T> => {
       console.error(`${operation} failed: ${error.message}`);
       // Log to console or send to logging infrastructure
+      //hehe
       return of(result as T);
     };
   }
