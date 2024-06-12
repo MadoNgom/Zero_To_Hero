@@ -2,14 +2,20 @@
   display: grid;
   height: 100vh;
   grid-template-columns: 300px 1fr;
-  grid-template-rows: 60px 1fr;
+  grid-template-rows: 60px 1fr 1fr;
   grid-template-areas:
     "sidebar header"
     "sidebar main";
 }
 
 .sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  height: 100%;
   grid-area: sidebar;
+  height: 100vh;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 .header {
