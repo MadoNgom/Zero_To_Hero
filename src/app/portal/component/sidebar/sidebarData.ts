@@ -7,27 +7,34 @@ export const sideBarData: any[] = [
     itemClasse: 'nav-item fs-6',
   },
   {
-    routeName: 'cours',
+    routeName: '/portal/cours',
     icon: 'bi bi-mortarboard-fill fs-3',
-    name: 'Cours',
+    name: 'Mes Cours',
     itemClasse: 'nav-item fs-6',
   },
   {
-    routeName: 'portal/profile',
+    routeName: '/portal/profile',
     icon: 'bi bi-person-fill fs-3',
     name: 'Profile',
     itemClasse: 'nav-item fs-6',
   },
   {
-    routeName: 'quizz',
-    icon: 'bi bi-chat-square-text-fill fs-3',
-    name: 'Discussion',
+    routeName: '/portal/quizz',
+    icon: 'bi bi-card-checklist fs-4',
+    name: 'Quizz',
+    itemClasse: 'nav-item fs-6',
+  },
+
+  {
+    routeName: 'portal/settings',
+    icon: 'bi bi-patch-check-fill fs-3',
+    name: 'Mes Certificats',
     itemClasse: 'nav-item fs-6',
   },
   {
-    routeName: 'portal/settings',
-    icon: 'bi bi-patch-question-fill fs-3',
-    name: 'Help',
+    routeName: '/portal/Settings',
+    icon: 'bi bi-gear-fill fs-3',
+    name: 'Settings',
     itemClasse: 'nav-item fs-6',
   },
   {

@@ -6,7 +6,10 @@
   font-family: "Poppins", sans-serif;
 }
 nav {
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
   height: 100%;
   padding: 1rem 2rem;
 }
@@ -31,6 +34,7 @@ ul li {
   background-color: #3636e5;
   color: #fff;
   border-radius: 15px;
+  padding: 0 2rem;
 }
 .logout {
   position: absolute;
