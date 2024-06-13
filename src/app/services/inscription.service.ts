@@ -8,7 +8,7 @@ import { Inscription } from '../models/inscription.model';
   providedIn: 'root'
 })
 export class InscriptionService {
-  private apiUrl = 'http://localhost:3000/inscriptions'; 
+  private apiUrl = 'http://localhost:3000/api/inscriptions'; 
 
   constructor(private http: HttpClient) { }
 

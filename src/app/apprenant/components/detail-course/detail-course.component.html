@@ -59,49 +59,82 @@
               Gratuit
             </h5>
 
-            <a
-              href="#"
-              class="btn btn-primary w-100 d-block mb-3"
-              routerLink="/payment"
-              >Acheter maintenant</a
-            >
-            <a href="#" class="btn btn-outline-primary w-100"
-              >Gratuit pour les membres</a
-            >
             <h6 class="mt-4">Paiement securisé</h6>
-            <div class="card-paiment d-flex align-items-center gx4">
-              <img
-                src="../../../../assets/paiments/paypal.png"
-                class="m-2"
-                alt=""
-              />
-              <img src="../../../../assets/paiments/visa.png" alt="" />
-              <img
-                src="../../../../assets/paiments/mastercard.png"
-                class="m-2"
-                alt=""
-              />
-              <img
-                src="../../../../assets/paiments/wave.png"
-                alt=""
-                width="40px"
-                height="40px"
-                class="m-2"
-              />
-              <img
-                src="../../../../assets/paiments/orangeMoney.png"
-                alt=""
-                width="48px"
-                height="48px"
-              />
+            <div class="card-paiment d-flex align-items-center gx-2">
+              <!--Paypal-->
+              <button
+                class="m-1 payment-option"
+                [ngClass]="{'selected': paymentMode === 'paypal'}"
+                (click)="selectPayment('paypal')"
+              >
+                <img
+                  src="../../../../assets/paiments/paypal.png"
+                  alt="PayPal"
+                  width="32px"
+                  height="32px"
+                />
+              </button>
+              <!--Visa-->
+              <button
+                class="m-1 payment-option"
+                [ngClass]="{'selected': paymentMode === 'visa'}"
+                (click)="selectPayment('visa')"
+              >
+                <img
+                  src="../../../../assets/paiments/visa.png"
+                  alt="Visa"
+                  width="32px"
+                  height="32px"
+                />
+              </button>
+              <!--Mastercard-->
+              <button
+                class="m-1 payment-option"
+                [ngClass]="{'selected': paymentMode === 'mastercard'}"
+                (click)="selectPayment('mastercard')"
+              >
+                <img
+                  src="../../../../assets/paiments/mastercard.png"
+                  alt="MasterCard"
+                  width="32px"
+                  height="32px"
+                />
+              </button>
+              <!--wave-->
+              <button
+                class="m-1 payment-option"
+                [ngClass]="{'selected': paymentMode === 'wave'}"
+                (click)="selectPayment('wave')"
+              >
+                <img
+                  src="../../../../assets/paiments/wave.png"
+                  alt="Wave"
+                  width="32px"
+                  height="32px"
+                />
+              </button>
+              <!--Orange Money-->
+              <button
+                class="m-1 payment-option"
+                [ngClass]="{'selected': paymentMode === 'orangeMoney'}"
+                (click)="selectPayment('orangeMoney')"
+              >
+                <img
+                  src="../../../../assets/paiments/orangeMoney.png"
+                  alt="Orange Money"
+                  width="32px"
+                  height="32px"
+                />
+              </button>
             </div>
+            <a href="#" class="btn btn-primary w-100 d-block mb-3" routerLink="/payment">Acheter maintenant</a>
             <p class="text-black-50">7-Jours garantis satisfait ou Remboursé</p>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
+
+
+
 <!-- SECOND SECTION -->
 <section class="py-4">
   <div class="container">

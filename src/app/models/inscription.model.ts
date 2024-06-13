@@ -3,5 +3,5 @@ export interface Inscription {
     user: string;
     course: string;
     dateInscription: Date;
-    paymentMode: 'wave' | 'om' | 'visa' | 'mastercard';
+    paymentMode: 'wave' | 'om' | 'visa' | 'mastercard' | 'paypal';
 }
