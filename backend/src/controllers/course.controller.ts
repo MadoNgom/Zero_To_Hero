@@ -1,15 +1,26 @@
 import { Request, Response } from 'express';
 import Course from '../models/course.model';
+import Module from '../models/module.model';
 import * as service from '../services/course.service';
+import upload from '../config/multer-config';
+
 
 export const createCourse = async (req: Request, res: Response) => {
-    try {
-        const newCourse = new Course(req.body);
-        const savedCourse = await service.createCourse(newCourse);
-        res.status(201).json(savedCourse);
-    } catch (error) {
-        res.status(400).json(error);
-    }
+    const { title, description, duration, level, categorie, price, formateur, modules, imageUrl } = req.body;
+    const newCourse = new Course({
+        title,
+        description,
+        imageUrl,
+        duration,
+        level,
+        categorie,
+        price,
+        formateur,
+        modules
+    });
+
+    const savedCourse = await service.createCourse(newCourse);
+    res.status(201).json(savedCourse);
 };
 
 export const getCourses = async (req: Request, res: Response) => {
@@ -54,5 +65,35 @@ export const getCourseCount = async (req: Request, res: Response) => {
         res.json({ totalCourses: count });
     } catch (error) {
         res.status(500).send(error);
+    }
+};
+
+
+
+export const createModule = async (req: Request, res: Response) => {
+    console.log(req.body.name);
+    const file = req.file;
+    if (!file) {
+        res.status(400).send('No file uploaded.');
+        return;
+    }
+    try {
+        const { name, description } = req.body;
+        const contenu = req.file ? 'http://localhost:4200/assets/uploads/' + req.file.filename : '';
+        const newModule = new Module({
+            name,
+            description,
+            contenu
+        });
+    
+        const savedModule = await service.createModule(newModule);
+        const modules = savedModule._id.modules;
+        const course = new Course({
+            modules: [savedModule]
+        });
+        const updatedCourse = await service.updateCourseById(req.body.idCours, course);
+        res.status(201).json(savedModule);
+    } catch (error) {
+        res.status(400).json(error);
     }
 };

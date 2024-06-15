@@ -5,55 +5,93 @@
       Ajouter un cours
     </button>
   </div>
-  <form *ngIf="showForm" class="mb-4">
-    <div class="d-flex">
-      <!-- forms group -->
-      <div class="form-group mx-2" data-mdb-input-init>
-        <input
-          type="file"
-          id="formControlLg"
-          class="form-control form-control-lg"
-          placeholder="Profile Image"
-        />
-      </div>
-      <!-- forms group -->
-      <div class="form-group" data-mdb-input-init>
+  <!-- cours.component.html -->
+
+  <div class="container mt-4">
+    <form
+      (submit)="onSubmit()"
+      enctype="multipart/form-data"
+      *ngIf="showForm"
+      class="mb-4 mt-4 text-center"
+    >
+      <div class="form-group">
+        <label for="title">Title</label>
         <input
           type="text"
-          id="formControlLg"
-          class="form-control form-control-lg"
-          placeholder="Course Name"
-        />
-      </div>
-      <!-- forms group -->
-      <div class="form-group mx-2" data-mdb-input-init>
-        <input
-          type="text"
-          id="formControlLg"
-          class="form-control form-control-lg"
-          placeholder="Author"
-        />
-      </div>
-      <!-- forms group -->
-      <div class="form-group" data-mdb-input-init>
-        <input
-          type="number"
-          id="formControlLg"
-          class="form-control form-control-lg"
-          placeholder="Prix"
+          id="title"
+          name="title"
+          [(ngModel)]="course.title"
+          class="form-control"
+          required
         />
       </div>
 
-      <!-- forms group -->
-      <div class="form-group mx-2" data-mdb-input-init>
+      <div class="form-group">
+        <label for="description">Description</label>
+        <textarea
+          id="description"
+          name="description"
+          [(ngModel)]="course.description"
+          class="form-control"
+          rows="4"
+          required
+        ></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="image">Choose Image</label>
         <input
-          type="number"
-          class="form-control form-control-lg"
-          placeholder="Likes"
+          type="file"
+          id="image"
+          name="image"
+          (change)="onFileSelected($event)"
+          accept="image/*"
+          class="form-control-file"
+          required
         />
       </div>
-    </div>
-  </form>
+
+      <div class="form-group">
+        <label for="duration">Duration (in hours)</label>
+        <input
+          type="number"
+          id="duration"
+          name="duration"
+          [(ngModel)]="course.duration"
+          class="form-control"
+          required
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="level">Level</label>
+        <select
+          id="level"
+          name="level"
+          [(ngModel)]="course.level"
+          class="form-control"
+          required
+        >
+          <option value="Difficile">Difficile</option>
+          <option value="Intermediaire">Intermediaire</option>
+          <option value="Débutant">Débutant</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="categorie">Category</label>
+        <input
+          type="text"
+          id="categorie"
+          name="categorie"
+          [(ngModel)]="course.categorie"
+          class="form-control"
+          required
+        />
+      </div>
+      <button type="submit" class="btn btn-primary my-3">Create Course</button>
+    </form>
+  </div>
   <div class="container-fluid">
     <div class="row">
       <div class="col-12">

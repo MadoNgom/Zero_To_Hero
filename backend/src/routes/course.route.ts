@@ -1,12 +1,14 @@
 import express from 'express';
-import { createCourse, getCourses, getCourse, updateCourse, deleteCourse, getCourseCount } from '../controllers/course.controller';
+import { createCourse, getCourses, getCourse, updateCourse, deleteCourse, getCourseCount , createModule} from '../controllers/course.controller';
+import upload from '../config/multer-config';
 
 const router = express.Router();
 
 router.get('/count', getCourseCount); // Assurez-vous que cette ligne est avant '/:id'
 router.get('/:id', getCourse);
 router.get('/', getCourses);
-router.post('/', createCourse);
+router.post('/', createCourse); 
+router.post('/module', upload.single('file'), createModule); // le truc de multer
 router.put('/:id', updateCourse);
 router.delete('/:id', deleteCourse);
 
