@@ -10,4 +10,9 @@ export const moduleSchema: Schema = new Schema({
     name: { type: String, required: true },
     description: { type: String, required: true },
     contenu : { type: String },
-}, { _id: false });
+});
+
+
+const Module = mongoose.model<IModule>('modules', moduleSchema);
+
+export default Module; 

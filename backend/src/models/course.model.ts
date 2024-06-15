@@ -24,9 +24,9 @@ const courseSchema: Schema = new Schema({
     categorie : {type : String, required : true},
     price: {type: priceSchema, required: true},
     formateur: { type: Schema.Types.ObjectId, ref: 'users', required: true },
-    modules : { type: Schema.Types.Array, required: true}
+    modules : { type: Schema.Types.Array}
 });
 
 const Course = mongoose.model<ICourse>('Course', courseSchema);
 
-export default Course;
+export default Course; 
