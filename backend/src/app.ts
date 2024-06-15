@@ -5,7 +5,7 @@ import connectMongoDB from './config/mongodb.config';
 import courseRoutes from './routes/course.route';
 import userRoutes from './routes/user.route';
 import inscriptionRoutes from './routes/inscription.route';
-import { Request, Response } from 'express';
+import { Request, Response, NextFunction } from 'express';
 import cors from 'cors';
 
 
@@ -37,6 +37,19 @@ app.use(`/${process.env.API_PREFIX}/inscriptions`, inscriptionRoutes);
 // Basic route for testing
 app.get('/', (req: Request, res: Response) => {
     res.send('Hello from Express server!');
+});
+
+// Error handling middleware for JSON parsing errors
+app.use((err: SyntaxError, req: Request, res: Response, next: NextFunction) => {
+  if ('body' in err) {
+    return res.status(400).json({ error: 'Invalid JSON' });
+  }
+  next(err);
+});
+
+// Error handling middleware (optional)
+app.use((err: SyntaxError, req: Request, res: Response, next: NextFunction) => {
+  res.status(500).json({ error: err.message });
 });
 
 app.listen(PORT, () => {
