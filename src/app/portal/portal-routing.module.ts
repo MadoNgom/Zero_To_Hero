@@ -8,6 +8,7 @@ import { QuizzComponent } from './component/quizz/quizz.component';
 import { CoursComponent } from './component/cours/cours.component';
 import { ContenuCoursComponent } from './component/contenu-cours/contenu-cours.component';
 import { QuestionsComponent } from './component/questions/questions.component';
+import { ProfileComponent } from './component/profile/profile.component';
 
 const routes: Routes = [
   {
@@ -38,6 +39,10 @@ const routes: Routes = [
       {
         path: 'questions',
         component: QuestionsComponent,
+      },
+      {
+        path: 'profile',
+        component: ProfileComponent,
       },
     ],
   },

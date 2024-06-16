@@ -1,82 +1,81 @@
 ul {
-    list-style: none;
-  }
-  .first-section {
-    background-image: url(../../../../assets/gradient.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    color: #fff;
-    position: relative;
-    padding: 4rem 0;
-  }
-  .card {
-    width: 350px;
-    position: absolute;
-    top: 130px;
-    border: 0;
-    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
-      rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
-  }
-  .card .card-price {
-    color: rgb(51 65 85);
-  }
-  .line-height {
-    line-height: 1.7;
-  }
-  .enroll-btn {
-    background-color: #fff;
-    display: block;
-    margin-top: 20px;
-    padding: 0.5rem 1rem;
-    font-size: 1.1rem;
-    border: none;
-    cursor: pointer;
-    border-radius: 15px;
-    color: brown;
-  }
-  /* TIMELINE */
-  ul.timeline {
-    list-style-type: none;
-    position: relative;
-  }
-  ul.timeline:before {
-    content: " ";
-    background: #d4d9df;
-    display: inline-block;
-    position: absolute;
-    left: 29px;
-    width: 2px;
-    height: 100%;
-    z-index: 400;
-  }
-  ul.timeline > li {
-    margin: 20px 0;
-    padding-left: 20px;
-  }
-  ul.timeline > li:before {
-    content: " ";
-    background: white;
-    display: inline-block;
-    position: absolute;
-    border-radius: 50%;
-    border: 3px solid #0077b6;
-    left: 20px;
-    width: 20px;
-    height: 20px;
-    z-index: 400;
-  }
-  .accordion-header {
-    background-color: rgba(2, 44, 77, 0.15);
-  }
-  .accordion-button {
-    background-color: #0077b6;
-    color: #fff;
-  }
-  .accordion-button .collapsed {
-    color: #fff;
-  }
-  .icon-text {
-    color: #d1d5db;
-  }
-  
+  list-style: none;
+}
+.first-section {
+  background-image: url(../../../../assets/gradient.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #fff;
+  position: relative;
+  padding: 4rem 0;
+}
+.card {
+  width: 350px;
+  position: absolute;
+  top: 130px;
+  border: 0;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+.card .card-price {
+  color: rgb(51 65 85);
+}
+.line-height {
+  line-height: 1.7;
+}
+.enroll-btn {
+  background-color: #fff;
+  display: block;
+  margin-top: 20px;
+  padding: 0.5rem 1rem;
+  font-size: 1.1rem;
+  border: none;
+  cursor: pointer;
+  border-radius: 15px;
+  color: brown;
+}
+/* TIMELINE */
+ul.timeline {
+  list-style-type: none;
+  position: relative;
+}
+ul.timeline:before {
+  content: " ";
+  background: #d4d9df;
+  display: inline-block;
+  position: absolute;
+  left: 29px;
+  width: 2px;
+  height: 100%;
+  z-index: 400;
+}
+ul.timeline > li {
+  margin: 20px 0;
+  padding-left: 20px;
+}
+ul.timeline > li:before {
+  content: " ";
+  background: white;
+  display: inline-block;
+  position: absolute;
+  border-radius: 50%;
+  border: 3px solid #0077b6;
+  left: 20px;
+  width: 20px;
+  height: 20px;
+  z-index: 400;
+}
+.accordion-header {
+  background-color: rgba(2, 44, 77, 0.15);
+}
+.accordion-button {
+  background-color: #0077b6;
+  color: #fff;
+}
+.accordion-button .collapsed {
+  color: #fff;
+}
+.icon-text {
+  color: #d1d5db;
+}

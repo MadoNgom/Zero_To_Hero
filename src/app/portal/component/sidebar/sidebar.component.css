@@ -5,13 +5,8 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
-nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  height: 100%;
-  padding: 1rem 2rem;
+.nav {
+  position: relative;
 }
 .nav-link {
   color: rgb(85, 83, 83s);

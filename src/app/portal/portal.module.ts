@@ -15,6 +15,7 @@ import { ListeModulesComponent } from './component/liste-modules/liste-modules.c
 import { CoursComponent } from './component/cours/cours.component';
 import { ContenuCoursComponent } from './component/contenu-cours/contenu-cours.component';
 import { QuestionsComponent } from './component/questions/questions.component';
+import { ProfileComponent } from './component/profile/profile.component';
 @NgModule({
   declarations: [
     PortalComponent,
@@ -28,6 +29,7 @@ import { QuestionsComponent } from './component/questions/questions.component';
     CoursComponent,
     ContenuCoursComponent,
     QuestionsComponent,
+    ProfileComponent,
   ],
   imports: [CommonModule, PortalRoutingModule, SharedModule, TabsModule],
 })

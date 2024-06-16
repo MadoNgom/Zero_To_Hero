@@ -13,10 +13,10 @@
   top: 0;
   left: 0;
   bottom: 0;
-  height: 100%;
   grid-area: sidebar;
-  height: 100vh;
+  height: 100%;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  padding: 1rem 2.5rem;
 }
 .header {
   background-color: #ffff;
