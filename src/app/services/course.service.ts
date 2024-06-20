@@ -10,10 +10,15 @@ import { environment } from '../../environments/environment.prod';
 export class CourseService {
   private apiUrl = `${environment.apiUrl}/courses`; // Assuming the endpoint is 'courses'
 
+
   constructor(private http: HttpClient) { }
 
   addCourse(course: Course): Observable<Course> {
     return this.http.post<Course>(this.apiUrl, course);
+  }
+
+  createModule(module: any): Observable<Course> {
+    return this.http.post<Course>(`${this.apiUrl}/module`, module);
   }
 
   getCourses(): Observable<Course[]> {
@@ -24,16 +29,17 @@ export class CourseService {
     return this.http.get<{ totalCourses: number }>(`${this.apiUrl}/count`);
   }
 
-  getCourseById(id: number): Observable<Course> {
+  getCourseById(id: string): Observable<Course> {
     return this.http.get<Course>(`${this.apiUrl}/${id}`);
   }
 
-  updateCourse(id: number, course: Course): Observable<Course> {
-    return this.http.put<Course>(`${this.apiUrl}/${id}`, course);
+  updateCourse(courseId: string, course: Course): Observable<Course> {
+    return this.http.put<Course>(`${this.apiUrl}/${courseId}`, course);
   }
 
-  deleteCourse(id: number): Observable<any> {
+  deleteCourse(id: string): Observable<any> {
     return this.http.delete(`${this.apiUrl}/${id}`);
   }
+
 }
 

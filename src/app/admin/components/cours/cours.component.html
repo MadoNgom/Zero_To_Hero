@@ -1,238 +1,83 @@
-<div class="container-fluid">
+<div class="container-fluid mt-4">
   <div class="d-flex justify-content-between align-items-center py-2">
-    <h2>Cours disponibles</h2>
-    <button class="btn btn-blue" (click)="toggleForm()">
-      Ajouter un cours
+    <h2>LISTE DES COURS</h2>
+    <button class="btn btn-blue" (click)="openModal(modalForm)">
+      AJOUTER UN COURS
     </button>
   </div>
-  <!-- cours.component.html -->
 
-  <div class="container mt-4">
-    <form
-      (submit)="onSubmit()"
-      enctype="multipart/form-data"
-      *ngIf="showForm"
-      class="mb-4 mt-4 text-center"
-    >
-      <div class="form-group">
-        <label for="title">Title</label>
-        <input
-          type="text"
-          id="title"
-          name="title"
-          [(ngModel)]="course.title"
-          class="form-control"
-          required
-        />
-      </div>
-
-      <div class="form-group">
-        <label for="description">Description</label>
-        <textarea
-          id="description"
-          name="description"
-          [(ngModel)]="course.description"
-          class="form-control"
-          rows="4"
-          required
-        ></textarea>
-      </div>
-
-      <div class="form-group">
-        <label for="image">Choose Image</label>
-        <input
-          type="file"
-          id="image"
-          name="image"
-          (change)="onFileSelected($event)"
-          accept="image/*"
-          class="form-control-file"
-          required
-        />
-      </div>
-
-      <div class="form-group">
-        <label for="duration">Duration (in hours)</label>
-        <input
-          type="number"
-          id="duration"
-          name="duration"
-          [(ngModel)]="course.duration"
-          class="form-control"
-          required
-        />
-      </div>
-
-      <div class="form-group">
-        <label for="level">Level</label>
-        <select
-          id="level"
-          name="level"
-          [(ngModel)]="course.level"
-          class="form-control"
-          required
-        >
-          <option value="Difficile">Difficile</option>
-          <option value="Intermediaire">Intermediaire</option>
-          <option value="Débutant">Débutant</option>
+  <div class="row d-flex align-items-center mt-4">
+    <div class="col-md-3">
+      <div class="d-flex align-items-center">
+        <label for="itemsPerPageSelect" class="me-2">PAR PAGE:</label>
+        <select id="itemsPerPageSelect" [(ngModel)]="itemsPerPage" class="form-select custom-select-width me-2" (change)="updatePaginatedCourses()">
+          <option *ngFor="let count of [4, 10, 20, 50]" [value]="count">{{ count }}</option>
         </select>
+        <label for="itemsPerPageSelect">ELEMENTS</label>
       </div>
-
-      <div class="form-group">
-        <label for="categorie">Category</label>
-        <input
-          type="text"
-          id="categorie"
-          name="categorie"
-          [(ngModel)]="course.categorie"
-          class="form-control"
-          required
-        />
-      </div>
-      <button type="submit" class="btn btn-primary my-3">Create Course</button>
-    </form>
+    </div>
+    <div class="col-md-9">
+      <input type="text" [(ngModel)]="searchText" class="form-control" placeholder="Rechercher un cours" (keyup)="searchCourse()">
+    </div>
   </div>
-  <div class="container-fluid">
+
+  <div class="container-fluid mt-2">
     <div class="row">
       <div class="col-12">
         <table class="table table-image">
           <thead>
             <tr>
-              <th scope="col">ID</th>
+              <th scope="col">N°</th>
               <th scope="col">Image</th>
-              <th scope="col">Article Name</th>
-              <th scope="col">Author</th>
-              <th scope="col">Prix</th>
-              <th scope="col">Likes</th>
-              <th>Operation</th>
+              <th scope="col">Titre</th>
+              <th scope="col">Desciption</th>
+              <th scope="col">Niveau</th>
+              <th scope="col">Catégorie</th>
+              <th>Action</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <th scope="row">1</th>
-              <td>
-                <img
-                  width="150px"
-                  src="../../../../assets/programe/javascript.jpeg"
-                  class="img-fluid"
-                  alt="Sheep"
-                />
-              </td>
-              <td>Bootstrap 4 CDN and Starter Template</td>
-              <td>Cristina</td>
-              <td class="text-success">100.000 XOF</td>
-              <td>2.846</td>
+            <tr *ngFor="let course of paginatedCourses; let i = index">
+              <th scope="row">{{ (currentPage - 1) * itemsPerPage + i + 1 }}</th>
+              <td> <img [src]="course.imageUrl" class="avatar" alt="Avatar" width="150px" class="img-fluid"> </td>
+              <td> {{course.title}} </td>
+              <td> {{ truncateDescription(course?.description) }} </td>
+              <td> {{ course.level }} </td>
+              <td> {{ course.categorie }} </td>
               <td>
                 <div class="d-flex align-items-center fs-4">
-                  <i class="bi bi-pencil-square mx-2 edit"></i>
-                  <i class="bi bi-trash3-fill delete"></i>
-                  <button class="btn btn-success">inscrits</button>
-                  <button class="btn btn-primary">modules</button>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <th scope="row">2</th>
-              <td>
-                <img
-                  width="150px"
-                  src="../../../../assets/programe/ui&ux.avif"
-                  class="img-fluid"
-                  alt="Sheep"
-                />
-              </td>
-              <td>Introduction à javascript</td>
-              <td>Cristina</td>
-              <td class="text-success">80.000 XOF</td>
-              <td>3.417</td>
-              <td>
-                <div class="d-flex align-items-center fs-4">
-                  <i class="bi bi-pencil-square mx-2 edit"></i>
-                  <i class="bi bi-trash3-fill delete"></i>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <th scope="row">3</th>
-              <td>
-                <img
-                  width="150px"
-                  src="../../../../assets/programe/react.jpg"
-                  class="img-fluid"
-                  alt="Sheep"
-                />
-              </td>
-              <td>Introduction à React Js</td>
-              <td>Cristina</td>
-              <td class="text-warning">50.000 XOF</td>
-              <td>3.417</td>
-              <td>
-                <div class="d-flex align-items-center fs-4">
-                  <i class="bi bi-pencil-square mx-2 edit"></i>
-                  <i class="bi bi-trash3-fill delete"></i>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <th scope="row">4</th>
-              <td>
-                <img
-                  width="150px"
-                  src="../../../../assets/programe/webdev.jpg"
-                  class="img-fluid"
-                  alt="Sheep"
-                />
-              </td>
-              <td>Introduction à React Js</td>
-              <td>Cristina</td>
-              <td class="text-danger">50.000 XOF</td>
-              <td>3.417</td>
-              <td>
-                <div class="d-flex align-items-center fs-4">
-                  <i class="bi bi-pencil-square mx-2 edit"></i>
-                  <i class="bi bi-trash3-fill delete"></i>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <th scope="row">5</th>
-              <td>
-                <img
-                  width="150px"
-                  src="../../../../assets/programe/node.jpeg"
-                  class="img-fluid"
-                  alt="Sheep"
-                />
-              </td>
-              <td>Introduction à Node Js</td>
-              <td>Cristina</td>
-              <td class="text-success">50.000 XOF</td>
-              <td>3.417</td>
-              <td>
-                <div class="d-flex align-items-center fs-4">
-                  <i class="bi bi-pencil-square mx-2 edit"></i>
-                  <i class="bi bi-trash3-fill delete"></i>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <th scope="row">3</th>
-              <td>
-                <img
-                  width="150px"
-                  src="../../../../assets/programe/java.jpeg"
-                  class="img-fluid"
-                  alt="Sheep"
-                />
-              </td>
-              <td>Bootstrap Grid 4 Tutorial and Examples</td>
-              <td>Cristina</td>
-              <td class="text-danger">50.000 XOF</td>
-              <td>3.417</td>
-              <td>
-                <div class="d-flex align-items-center fs-4">
-                  <i class="bi bi-pencil-square mx-2 edit"></i>
-                  <i class="bi bi-trash3-fill delete"></i>
+                  <div class="dropdown">
+                    <button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                      <span class="bi-eye"></span>&nbsp;Détails
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                      <li>
+                        <button class="dropdown-item" type="button" (click)="editCourse(course, modalForm)">
+                          <span class="bi-pencil"></span>&nbsp;modifier
+                        </button>
+                      </li>
+                      <li>
+                        <button class="dropdown-item" type="button" (click)="confirmDelete(course._id!, modalDelete)">
+                          <span class="bi-trash"></span>&nbsp;supprimer
+                        </button>
+                      </li>
+                      <li class="text-primary">
+                        <button class="dropdown-item" type="button" (click)="listModule(course._id!, list_modules)">
+                          <span class="bi-list-task"></span>&nbsp;liste des modules
+                        </button>
+                      </li>
+                      <li>
+                        <button class="dropdown-item" type="button">
+                          <span class="bi-person-lines-fill"></span>&nbsp;liste des inscris
+                        </button>
+                      </li>
+                      <li>
+                        <button class="dropdown-item" type="button" (click)="addModule(course._id!, modalFormModule)">
+                          <span class="bi-person-lines-fill"></span>&nbsp;ajouter module
+                        </button>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </td>
             </tr>
@@ -240,5 +85,154 @@
         </table>
       </div>
     </div>
+    <!-- pagination -->
+    <div class="d-flex justify-content-end">
+      <pagination
+        [(ngModel)]="currentPage"
+        [totalItems]="totalItems"
+        [itemsPerPage]="itemsPerPage"
+        (pageChanged)="pageChanged($event)"
+        [previousText]="'Préc'"
+        [nextText]="'Suiv'">
+      </pagination>
+    </div>
+    <!-- /end div -->
   </div>
 </div>
+
+<!-- formulaire d'ajout et de modification -->
+<ng-template #modalForm let-modal>
+  <div class="modal-header">
+    <h5 class="modal-title">{{ isEditModalOpen ? 'MISE A JOUR' : 'AJOUT' }} COURS</h5>
+    <button type="button" class="btn-close" (click)="closeModal()" aria-label="Close"></button>
+  </div>
+  <div class="modal-body">
+    <form class="row g-3" [formGroup]="courseForm" (ngSubmit)="onSubmit()">
+      <!--  input title -->
+      <div class="col-md-9">
+        <input class="form-control" type="text" placeholder="Titre du cours" formControlName="title"
+        [ngClass]="{ 'is-invalid': courseForm.get('title')?.invalid && (courseForm.get('title')?.dirty || courseForm.get('title')?.touched) }">
+      </div>
+      <!--  input title -->
+      <div class="col-md-3">
+        <input class="form-control" type="number" min="10" value="10" placeholder="Durée" formControlName="duration"
+        [ngClass]="{ 'is-invalid': courseForm.get('duration')?.invalid && (courseForm.get('duration')?.dirty || courseForm.get('duration')?.touched) }">
+      </div>
+      <!-- input catégorie -->
+      <div class="col-md-6">
+        <label for="inputCategorie" class="form-label">Catégorie cours</label>
+        <select class="form-select" id="inputCategorie" formControlName="categorie"
+        [ngClass]="{ 'is-invalid': courseForm.get('categorie')?.invalid && (courseForm.get('categorie')?.dirty || courseForm.get('categorie')?.touched) }">
+          <option *ngFor="let categorie of categories" [value]="categorie">{{ categorie }}</option>
+        </select>
+      </div>
+      <!-- input level -->
+      <div class="col-md-6">
+        <label for="inputLevel" class="form-label">Niveau cours</label>
+        <select class="form-select" id="inputLevel" formControlName="level"
+        [ngClass]="{ 'is-invalid': courseForm.get('level')?.invalid && (courseForm.get('level')?.dirty || courseForm.get('level')?.touched) }">
+          <option *ngFor="let level of levels" [value]="level">{{ level }}</option>
+        </select>
+      </div>
+      <!-- input description -->
+      <div class="col-md-12">
+        <textarea class="form-control" id="inputDesc" rows="3" formControlName="description" placeholder="Desciption du cours"
+        [ngClass]="{ 'is-invalid': courseForm.get('description')?.invalid && (courseForm.get('description')?.dirty || courseForm.get('description')?.touched) }">
+      </textarea>
+      </div>
+      <!-- input type de paiement -->
+      <div class="col-md-9">
+        <label for="inputType" class="form-label">Type de paiement</label>
+        <select class="form-select" id="inputType" formControlName="priceType"
+        [ngClass]="{ 'is-invalid': courseForm.get('priceType')?.invalid && (courseForm.get('priceType')?.dirty || courseForm.get('priceType')?.touched) }">
+          <option value="free">gratuit</option>
+          <option value="value">payant</option>
+        </select>
+      </div>
+      <!-- input level -->
+      <div class="col-md-3 mt-4">
+        <label for="inputAmount">Montant</label>
+        <input class="form-control" id="inputAmount" type="number" min="0" formControlName="priceAmount"
+        [ngClass]="{ 'is-invalid': courseForm.get('priceAmount')?.invalid && (courseForm.get('priceAmount')?.dirty || courseForm.get('priceAmount')?.touched) }">
+      </div>
+      <div class="d-flex justify-content-start">
+        <button type="submit" class="btn btn-primary" [disabled]="!courseForm.valid">{{ isEditModalOpen ? 'METTRE A JOUR' : 'AJOUTER' }}</button>
+      </div>
+    </form>
+  </div>
+</ng-template>
+
+<!-- template de suppression -->
+<ng-template #modalDelete let-modal>
+  <div class="modal-body">
+    <p class="text-center" *ngIf="!deleteMsg">Etes-vous sûr de vouloir supprimer ce cours ?</p>
+    <p class="text-center" *ngIf="deleteMsg">{{ deleteMsg }}</p>
+  </div>
+  <div class="modal-footer border-0 d-flex justify-content-center">
+    <button type="button" class="btn btn-secondary" (click)="closeModal()">Annuler</button>
+    <button type="button" class="btn btn-danger" (click)="deleteConfirmed()">Supprimer</button>
+  </div>
+</ng-template>
+
+<!-- template liste des modules -->
+<ng-template let-modal #list_modules>
+  <div class="modal-header">
+    <h5 class="modal-title">Liste des modules associés au cours</h5>
+    <button type="button" class="btn-close" (click)="closeModal()" aria-label="Close"></button>
+  </div>
+  <div class="modal-body">
+    <table class="table table table-striped" *ngIf="modules.length > 0">
+      <thead>
+        <tr>
+          <th scope="col">N°</th>
+          <th scope="col">Nom</th>
+          <th scope="col">Description</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let module of modules; let i = index">
+          <th scope="row">{{ (currentPage - 1) * itemsPerPage + i + 1 }}</th>
+          <td> {{module.name}} </td>
+          <td> <span>{{module.description}}</span></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="text-center p-4" *ngIf="modules.length <= 0">
+      <h5>Aucun module n'est associé à ce cours</h5>
+    </div>
+  </div>
+</ng-template>
+
+<!-- formulaire d'ajout et de modification -->
+<ng-template #modalFormModule let-modal>
+  <div class="modal-header">
+    <h5 class="modal-title">AJOUT MODULE</h5>
+    <button type="button" class="btn-close" (click)="closeModal()" aria-label="Close"></button>
+  </div>
+  <div class="modal-body">
+    <form class="row g-3" [formGroup]="moduleForm" (ngSubmit)="onSubmitModule()">
+      <!--  input title -->
+      <div class="col-md-12">
+        <input class="form-control" type="text" placeholder="Nom du module" formControlName="name"
+        [ngClass]="{ 'is-invalid': moduleForm.get('name')?.invalid && (moduleForm.get('name')?.dirty || moduleForm.get('name')?.touched) }">
+      </div>
+      <!-- input description -->
+      <div class="col-md-12">
+        <textarea class="form-control" id="inputDesc" rows="3" formControlName="description" placeholder="Desciption du module"
+        [ngClass]="{ 'is-invalid': moduleForm.get('description')?.invalid && (moduleForm.get('description')?.dirty || moduleForm.get('description')?.touched) }">
+      </textarea>
+    </div>
+      <div class="col-md-12">
+        <label for="contenu">Choisir un contenu</label>
+        <input type="file" id="contenu" name="contenu" (change)="onFileSelected($event)" class="form-control" required/>
+      </div>
+
+      <div class="d-flex justify-content-start">
+        <button type="submit" class="btn btn-primary">AJOUTER</button>
+      </div>
+    </form>
+  </div>
+</ng-template>
+
+

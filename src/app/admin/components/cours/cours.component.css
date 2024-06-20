@@ -13,3 +13,13 @@ th {
   background-color: #3636e5;
   color: #fff;
 }
+
+.custom-select-width {
+  width: auto;
+  max-width: 150px; /* ajustez cette valeur selon vos besoins */
+}
+
+.no-border-radius {
+  border-radius: 0 !important;
+}
+

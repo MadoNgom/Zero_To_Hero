@@ -5,8 +5,15 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
+<<<<<<< HEAD
 .nav {
   position: relative;
+=======
+nav {
+  position: relative;
+  height: 100%;
+  padding: 1rem 2rem;
+>>>>>>> 7918d93 (fin du projet)
 }
 .nav-link {
   color: rgb(85, 83, 83s);
@@ -29,7 +36,10 @@ ul li {
   background-color: #3636e5;
   color: #fff;
   border-radius: 15px;
+<<<<<<< HEAD
   padding: 0 2rem;
+=======
+>>>>>>> 7918d93 (fin du projet)
 }
 .logout {
   position: absolute;

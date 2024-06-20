@@ -6,13 +6,21 @@ import { AuthService } from './auth.service';
 })
 export class isFormateurGuard {
   canActivate: CanActivateFn = () => {
+<<<<<<< HEAD
     if (this.authService.getCurruntUser().type != 'Formateur') {
+=======
+    if (this.authService.getCurrentUser().type != 'Formateur') {
+>>>>>>> 7918d93 (fin du projet)
       this.router.navigate(['login']);
       return false;
     }
     return true;
   };
+<<<<<<< HEAD
   
+=======
+
+>>>>>>> 7918d93 (fin du projet)
 
   constructor(private authService: AuthService, private router: Router) {}
 }

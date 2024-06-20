@@ -12,7 +12,7 @@ export class isApprenantGuard {
     }
     return true;
   };
-  
+
 
   constructor(private authService: AuthService, private router: Router) {}
 }
