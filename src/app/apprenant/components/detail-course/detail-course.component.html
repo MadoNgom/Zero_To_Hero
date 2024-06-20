@@ -54,13 +54,12 @@
           />
           <div class="card-body">
             <h5 *ngIf="course.price?.type === 'value'" class="card-price">
-              {{ course.price?.amount | number : "1.0-3" : "fr-FR" }} FCFA
+              {{ course.price.amount | number : "1.0-3" : "fr-FR" }} FCFA
             </h5>
             <h5 *ngIf="course.price?.type === 'free'" class="card-price">
               Gratuit
             </h5>
 
-<<<<<<< HEAD
             <h6 class="mt-4">Paiement securisé</h6>
             <div class="card-paiment d-flex align-items-center gx-2">
               <!--Paypal-->
@@ -129,48 +128,6 @@
                 />
               </button>
             </div>
-<<<<<<< HEAD
-=======
-            <!-- <a href="#" class="btn btn-primary w-100 d-block mb-3" routerLink="/payment">Acheter maintenant</a> -->
-=======
-            <a
-              href="#"
-              class="btn btn-primary w-100 d-block mb-3"
-              routerLink="/payment"
-              >Acheter maintenant</a
-            >
-            <a href="#" class="btn btn-outline-primary w-100"
-              >Gratuit pour les membres</a
-            >
-            <h6 class="mt-4">Paiement securisé</h6>
-            <div class="card-paiment d-flex align-items-center gx4">
-              <img
-                src="../../../../assets/paiments/paypal.png"
-                class="m-2"
-                alt=""
-              />
-              <img src="../../../../assets/paiments/visa.png" alt="" />
-              <img
-                src="../../../../assets/paiments/mastercard.png"
-                class="m-2"
-                alt=""
-              />
-              <img
-                src="../../../../assets/paiments/wave.png"
-                alt=""
-                width="40px"
-                height="40px"
-                class="m-2"
-              />
-              <img
-                src="../../../../assets/paiments/orangeMoney.png"
-                alt=""
-                width="48px"
-                height="48px"
-              />
-            </div>
->>>>>>> 7918d93 (fin du projet)
->>>>>>> e949af98fd5844ca568b5f37d74315fcd03e04fc
             <p class="text-black-50">7-Jours garantis satisfait ou Remboursé</p>
           </div>
           <div class="mb-4">
@@ -199,10 +156,6 @@
     </div>
   </div>
 </section>
-<<<<<<< HEAD
-
-=======
->>>>>>> 7918d93 (fin du projet)
 <!-- SECOND SECTION -->
 <section class="py-4">
   <div class="container">
@@ -265,3 +218,4 @@
   </div>
 </section>
 <app-footer></app-footer>
+
