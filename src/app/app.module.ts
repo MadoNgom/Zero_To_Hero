@@ -11,7 +11,6 @@ import { SharedModule } from './shared/shared.module';
 import { AdminModule } from './admin/admin.module';
 import { CoreModule } from './core/core.module';
 import { ApprenantModule } from './apprenant/apprenant.module';
-import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 @NgModule({
   declarations: [AppComponent],

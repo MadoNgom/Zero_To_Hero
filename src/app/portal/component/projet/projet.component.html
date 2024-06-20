@@ -1,0 +1,26 @@
+<section>
+  <div class="container py-5">
+    <div class="row">
+      <div class="col-md-4" *ngFor="let module of data">
+        <div class="e-card playing">
+          <div class="image"></div>
+
+          <div class="wave"></div>
+          <div class="wave"></div>
+          <div class="wave"></div>
+
+          <div class="infotop">
+            <img [src]="module.img" alt="" />
+            <h5>{{ module.title }}</h5>
+
+            <br />
+            <div class="name mb-4">MikeAndrewDesigner</div>
+            <button class="btn btn-light" routerLink="/portal/projet1">
+              Commencer le Projet
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

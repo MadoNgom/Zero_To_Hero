@@ -1,7 +1,4 @@
-import { Component } from '@angular/core';
-import { Course } from '../../../models/course.model';
-import { CourseService } from '../../../services/course.service';
-import { ActivatedRoute } from '@angular/router';
+import { Component, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-contenu-cours',
@@ -10,9 +7,16 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ContenuCoursComponent {
   tabs: string[] = ['Contenu Cours', 'Reviews', 'Annonce'];
+  @ViewChild('videoPlayer') videoPlayer: any;
+  showPlayButton: boolean = true;
 
   activatedIndex: number = 0;
   changeTab(tabIndex: number) {
     this.activatedIndex = tabIndex;
+  }
+
+  playVideo() {
+    this.videoPlayer.nativeElement.play();
+    this.showPlayButton = false;
   }
 }

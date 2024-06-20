@@ -8,6 +8,7 @@ import { AdminComponent } from './admin.component';
 
 import { CoursComponent } from './components/cours/cours.component';
 import { ProgrameComponent } from './components/programe/programe.component';
+import { isAdminGuard } from '../is-admin.guard';
 
 const routes: Routes = [
   {
@@ -16,12 +17,13 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        redirectTo: 'dashboard', // Redirect to dashboard by default
+        redirectTo: 'dashboard',
         pathMatch: 'full',
       },
       {
         path: 'dashboard',
         component: DashboardComponent,
+        canActivate: [isAdminGuard],
       },
       {
         path: 'add-formateur',

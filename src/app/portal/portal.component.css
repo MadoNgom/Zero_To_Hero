@@ -1,7 +1,9 @@
 .admin-container {
   display: grid;
   height: 100vh;
+  width: 100%;
   grid-template-columns: 300px 1fr;
+
   grid-template-rows: 60px 1fr 1fr;
   grid-template-areas:
     "sidebar header"
@@ -17,6 +19,8 @@
   height: 100%;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
   padding: 1rem 2.5rem;
+  /* display: none; */
+  z-index: 2;
 }
 .header {
   background-color: #ffff;
@@ -28,3 +32,13 @@
   grid-area: main;
   background-color: #f9f8f9;
 }
+/* @media (min-width: 650px) {
+  .admin-container {
+    height: 100vh;
+    grid-template-columns: 300px 1fr;
+    grid-template-rows: 60px 1fr 1fr;
+    grid-template-areas:
+      "sidebar header"
+      "sidebar main";
+  }
+} */

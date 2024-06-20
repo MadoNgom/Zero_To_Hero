@@ -7,15 +7,13 @@ import { DashboardComponent } from './component/dashboard/dashboard.component';
 import { SidebarComponent } from './component/sidebar/sidebar.component';
 import { ReusableHeaderComponent } from './component/reusable-header/reusable-header.component';
 import { SharedModule } from '../shared/shared.module';
-import { QuizzComponent } from './component/quizz/quizz.component';
 import { SuggestionComponent } from './component/suggestion/suggestion.component';
 import { TabsModule } from '../tabs/tabs.module';
-import { ListeModulesComponent } from './component/liste-modules/liste-modules.component';
-
 import { CoursComponent } from './component/cours/cours.component';
 import { ContenuCoursComponent } from './component/contenu-cours/contenu-cours.component';
-import { QuestionsComponent } from './component/questions/questions.component';
 import { ProfileComponent } from './component/profile/profile.component';
+import { ProjetComponent } from './component/projet/projet.component';
+import { Projet1Component } from './component/projet1/projet1.component';
 @NgModule({
   declarations: [
     PortalComponent,
@@ -23,13 +21,12 @@ import { ProfileComponent } from './component/profile/profile.component';
     DashboardComponent,
     SidebarComponent,
     ReusableHeaderComponent,
-    QuizzComponent,
     SuggestionComponent,
-    ListeModulesComponent,
     CoursComponent,
     ContenuCoursComponent,
-    QuestionsComponent,
     ProfileComponent,
+    ProjetComponent,
+    Projet1Component,
   ],
   imports: [CommonModule, PortalRoutingModule, SharedModule, TabsModule],
 })

@@ -1,0 +1,4 @@
+.showcase-content {
+  max-width: min(950px, 90%);
+  margin-inline: auto;
+}

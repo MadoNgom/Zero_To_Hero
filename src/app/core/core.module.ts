@@ -12,6 +12,7 @@ import { SignupComponent } from './component/signup/signup.component';
 import { TestimonialComponent } from './component/testimonial/testimonial.component';
 import { FormComponent } from './component/form/form.component';
 import { SignupFormComponent } from './component/signup-form/signup-form.component';
+import { PricingComponent } from './component/pricing/pricing.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { SignupFormComponent } from './component/signup-form/signup-form.compone
     TestimonialComponent,
     FormComponent,
     SignupFormComponent,
+    PricingComponent,
   ],
   imports: [CommonModule, SharedModule, BrowserModule, ReactiveFormsModule],
   exports: [HomeComponent],

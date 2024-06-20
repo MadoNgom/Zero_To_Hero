@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../../services/user.service';
-import { CourseService } from '../../../services/course.service'; // Import CourseService
-
+import { CourseService } from '../../../services/course.service';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -14,28 +13,31 @@ export class DashboardComponent implements OnInit {
   tabs: string[] = ['Users', 'Formateurs', 'Apprenants', 'Admins'];
   activatedIndex: number = 0;
 
-  constructor(private userService: UserService, private courseService: CourseService) {} // Inject CourseService
+  constructor(
+    private userService: UserService,
+    private courseService: CourseService
+  ) {} // Inject CourseService
 
   ngOnInit(): void {
     this.userService.getUsersCount().subscribe({
       next: (data: { totalUsers: number }) => {
         this.totalUsers = data.totalUsers;
       },
-      error: (err: any) => console.error(err)
+      error: (err: any) => console.error(err),
     });
 
     this.courseService.getCoursesCount().subscribe({
       next: (data) => {
         this.totalCourses = data.totalCourses;
       },
-      error: (err) => console.error('Error fetching course count:', err)
+      error: (err) => console.error('Error fetching course count:', err),
     });
 
     this.userService.getTrainersCount().subscribe({
       next: (data) => {
         this.totalTrainers = data.totalTrainers;
       },
-      error: (err) => console.error('Error fetching trainer count:', err)
+      error: (err) => console.error('Error fetching trainer count:', err),
     });
   }
 

@@ -6,7 +6,11 @@
   <span class="p-2 text-dark d-block mb-1 fs-5">Overview</span>
   <ul *ngFor="let item of sideBarData">
     <li [class.active]="item.active">
-      <a class="nav-link" [routerLink]="item.routeName">
+      <a
+        class="nav-link"
+        [routerLink]="item.routeName"
+        (click)="onItemClick(item)"
+      >
         <i [class]="item.icon"></i>
         <span [class]="item.itemClasse">
           <i *ngIf="item.logouticon" [class]="item.logouticon"></i
@@ -16,3 +20,15 @@
     </li>
   </ul>
 </nav>
+<ul>
+  <!-- <li *ngFor="let item of sideBarData" [class.active]="item.active">
+    <a class="nav-link" [routerLink]="item.routeName" (click)="onItemClick(item)">
+      <i [class]="item.icon"></i>
+      <span [class]="item.itemClasse">
+        <i *ngIf="item.logouticon" [class]="item.logouticon"></i>
+        {{ item.name }}
+      </span>
+    </a>
+  </li>
+</ul> -->
+</ul>

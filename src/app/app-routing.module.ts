@@ -7,6 +7,7 @@ import { ContactComponent } from './core/component/contact/contact.component';
 import { ProgramsComponent } from './apprenant/components/programs/programs.component';
 import { LoginComponent } from './core/component/login/login.component';
 import { SignupComponent } from './core/component/signup/signup.component';
+import { PricingComponent } from './core/component/pricing/pricing.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -14,24 +15,6 @@ const routes: Routes = [
     path: 'home',
     component: HomeComponent,
   },
-
-  {
-    path: 'portal',
-    loadChildren: () =>
-      import('./portal/portal.module').then((x) => x.PortalModule),
-    data: { preload: false },
-  },
-  {
-    path: 'apprenant',
-    loadChildren: () =>
-      import('./apprenant/apprenant.module').then((m) => m.ApprenantModule),
-  },
-  {
-    path: 'admin',
-    loadChildren: () =>
-      import('./admin/admin.module').then((m) => m.AdminModule),
-  },
-
   {
     path: 'about',
     component: AboutComponent,
@@ -49,8 +32,29 @@ const routes: Routes = [
     component: ContactComponent,
   },
   {
+    path: 'pricing',
+    component: PricingComponent,
+  },
+  {
     path: 'programs',
     component: ProgramsComponent,
+  },
+
+  {
+    path: 'portal',
+    loadChildren: () =>
+      import('./portal/portal.module').then((x) => x.PortalModule),
+    data: { preload: false },
+  },
+  {
+    path: 'apprenant',
+    loadChildren: () =>
+      import('./apprenant/apprenant.module').then((m) => m.ApprenantModule),
+  },
+  {
+    path: 'admin',
+    loadChildren: () =>
+      import('./admin/admin.module').then((m) => m.AdminModule),
   },
 ];
 

@@ -12,7 +12,10 @@
     <!-- VIDEO INTRODUCTIVE -->
     <div class="col-md-9">
       <div class="video-content">
-        <video controls>
+        <span class="play-icon" *ngIf="showPlayButton" (click)="playVideo()">
+          <i class="bi bi-play-fill text-light fs-2"></i>
+        </span>
+        <video #videoPlayer controls>
           <source src="../../../../assets/video/reactjs.mp4" type="video/mp4" />
         </video>
       </div>

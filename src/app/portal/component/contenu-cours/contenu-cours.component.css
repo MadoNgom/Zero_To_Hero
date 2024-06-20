@@ -9,6 +9,36 @@ li {
   height: 250px;
 }
 
+.video-content .play-icon {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #444fe6;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  text-align: center;
+  z-index: 1;
+}
+
+.video-content video {
+  width: 100%;
+  height: auto;
+}
+
+.play-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  z-index: 1;
+}
+
 @media (min-width: 750px) {
   .video-content {
     height: 450px;

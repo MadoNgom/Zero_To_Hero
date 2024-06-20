@@ -19,16 +19,9 @@ export const sideBarData: any[] = [
     itemClasse: 'nav-item fs-6',
   },
   {
-    routeName: '/portal/quizz',
-    icon: 'bi bi-card-checklist fs-4',
-    name: 'Quizz',
-    itemClasse: 'nav-item fs-6',
-  },
-
-  {
-    routeName: 'portal/settings',
-    icon: 'bi bi-patch-check-fill fs-3',
-    name: 'Mes Certificats',
+    routeName: '/portal/projet',
+    icon: 'bi bi-lightbulb-fill fs-3',
+    name: 'Projet Guidé',
     itemClasse: 'nav-item fs-6',
   },
   {
@@ -38,9 +31,9 @@ export const sideBarData: any[] = [
     itemClasse: 'nav-item fs-6',
   },
   {
-    routeName: 'Logout',
-    name: 'Logout',
-    logouticon: 'bi bi-box-arrow-right fs-3 mx-2 text-dark',
-    itemClasse: 'lnav-item logout fs-6',
+    routeName: 'logout',
+    name: 'Se deconnecter',
+
+    itemClasse: 'nav-item  text-dark logout fs-6',
   },
 ];

@@ -3,12 +3,11 @@ import { Routes, RouterModule } from '@angular/router';
 import { PortalComponent } from './portal.component';
 import { UserComponent } from './component/user/user.component';
 import { DashboardComponent } from './component/dashboard/dashboard.component';
-import { QuizzComponent } from './component/quizz/quizz.component';
-
 import { CoursComponent } from './component/cours/cours.component';
 import { ContenuCoursComponent } from './component/contenu-cours/contenu-cours.component';
-import { QuestionsComponent } from './component/questions/questions.component';
 import { ProfileComponent } from './component/profile/profile.component';
+import { ProjetComponent } from './component/projet/projet.component';
+import { Projet1Component } from './component/projet1/projet1.component';
 
 const routes: Routes = [
   {
@@ -25,10 +24,6 @@ const routes: Routes = [
       },
 
       {
-        path: 'quizz',
-        component: QuizzComponent,
-      },
-      {
         path: 'cours',
         component: CoursComponent,
       },
@@ -36,13 +31,18 @@ const routes: Routes = [
         path: 'cours/:_id',
         component: ContenuCoursComponent,
       },
-      {
-        path: 'questions',
-        component: QuestionsComponent,
-      },
+
       {
         path: 'profile',
         component: ProfileComponent,
+      },
+      {
+        path: 'projet',
+        component: ProjetComponent,
+      },
+      {
+        path: 'projet1',
+        component: Projet1Component,
       },
     ],
   },

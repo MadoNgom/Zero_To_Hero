@@ -3,7 +3,8 @@
   gap: 1rem;
 }
 .card {
-  background-color: #fff;
+  background-color: #b26df7;
+  color: #fff;
   padding: 2rem 1rem;
   border-radius: 10px;
   border: 0;
@@ -22,6 +23,21 @@
   background-color: #fff;
 }
 
+.card:nth-child(4) {
+  background-color: #ee9170;
+}
+
+.card:nth-child(2) {
+  background-color: #5af07a;
+}
+.card:nth-child(3) {
+  background-color: #6e6cf9;
+  color: #fff;
+}
+.card:nth-child(1) {
+  background-color: #b26df7;
+  color: #fff;
+}
 @media screen and (min-width: 650px) {
   .grid {
     grid-template-columns: repeat(2, 1fr);

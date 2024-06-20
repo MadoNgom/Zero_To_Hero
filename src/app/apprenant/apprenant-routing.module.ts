@@ -17,12 +17,20 @@ const routes: Routes = [
         redirectTo: 'dashboard',
         pathMatch: 'full',
       },
-      { path: 'dashboard', component: ProgramsComponent , canActivate: [isApprenantGuard]},
-      { path: 'payment', component: PaymentComponent , canActivate: [AuthGuard, isApprenantGuard]},
+      {
+        path: 'dashboard',
+        component: ProgramsComponent,
+        canActivate: [isApprenantGuard],
+      },
+      {
+        path: 'payment',
+        component: PaymentComponent,
+        canActivate: [AuthGuard, isApprenantGuard],
+      },
     ],
   },
   { path: 'react', component: ReactComponent },
-  { path: 'programs/:_id', component: DetailCourseComponent }
+  { path: 'programs/:_id', component: DetailCourseComponent },
 ];
 
 @NgModule({
