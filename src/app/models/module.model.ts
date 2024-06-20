@@ -1,9 +1,7 @@
-import { Course } from "./course.model";
-
 export class Module {
-    _id?: number;
-    name: string | undefined;
-    description: string | undefined;
-    course: Course | undefined;
-
+    _id?: string;
+    name?: string;
+    description?: string;
+    contenu?: string;
+    idCours?: string;
 }
