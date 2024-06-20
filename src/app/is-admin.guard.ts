@@ -12,7 +12,6 @@ export class isAdminGuard {
     }
     return true;
   };
-  
 
   constructor(private authService: AuthService, private router: Router) {}
 }

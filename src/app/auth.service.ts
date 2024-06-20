@@ -20,12 +20,7 @@ export class AuthService {
       ();
   }
 
-  signup(user: {
-    fullName: string;
-    email: string;
-    password: string;
-    iAgree: boolean;
-  }) {
+  signup(user: { fullName: string; email: string; password: string; iAgree: boolean;}) {
     return this.http
       .post<{ accessToken: string }>(`${this.apiUrl}/signup`, user)
       .pipe();
@@ -34,6 +29,7 @@ export class AuthService {
   storeJwtToken(jwt: string) {
     localStorage.setItem(this.JWT_TOKEN, jwt);
   }
+
   setCurruntUser(user: any) {
     localStorage.setItem('user', JSON.stringify(user));
   }
@@ -41,6 +37,7 @@ export class AuthService {
   getJwtToken() {
     return localStorage.getItem(this.JWT_TOKEN);
   }
+
   getCurruntUser() {
     const userString = localStorage.getItem('user');
     return userString ? JSON.parse(userString) : null;

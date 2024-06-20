@@ -19,6 +19,9 @@ import { TableApprenantComponent } from './components/table-apprenant/table-appr
 import { TableAdminComponent } from './components/table-admin/table-admin.component';
 import { ProgrameComponent } from './components/programe/programe.component';
 
+import { PaginationModule } from 'ngx-bootstrap/pagination';
+import { ModalModule } from 'ngx-bootstrap/modal';
+
 @NgModule({
   declarations: [
     DashboardComponent,
@@ -42,6 +45,8 @@ import { ProgrameComponent } from './components/programe/programe.component';
     AdminRoutingModule,
     TabsModule,
     ReactiveFormsModule,
+    PaginationModule.forRoot(),
+    ModalModule.forRoot(),
   ],
   exports: [SidebarComponent],
 })
