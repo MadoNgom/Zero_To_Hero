@@ -9,9 +9,10 @@ import { LoginComponent } from './core/component/login/login.component';
 import { SignupComponent } from './core/component/signup/signup.component';
 import { PricingComponent } from './core/component/pricing/pricing.component';
 import { AuthGuard } from './auth.guard'; // Importer AuthGuard
+import { DashboardComponent } from './admin/components/dashboard/dashboard.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/dashboard', pathMatch: 'full' }, // Rediriger vers /dashboard
+  { path: '', redirectTo: '/home', pathMatch: 'full' }, // Rediriger vers /dashboard
   {
     path: 'home',
     component: HomeComponent,
@@ -54,12 +55,11 @@ const routes: Routes = [
   {
     path: 'admin',
     loadChildren: () =>
-      import('./admin/admin.module').then((m) => m.AdminModule),
+      import('./admin/admin.module').then((m) => m.AdminModule), 
   },
   {
     path: 'dashboard',
-    component: ProgramsComponent, // ou un autre composant de votre choix
-    canActivate: [AuthGuard], // Protéger cette route avec AuthGuard
+    component: DashboardComponent, // ou un autre composant de votre choix // Protéger cette route avec AuthGuard
   },
 ];
 
