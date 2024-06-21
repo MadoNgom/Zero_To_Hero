@@ -42,18 +42,10 @@
     </div>
     <div>
       <!-- TO HIDE THE BUTTON IF THE USER SIGN IN -->
-      <button
-        class="btn btn-outline-primary mx-2"
-        routerLink="/signup"
-        *ngIf="!isLogin"
-      >
+      <button class="btn btn-outline-primary mx-2" routerLink="/signup">
         s'inscrire
       </button>
-      <button
-        class="btn btn-primary mx-2 ms-auto"
-        routerLink="/login"
-        *ngIf="!isLogin"
-      >
+      <button class="btn btn-primary mx-2 ms-auto" routerLink="/login">
         se connecter
       </button>
       <button

@@ -1,9 +1,7 @@
 .admin-container {
   display: grid;
   height: 100vh;
-  width: 100%;
   grid-template-columns: 300px 1fr;
-
   grid-template-rows: 60px 1fr 1fr;
   grid-template-areas:
     "sidebar header"
@@ -16,9 +14,9 @@
   left: 0;
   bottom: 0;
   grid-area: sidebar;
-  height: 100%;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-  padding: 1rem 2.5rem;
+  /* padding: 1rem 2.5rem; */
+  background-color: #fff;
   /* display: none; */
   z-index: 2;
 }
