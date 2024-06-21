@@ -1,36 +1,31 @@
-<div class="container-fluid py-2">
-  <div class="container showcase">
-    <div class="row d-flex justify-content-between align-items-center">
-      <div class="col-md-6">
+<div class="showcase">
+  <div>
+    <div class="d-flex justify-content-between align-items-center">
+      <div class="mx-lg-3 icon-text">
+        <h1 class="section-title">
+          Devenez Meilleur chaque jours <br />
+          avec Zero To Hero <i class="bi bi-rocket-takeoff"></i>
+        </h1>
+        <!-- RATINGS -->
+        <div class="rating fs-6 mb-3">
+          <i class="bi bi-star-fill text-warning"></i>
+          <i class="bi bi-star-fill text-warning"></i>
+          <i class="bi bi-star-fill text-warning"></i>
+          <i class="bi bi-star-fill text-warning"></i>
+          <i class="bi bi-star-half text-warning"></i>
+          150K
+        </div>
+        <!-- INFO -->
         <div>
-          <div class="mx-lg-3 icon-text">
-            <h1 class="section-title">
-              Devenez Meilleur chaque jours <br />
-              avec Zero To Hero <i class="bi bi-rocket-takeoff"></i>
-            </h1>
-            <!-- RATINGS -->
-            <div class="rating fs-6 mb-3">
-              <i class="bi bi-star-fill text-warning"></i>
-              <i class="bi bi-star-fill text-warning"></i>
-              <i class="bi bi-star-fill text-warning"></i>
-              <i class="bi bi-star-fill text-warning"></i>
-              <i class="bi bi-star-half text-warning"></i>
-              150K
-            </div>
-            <!-- INFO -->
-            <div>
-              <i class="bi bi-patch-check mb-3"></i> Certificat
-              <i class="bi bi-bar-chart-line"></i> Débutant
-              <p>
-                Ce cours vous guidera à travers les concepts fondamentaux de
-                React
-              </p>
-              <button class="btn bg-white d-block mt-4">Voir les cours</button>
-            </div>
-          </div>
+          <i class="bi bi-patch-check mb-3"></i> Certificat
+          <i class="bi bi-bar-chart-line"></i> Débutant
+          <p>
+            Ce cours vous guidera à travers les concepts fondamentaux de React
+          </p>
+          <button class="btn bg-white d-block mt-4">Voir les cours</button>
         </div>
       </div>
-      <div class="col-md-4">
+      <div>
         <img
           src="../../../../assets/image/clipard-2.png"
           class="img-fluid"
@@ -41,11 +36,12 @@
     </div>
   </div>
 </div>
-<div class="container py-1">
-  <div class="row">
-    <div class="col-md-3 col-sm-6" *ngFor="let data of listeCours">
-      <a class="card card-block" [routerLink]="['/portal/cours', data._id]">
-        <img [src]="data.imageUrl" alt="Photo " />
+
+<div class="container-fluid px-4">
+  <div class="grid">
+    <div class="cadre" *ngFor="let data of listeCours">
+      <a class="card" [routerLink]="['/portal/cours', data._id]">
+        <img [src]="data.imageUrl" alt="Photo " class="card-img-top" />
         <div class="p-2">
           <h4 class="card-title mb-2">{{ data.title }}</h4>
           <div class="card-text">

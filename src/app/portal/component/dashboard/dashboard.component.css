@@ -4,16 +4,22 @@
   background-position: center;
   background-repeat: no-repeat;
   color: #fff;
-  position: relative;
-  padding: 2rem 1rem;
+  padding: 2rem;
+  max-width: 100%;
   min-height: 20vh;
-  margin: 1rem;
+  margin: 2rem 1rem;
   border-radius: 20px;
 }
+.grid {
+  display: grid;
+  margin-top: 2rem;
+  margin-inline: auto;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+}
 
-img {
-  height: 150px;
-  width: 100%;
+.card-img-top {
+  height: 200px;
   border-radius: 5px;
 }
 
